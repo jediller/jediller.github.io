@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Drawing Things</title>
+</head>
+<body onload="draw1();" onresize="redraw();"> 
+
+<div>
+<div height='+h10+'>
+	<input type="button" value="Boxes" onclick="doBoxes();">
+	<input type="button" value="Lines" onclick="doLines();">
+	<input type="button" value="Connect" onclick="doConnect();">
+	<input type="button" value="Grad1" onclick="doGrad1();">
+	<input type="button" value="Clear" onclick="doClear();">
+	<input type="button" value="Stop" onclick="doStop();">
+</div>
+
+<div height='+h90+'>
+	<canvas id="canvas"></canvas></div>
+</div> 
+
+<script>
+	var w = window.innerWidth
+	var h = window.innerHeight
+   var h10 = Math.floor(10 * h / 100);
+   var h90 = Math.floor(90 * h / 100);
+   var myTest;
+	var color;
+	var context;
+   var ep1 = 0, ep2 = 0;
+
+	var can = document.getElementsByTagName('canvas')[0];
+	can.width = w;
+	can.height = h90;
+
+	function redraw() {
+		w = window.innerWidth
+		h = window.innerHeight
+   	h10 = Math.floor(10 * h / 100);
+   	h90 = Math.floor(90 * h / 100);
+		can.width = w;
+		can.height = h90;
+	}
+
+	function draw1() {
+		myTest = setInterval(draw, 200);
+	}
+
+	function doBoxes() {
+		clearInterval(myTest);
+		myTest = setInterval(draw, 200);
+	}
+
+	function doLines() {
+		clearInterval(myTest);
+		myTest = setInterval(lines, 200);
+	}
+
+	function doGrad1() {
+		clearInterval(myTest);
+		myTest = setInterval(grad1, 200);
+	}
+
+	function doConnect() {
+		clearInterval(myTest);
+		myTest = setInterval(clines, 200);
+	}
+
+	function doStop() {
+		clearInterval(myTest);
+	}
+
+	function lines() {
+		context.beginPath();
+		context.lineWidth = "10";
+		context.strokeStyle=rchoice(color);
+		context.moveTo(Math.floor(Math.random()*w),Math.floor(Math.random()*h));
+		ep1 = Math.floor(Math.random()*w);
+		ep2 = Math.floor(Math.random()*h);
+		context.lineTo(ep1,ep2);
+		context.stroke();
+	}
+
+	function clines() {
+		context.beginPath();
+		context.lineWidth = "5";
+		context.strokeStyle=rchoice(color);
+		context.moveTo(ep1,ep2);
+		ep1 = Math.floor(Math.random()*w-10);
+		ep2 = Math.floor(Math.random()*h-10);
+		context.lineTo(ep1,ep2);
+		context.stroke();
+	}
+
+
+	function grad1() {
+		ep1 = Math.floor(Math.random()*w-20);
+		ep2 = Math.floor(Math.random()*h-20);
+		var grd = context.createRadialGradient(ep1,ep2,10,ep1+10,ep2+10,20)
+		grd.addColorStop(0,"red")
+		grd.addColorStop(1,"blue")
+		context.fillStyle = grd;
+		context.fillRect(ep1,ep2,40,40)
+	}
+
+function draw() {
+	color = ["Coral", "Cyan", "Crimson","DarkRed","DeepPink","Yellow","Green",
+	"Gold","GoldenRod","Gray","GreenYellow","HoneyDew","HotPink","IndianRed",
+	"Indigo","Ivory","Khaki","Lavender","LawnGreen","LightBlue","LightCoral"];
+  var canvas = document.getElementById('canvas');
+    if (canvas.getContext) { 
+    context = canvas.getContext('2d');
+	 rbox(context, rchoice(color));
+    }  
+}
+
+function doClear() {
+	context.fillStyle = "White";
+	context.fillRect(0,0,w,h);
+}
+
+function rbox(context,crayon)
+{
+    context.fillStyle=crayon;
+    x1 = Math.floor(Math.random()*w)
+	 d1 = 10+Math.floor(Math.random()*25);
+    x2 = Math.floor(Math.random()*h90)
+	 d2 = 10+Math.floor(Math.random()*25);
+    context.fillRect(x1,x2,d1,d2)
+}
+
+function rchoice(arr) {
+   var v = Math.floor(Math.random()*arr.length);
+   return arr[v];
+}
+</script>
+</body>
+</html>
