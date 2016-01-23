@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery list sample</title>
+</head>
+<body>
+<script src="jquery.js"></script> 
+
+<p>jQuery example to add items to a list</p>
+<ul id="mylist">
+</ul>
+
+<input type="text" id="text_data"  />
+<input type="Button" id="button1" value="Add me" />
+
+<script>
+$('#button1').click(function(){
+	if ($('#text_data').val().length > 0) {
+		$( '#mylist' ).append( '<li>'+$('#text_data').val()+'</li>' );
+		console.log('added to list: '+$('#text_data').val())
+	} else {
+		console.log('empty value ignored')
+	}
+});   
+</script>
+
+</body>
+</html>
