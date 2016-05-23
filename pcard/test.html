@@ -1,0 +1,64 @@
+<html>
+<head><title>Test</title></head>
+<body>
+
+<script>
+var cards = [];
+card = 0;
+cards.push("pcardT_0001.jpg");
+cards.push("pcardT_0002.jpg");
+cards.push("pcardT_0003.jpg");
+cards.push("pcardT_0004.jpg");
+cards.push("pcardT_0005.jpg");
+cards.push("pcardT_0006.jpg");
+cards.push("pcardT_0007.jpg");
+cards.push("pcardT_0008.jpg");
+card = 0
+flipname = cards[card];
+</script>
+
+<input type="button" value="flip" onclick="flip();">
+<input type="button" value="next" onclick="next();">
+<input type="button" value="back" onclick="back();">
+
+<div id="flipper">
+<img src="pcardT_0001.jpg" id="card" height=300 width=500>
+</div>
+<p id="comment"></p>
+
+<script>
+function flip() {
+   f = '<img src="'
+   b = '" height=300 width=500>'
+
+   var test = flipname.search("cardF");
+
+   if ( test == -1 ) { flipname = flipname.replace("pcardT","pcardF") } else
+		{ flipname = flipname.replace("pcardF","pcardT") }
+
+   document.getElementById("flipper").innerHTML = f + flipname + b;
+}
+
+function next() {
+  f = '<img src="'
+  b = '" height=300 width=500>'
+  card++;
+  if ( card >= cards.length ) { card = 0 }
+  flipname = cards[card];
+  document.getElementById("flipper").innerHTML = f + flipname + b;
+}
+
+function back() {
+  f = '<img src="'
+  b = '" height=300 width=500>'
+  card--;
+  if ( card <= -1 ) { card = cards.length-1 }
+  flipname = cards[card];
+  document.getElementById("flipper").innerHTML = f + flipname + b;
+}
+  
+</script>
+
+</body>
+</htm>
+
