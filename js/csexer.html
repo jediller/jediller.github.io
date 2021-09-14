@@ -89,9 +89,9 @@
     if (prb1 == 'word' && word1 == value1) return " onclick='right();'"
     color = ["red","orange","green","blue","black"];
     vv = color.indexOf(color1)+1
-    if (prb1 == 'color number' && vv == value1) return " onclick='right();'"
+    if (prb1 == 'number of color' && vv == value1) return " onclick='right();'"
     vv = color.indexOf(word1)+1
-    if (prb1 == 'word number' && vv == value1) return " onclick='right();'"
+    if (prb1 == 'number of word' && vv == value1) return " onclick='right();'"
     /*
     logitem = 'value:' + value1 + ' problem: ' + prb1 + ' color: '+ color1 + ' word: ' + word1
     console.log(logitem)
@@ -124,7 +124,7 @@
   }
 
   function getProblem() {
-    prb = ['color','word','color number','word number'];
+    prb = ['color','word','number of color','number of word'];
     var v = Math.floor(Math.random()*prb.length);
     return prb[v];
   }
