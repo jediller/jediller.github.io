@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<meta name="author" content="John E. Diller, Catherine E. Diller">
+<title>Cognitive Switching Exercise 1</title>
+</head>
+<body>
+
+<div>
+<div height='+h20+'>
+	<input type="button" value="Start/Restart" onclick="doStart();">
+</div>
+<div height='+h20+'><P></P></div>
+<div height='+h20+'>
+	<input type="button" style=background-color:white;color:red;" value="1 Red" onclick="goaway();">
+	<input type="button" style=background-color:white;color:orange;" value="2 Orange" onclick="goaway();">
+	<input type="button" style=background-color:white;color:green;" value="3 Green" onclick="goaway();">
+	<input type="button" style=background-color:white;color:blue;" value="4 Blue" onclick="goaway();">
+	<input type="button" style=background-color:white;color:black;" value="5 Black" onclick="goaway();">
+</div>
+
+<div height='+h50+'>
+  <p id="quest"></p></div>
+</div>
+
+<script>
+	var w = window.innerWidth
+	var h = window.innerHeight
+   var h10 = Math.floor(10 * h / 100);
+   var h20 = Math.floor(20 * h / 100);
+   var h50 = Math.floor(50 * h / 100);
+   let gotyme = 0
+   let comptime = 0
+   let totaltime = 0
+   let attempts = 0
+   var myTest;
+	var color;
+	var context;
+   var ep1 = 0, ep2 = 0;
+   var rightCnt = 0, wrongCnt = 0;
+
+  function doNext() {
+    gotyme = new Date()
+    var word = getColor()
+    var col = getColor()
+    while (col == word) {
+      col = getColor()
+    }
+    var pr = getProblem()
+
+    aver = (attempts > 0) ? (totaltime / attempts / 1000).toFixed(3) : 0
+
+    stuff = "Right: "+rightCnt+" Wrong: "+wrongCnt+"<br>"+
+    "average time: "+aver+" totaltime: "+(totaltime/1000).toFixed(3)+"<br>"+
+    "<font size=+1 color='black'>Find: "+pr+"</font><br>" +
+    "<font size=+3 color='"+col+"'>"+word+"</font><br><br>" +
+    "<input type='button' value='1'" + answer(1,pr,col,word) + ">" +
+    "<input type='button' value='2'" + answer(2,pr,col,word) + ">" +
+    "<input type='button' value='3'" + answer(3,pr,col,word) + ">" +
+    "<input type='button' value='4'" + answer(4,pr,col,word) + ">" +
+    "<input type='button' value='5'" + answer(5,pr,col,word) + "><br>" +
+    "<input type='button' value='red'" + answer('red',pr,col,word) + ">" +
+    "<input type='button' value='orange'" + answer('orange',pr,col,word) + ">" +
+    "<input type='button' value='green'" + answer('green',pr,col,word) + ">" +
+    "<input type='button' value='blue'" + answer('blue',pr,col,word) + ">" +
+    "<input type='button' value='black'" + answer('black',pr,col,word) + ">"
+
+    document.getElementById("quest").innerHTML = stuff
+
+
+  }
+
+  function doStart()
+  {
+   gotyme = 0
+   comptime = 0
+   totaltime = 0
+   attempts = 0
+   rightCnt = 0
+   wrongCnt = 0
+   doNext()
+  }
+
+  function answer(value1, prb1, color1, word1)
+  {
+    var res = 'wrong();>'
+    if (prb1 == 'color' && color1 == value1) return " onclick='right();'"
+    if (prb1 == 'word' && word1 == value1) return " onclick='right();'"
+    color = ["red","orange","green","blue","black"];
+    vv = color.indexOf(color1)+1
+    if (prb1 == 'color number' && vv == value1) return " onclick='right();'"
+    vv = color.indexOf(word1)+1
+    if (prb1 == 'word number' && vv == value1) return " onclick='right();'"
+    /*
+    logitem = 'value:' + value1 + ' problem: ' + prb1 + ' color: '+ color1 + ' word: ' + word1
+    console.log(logitem)
+    */
+    return " onclick='wrong();'"
+  }
+
+  function getColor() {
+    color = ["red","orange","green","blue","black"];
+    var v = Math.floor(Math.random()*color.length);
+    return color[v];
+  }
+
+  function right() {
+    rightCnt += 1
+    attempts += 1
+    rn = new Date()
+    comptime = rn - gotyme
+    totaltime += comptime
+    doNext()
+  }
+
+  function wrong() {
+    attempts += 1
+    wrongCnt += 1
+    rn = new Date()
+    comptime = rn - gotyme
+    totaltime += comptime
+    doNext()
+  }
+
+  function getProblem() {
+    prb = ['color','word','color number','word number'];
+    var v = Math.floor(Math.random()*prb.length);
+    return prb[v];
+  }
+
+  function goaway() {
+	}
+
+
+
+function rchoice(arr) {
+   var v = Math.floor(Math.random()*arr.length);
+   return arr[v];
+}
+</script>
+</body>
+</html>
