@@ -1,0 +1,187 @@
+<html>
+<head><title>Tips and Hints</title></head>
+<body>
+<h2>jpg and mp3 to mp4</h2><pre>
+
+ffmpeg -i Magnificat1.jpg -i Magnificat1.mp3 -c:v copy -c:a aac -strict 2 Magnificat1.mp4
+
+ffmpeg -i ItsABrandNewDay.mp3 -i HereIAm.mp3 -filter_complex "[0:a]volume=0.5[a1];[1:a]volume=0.5[a2]; [a1][a2]amerge" test.mp3
+
+~/Documents$ cat input.txt
+file 'HailMary.png'
+duration 3.000
+file 'HailMary2.png'
+duration 5.000
+file 'HailMary3.png'
+duration 4.000
+~/Documents$ ffmpeg -f concat -i input.txt -i GloryBound.mp3 Glory3.flv 
+</pre>
+<hr>
+
+<h2>Directions to update old wireless adapter after OS updates</h2>
+<pre>
+sudo bash
+cd /home/john/rtl8812au
+make clean
+make all
+make install
+modprobe -r 8812au
+modprobe
+ 8812au
+
+cd /home/john/rtl8812au; make clean; make all; make install
+   modprobe -r 8812au ; modprobe 8812au
+</pre>
+<hr>
+
+<h2>Add Password to PDF from command line</h2>
+<pre>
+pdftk noPasswordYet.pdf output nowWithPW.pdf user_pw secretPW
+</pre>
+<hr>
+
+<h2>English subtitles and compress</h2>
+<pre>
+Pick up English subtitles when using youtube-dl to download
+from Asian Crush like this.
+
+youtube-dl --write-sub --write-auto-sub https://www.asiancrush.com/video/001526v/now-and-forever/ 
+</pre>
+
+movies might tend to be very large ffmpeg might give very good
+compression like this ...
+
+ffmpeg -i 'Now and Forever-1_r4xyr5iq.mp4' -vcodec libx265 -crf 24 NowAndForever.mp4
+john@jediller:~/movies$ ls -lrth *Now*
+-rw-r--r-- 1 john john 11G Nov 19 2000 'Now and Forever-1_r4xyr5iq.mp4'
+-rw-r--r-- 1 john john 534M Feb 22 14:37 NowAndForever.mp4
+</pre>
+<hr>
+
+<h2>Once a useful backup</h2>
+<pre>
+john@jediller:~/Downloads$ rsync -arv WINDOWS8.qcow2 /backups/
+sending incremental file list
+WINDOWS8.qcow2
+</pre>
+<hr>
+
+<h2>Spliting large MP files</h2>
+<pre>
+Split audio into bite size pieces of 10 minutes each for my MP3 player ... like this ...
+ ffmpeg -i LordTonysWife.mp3 -f segment -segment_time 600 -c copy L%02dordTonysWife.mp3
+
+<h2>Easy Github to add inline C to Python</h2>
+<pre>
+https://gist.github.com/adamnew123456/12546e6e36607a63e254
+
+Very useful write inline C code in your Python  ... nice !!!
+</pre>
+<hr>
+
+<h2>Croping MP4 with ffmpeg</h2>
+<pre>
+ffmpeg -i in.mp4 -filter:v "crop=out_w:out_h:x:y" out.mp4 
+Where the options are as follows:
+
+out_w is the width of the output rectangle
+out_h is the height of the output rectangle
+x and y specify the top left corner of the output rectangle
+see https://video.stackexchange.com/questions/4563/how-can-i-crop-a-video-with-ffmpeg   
+</pre>
+<hr>
+
+<h2>Turn video into slow motion</h2>
+<pre>
+
+ffmpeg -i input.mkv -filter:v "setpts=2.0*PTS" output.mkv
+=10.0  for ten times slower, =0.5 for twice as fast
+
+
+see https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video
+</pre>
+<hr>
+
+<h2>Sample to concatenate files</h2>
+<pre>
+12:27:26 audio $ cat mp3List.txt
+file '/home/john/audio/Magnificat.mp3'
+file '/home/john/audio/Memorare.mp3'
+file '/home/john/audio/ApostlesCreed.mp3'
+file '/home/john/audio/PrayerOfSaintFrancis.mp3'
+12:27:53 audio $ ffmpeg -f concat -safe 0 -i mp3List.txt -c copy prays.mp3
+
+see https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
+</pre>
+<hr>
+<h2>Quick and Easy Webserver</h2>
+<pre>
+ Run a quick webserver from Ubuntu, and pretty much everywhere. Note --bind allows one to specify which adapter on your machine is listening
+
+sudo python3 -m http.server --bind 192.168.86.133 80
+</pre>
+<hr>
+<h2>convert text with vim</h2>
+<pre>
+ from google search
+
+If you want to convert text to lowercase, create a visual block and press u (or U to convert to uppercase).
+...
+gg - goes to first line of text.
+V - turns on Visual selection, in line mode.
+G - goes to end of file (at the moment you have whole text selected)
+u - lowercase selected area.
+</pre>
+<hr> 
+
+<h2>Python environments</h2>
+<pre>
+sudo apt-get install -y python3-venv
+
+python3 -m venv twoFactorAuth
+
+source twoFactorAuth/bin/activate
+
+pip install --upgrade pip
+</pre>
+<hr>
+ 
+<h2>A Little fun with Julia</h2>
+<pre>
+
+julia> Pkg.add(PackageSpec(url="https://github.com/JuliaMath/Primes.jl"))
+Cloning git-repo `https://github.com/JuliaMath/Primes.jl`
+Updating git-repo `https://github.com/JuliaMath/Primes.jl`
+Resolving package versions...
+Updating `~/.julia/environments/v1.4/Project.toml`
+[27ebfcd6] + Primes v0.5.0 #master (https://github.com/JuliaMath/Primes.jl)
+Updating `~/.julia/environments/v1.4/Manifest.toml`
+[27ebfcd6] + Primes v0.5.0 #master (https://github.com/JuliaMath/Primes.jl)
+
+julia> using Primes
+[ Info: Precompiling Primes [27ebfcd6-29c5-5fa9-bf4b-fb8fc14df3ae]
+
+julia> primes(10)
+4-element Array{Int64,1}:
+2
+3
+5
+7
+</pre>
+<hr>
+
+<h2>Clear up Audio Problems</h2>
+<pre>
+ pulseaudio -k && sudo alsa force-reload
+</pre>
+<hr>
+
+<h2>Random busybox command for something</h2>
+<pre>
+ sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/install'
+</pre>
+<hr>
+
+</body>
+</html>
+ 
