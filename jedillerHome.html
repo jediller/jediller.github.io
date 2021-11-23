@@ -12,9 +12,13 @@ th, td {
 </head>
 <body>
   <script>
-    function myLink(name,page,newRow=false,color1="black") {
+    var coloring = "Black"
+    function myLink(name,page,newRow=false) {
       if (newRow) { document.write("</tr><tr>")}
-      document.write('<td><a target="_blank" style="color:'+color1+'" href="'+page+'"><b>'+name+'</b></a></td>\n')
+      document.write('<td><a target="_blank" style="color:'+window.coloring+'" href="'+page+'"><b>'+name+'</b></a></td>\n')
+    }
+    function myOrange(name,page,newRow=false,color1="orange") {
+      myLink(name,page,newRow,color1)
     }
   </script>
   <table>
@@ -27,38 +31,69 @@ th, td {
     <br>
     <tr>
     <script>
-        myLink('SimpleSite','https://jediller.simplesite.com/',newRow=false,color1="orange")
-        myLink('GIT Current','https://jediller.github.io/CacheJediller.html',newRow=false,color1="orange")
+       window.coloring = "orange"
+        myLink('SimpleSite','https://jediller.simplesite.com/')
+        myLink('GIT Current','https://jediller.github.io/CacheJediller.html')
+        myLink("GitHub","https://github.com/")
+        myLink("GitHub Jedi","")
+
+        window.coloring = "black"
         myLink('Outlook','http://outlook.com/',newRow=true)
         myLink("Yahoo Mail","http://mail.yahoo.com/")
         myLink("GMail","https://mail.google.com/")
-        myLink("GDrive","https://drive.google.com/", newRow=false, color1="green")
+        myLink("GDrive","https://drive.google.com/")
         myLink("G Calendar","https://calendar.google.com/calendar/render?tab=oc#main_7%7Cmonth")
 
+       // News
+        window.coloring = "Sienna"
         myLink("News Max","https://www.newsmax.com/",newRow=true)
-        myLink('Hermit','https://gethermit.com/')
+        myLink('Fox News','http://foxnews.com/')
+        myLink('CNN News','http://cnn.com/')
+        myLink('Go Comics','http://www.gocomics.com/')
 
+        window.coloring="DarkGreen"
+        myLink('Hermit','https://gethermit.com/', newRow=true)
+        myLink('Linkedin','https://www.linkedin.com/')
+        myLink('NaNoWriMo','https://nanowrimo.org/')
+        myLink('Dulingo','https://www.duolingo.com/learn')
+        myLink('MemRise','http://www.memrise.com/home/#')
+
+        window.coloring = "Navy"
         myLink('Amazon Developer','https://developer.amazon.com/',newRow=true);
         myLink("Alexa","https://alexa.amazon.com/")
         myLink("GDrive API","https://developers.google.com/drive/")
         myLink("GAssistant","https://developers.google.com/assistant/")
 
-        myLink('Group Me','https://web.groupme.com/chats',newRow=true,color1="red");
+        window.coloring = "OrangeRed"
+        myLink('Group Me','https://web.groupme.com/chats',newRow=true);
         myLink('Van Blog','http://vtdiller.blogspot.com/')
         myLink('John Blog','http://jediller.blogspot.com/')
         myLink('Assembly 2446','https://groups.google.com/g/kofc2446')
         myLink('Council 6650','https://groups.google.com/g/kofc6650')
 
-        myLink('Liturgy','https://theliturgy.org/watch');
-        myLink('Fox News','http://foxnews.com/',newRow=true)
-        myLink('CNN News','http://cnn.com/')
-
-        myLink('Go Comics','http://www.gocomics.com/')
+        window.coloring = "Purple"
         myLink('Daily Mass','https://mass-online.org/daily-holy-mass-live-online/',newRow=true)
-        myLink('Bills',"http://buffalobills.com/",newRow=true,color1="blue")
-        myLink('Rumblings',"https://www.buffalorumblings.com/",newRow=false,color1="blue")
-        myLink('Bills USA Today',"https://billswire.usatoday.com/",newRow=false,color1="blue")
-        myLink('Bills ESPN',"https://www.espn.com/nfl/team/_/name/buf/buffalo-bills",newRow=false,color1="blue")
+        myLink('Liturgy','https://theliturgy.org/watch')
+
+        window.coloring = "MidnightBlue"
+        myLink('Bills',"http://buffalobills.com/",newRow=true)
+        myLink('Rumblings',"https://www.buffalorumblings.com/")
+        myLink('Bills USA Today',"https://billswire.usatoday.com/")
+        myLink('Bills ESPN',"https://www.espn.com/nfl/team/_/name/buf/buffalo-bills")
+        myLink("Local Games","https://506sports.com/")
+
+        window.coloring = "Black"
+        myLink('Spanish','https://www.spanishpod101.com/dashboard',newRow=true)
+        myLink('Euler Project','https://projecteuler.net/sign_in')
+
+        window.coloring = "Red"
+        myLink('Prime Video','https://www.amazon.com/Prime-Video/b?node=2676882011',newRow=true)
+        myLink('YouTube','https://www.youtube.com/')
+        myLink('Tubi','https://tubitv.com/')
+        myLink('Asian Crush','https://www.asiancrush.com/')
+        myLink("Crackle","https://www.crackle.com/")
+
+        window.coloring = "Black"
         </script>
     </tr>
   </table>
