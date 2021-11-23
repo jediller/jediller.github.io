@@ -14,7 +14,7 @@ file 'HailMary2.png'
 duration 5.000
 file 'HailMary3.png'
 duration 4.000
-~/Documents$ ffmpeg -f concat -i input.txt -i GloryBound.mp3 Glory3.flv 
+~/Documents$ ffmpeg -f concat -i input.txt -i GloryBound.mp3 Glory3.flv
 </pre>
 <hr>
 
@@ -45,7 +45,7 @@ pdftk noPasswordYet.pdf output nowWithPW.pdf user_pw secretPW
 Pick up English subtitles when using youtube-dl to download
 from Asian Crush like this.
 
-youtube-dl --write-sub --write-auto-sub https://www.asiancrush.com/video/001526v/now-and-forever/ 
+youtube-dl --write-sub --write-auto-sub https://www.asiancrush.com/video/001526v/now-and-forever/
 </pre>
 
 movies might tend to be very large ffmpeg might give very good
@@ -81,13 +81,13 @@ Very useful write inline C code in your Python  ... nice !!!
 
 <h2>Croping MP4 with ffmpeg</h2>
 <pre>
-ffmpeg -i in.mp4 -filter:v "crop=out_w:out_h:x:y" out.mp4 
+ffmpeg -i in.mp4 -filter:v "crop=out_w:out_h:x:y" out.mp4
 Where the options are as follows:
 
 out_w is the width of the output rectangle
 out_h is the height of the output rectangle
 x and y specify the top left corner of the output rectangle
-see https://video.stackexchange.com/questions/4563/how-can-i-crop-a-video-with-ffmpeg   
+see https://video.stackexchange.com/questions/4563/how-can-i-crop-a-video-with-ffmpeg
 </pre>
 <hr>
 
@@ -132,7 +132,7 @@ V - turns on Visual selection, in line mode.
 G - goes to end of file (at the moment you have whole text selected)
 u - lowercase selected area.
 </pre>
-<hr> 
+<hr>
 
 <h2>Python environments</h2>
 <pre>
@@ -145,7 +145,7 @@ source twoFactorAuth/bin/activate
 pip install --upgrade pip
 </pre>
 <hr>
- 
+
 <h2>A Little fun with Julia</h2>
 <pre>
 
@@ -181,7 +181,16 @@ julia> primes(10)
  sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/install'
 </pre>
 <hr>
-
+<h2>Cruial Steps to GitHub Smoothly Working</h2>
+<pre>
+From History
+1990  ssh-keygen -t rsa -b 4096 -C "jediller@outlook.com"
+1991  eval "$(ssh-agent -s)"
+1992  ssh-add ~/.ssh/id_rsa
+1993  cat ~/.ssh/id_rsa.pub
+With much help from this URL:
+https://medium.com/featurepreneur/setting-up-ssh-key-with-github-for-ubuntu-cd8f2fabf25b
+</pre>
+<hr>
 </body>
 </html>
- 
