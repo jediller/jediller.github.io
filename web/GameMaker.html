@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Links to RPG Game Maker</title>
+  <style>
+th, td {
+  padding-top: 0px;
+  padding-bottom: 3px;
+  padding-left: 0px;
+  padding-right: 20px;
+}
+</style>
+</head>
+<body>
+  <script>
+    var coloring = "Black"
+    function myLink(name,page,newRow=false) {
+      if (newRow) { document.write("</tr><tr>")}
+      document.write('<td><a target="_blank" style="color:'+window.coloring+'" href="'+page+'"><b>'+name+'</b></a></td>\n')
+    }
+  </script>
+  <table>
+    <tr>
+    <script>
+        window.coloring = "Black"
+        myLink('RPG Maker Tutorials','https://www.rpgmakerweb.com/support/products/tutorials')
+        myLink('RPG Maker Custom Script','http://rmvxace.wikia.com/wiki/RPG_Maker_VX_Ace_Master_Script_List',newRow=true)
+        myLink('RPG Maker Advanced Tutorials','http://forums.rpgmakerweb.com/index.php?/topic/28939-a-list-of-rmvx-ace-tutorials/',newRow=true)
+    </script>
+    </tr>
+  </table>
+</body>
+</html>
