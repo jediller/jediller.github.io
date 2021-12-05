@@ -192,5 +192,29 @@ With much help from this URL:
 </pre>
 https://medium.com/featurepreneur/setting-up-ssh-key-with-github-for-ubuntu-cd8f2fabf25b
 <hr>
+<h2>Creating Video from Image on Ubuntu</h2>
+<pre>
+  Download images into directory
+  Convert all the images to a smaller size. This step is only needed is the
+  result is too large. Making the images smaller may reduce crispness.
+
+  for f in `ls -1 IMG*.jpg`; do convert -resize 1248X702 $f 'G'$f; done
+
+  ffmpeg -i IMG_20211205_112929068.jpg
+
+  was used to get the size of the IMG, 1248X702 was choosen to keep the height
+  and width ratios the same. This never hurts, and might be important in this
+  case the original size was 4160X2340
+
+  ffmpeg -framerate 1 -pattern_type glob -i 'GIMG*.jpg' -c:v libx265 -r 1 test1s.mp4
+
+  creates a small video
+
+  ffmpeg -framerate 1/3 -pattern_type glob -i 'GIMG*.jpg' -c:v libx265  -r 1 test1g.mp4
+
+  creates a small video, but shows each image for 3 seconds
+
+
+</pre>
 </body>
 </html>
