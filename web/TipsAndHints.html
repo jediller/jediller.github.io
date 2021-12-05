@@ -214,6 +214,11 @@ https://medium.com/featurepreneur/setting-up-ssh-key-with-github-for-ubuntu-cd8f
 
   creates a small video, but shows each image for 3 seconds
 
+  even better
+
+  ffmpeg -framerate 1/3 -pattern_type glob -i 'IMG*.jpg' -c:v libx265 -vf scale=1024:-1  -r 1 test7.mp4
+  Without the -vf scale=1024:-1 the MP4 is 50MB with it only 4.5MB (dimensions of raw image 4160X2340)
+
 
 </pre>
 </body>
