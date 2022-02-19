@@ -293,7 +293,15 @@ Already created empty "SimpleWords" at GitHub
   remote: Resolving deltas: 100% (1/1), done.
   To github.com:jediller/SimpleWords.git
    * [new branch]      master -> master
-  Branch 'master' set up to track remote branch 'master' from 'origin'.  
+  Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
+</pre>
+<hr>
+<h2>More ffmpeg Samples</h2>
+<pre>
+ffmpeg -i GMT20220216-001452_Recording.m4a -ss 00:16:00 -to 00:51:37 -af "volume=volume=12dB" AssemblyMeeting021522.m4a
+ffmpeg -i GMT20220216-001452_Recording.m4a -ss 00:51:37 -af "volume=volume=12dB" CCCMeeting021522.m4a
 
 </pre>
 </body>
