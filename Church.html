@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>jediller homepage</title>
+  <style>
+th, td {
+  padding-top: 0px;
+  padding-bottom: 3px;
+  padding-left: 0px;
+  padding-right: 20px;
+}
+</style>
+</head>
+<body>
+  <script>
+    var coloring = "Black"
+    function myLink(name,page,newRow=false) {
+      if (newRow) { document.write("</tr><tr>")}
+      document.write('<td><a target="_blank" style="color:'+window.coloring+'" href="'+page+'"><b>'+name+'</b></a></td>\n')
+    }
+  </script>
+  <table>
+    <tr>
+    <script>
+        window.coloring = "Blue"
+        myLink('Catholic Interest','web/OfCatholicInterest.html')
+
+        window.coloring = "Purple"
+        myLink('Daily Mass','https://mass-online.org/daily-holy-mass-live-online/',newRow=true)
+        myLink('Liturgy','https://theliturgy.org/watch')
+        myLink('Formed','https://watch.formed.org/browse')
+        myLink('Summa Theologiae','https://aquinas101.thomisticinstitute.org/st-index')
+        myLink('Gregorian Chant','https://www.ccwatershed.org/Gregorian/')
+        myLink('Samaritan Ministries','http://samaritanministries.org/',newRow=true)
+        myLink('New Saint Thomas','https://newsaintthomas.com/')
+        myLink('Franciscan at Home','https://franciscanathome.com/user')
+        myLink("Gaudium Magazine","https://www.gaudiummag.com/")
+        myLink("Daily Readings","https://bible.usccb.org/daily-bible-reading")
+
+        myLink("Vatican News","https://www.vaticannews.va/en/prayers/the-magnificat.html", newRow=true)
+        myLink("Devine Office","https://divineoffice.org/")
+        myLink("Prayer Treasury","https://magnificat-ministry.net/prayer/prayer-treasury/")
+        myLink("Catholic Teachings","https://www.ewtn.com/catholicism/teachings")
+        myLink("Magnificat Readings","https://us.magnificat.net/online/")
+        myLink("Papal Encyclicals","https://www.papalencyclicals.net/",newRow=true)
+
+        window.coloring = "Red"
+
+        myLink("EWTN TV","https://www.ewtn.com/tv/watch-live")
+        myLink("Vatican","https://www.vatican.va/")
+      
+
+                  </script>
+    </tr>
+  </table>
+</body>
+</html>
