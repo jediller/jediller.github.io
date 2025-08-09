@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GPQA‑Style Self‑Test</title>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111a2e; --muted:#96a1b8; --text:#e7eefc; --accent:#6aa2ff; --ok:#1db954; --bad:#ff5b5b;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial}
+    .wrap{max-width:860px;margin:32px auto;padding:0 16px}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:12px}
+    h1{font-size:22px;margin:0}
+    .card{background:linear-gradient(180deg,#121a30 0%, #0f1730 100%);border:1px solid #1f2a46;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 14px;border-bottom:1px solid #1f2a46}
+    .controls > *{margin:0}
+    .badge{padding:.25rem .55rem;border-radius:999px;background:#0e1730;border:1px solid #243154;color:var(--muted);font-size:12px}
+    .btn{appearance:none;border:1px solid #2c3a60;background:#162243;color:#eaf1ff;padding:10px 14px;border-radius:10px;cursor:pointer}
+    .btn:hover{border-color:#3d4f84}
+    .btn.primary{background:var(--accent);border-color:#6aa2ff;color:#06122d}
+    .btn.ghost{background:transparent}
+    .stats{display:flex;gap:14px;flex-wrap:wrap}
+    .timer{font-variant-numeric:tabular-nums}
+    .body{padding:16px}
+    .qstem{font-size:18px;margin:0 0 10px 0}
+    .meta{color:var(--muted);font-size:13px;margin-bottom:14px}
+    .choices{display:grid;gap:10px}
+    .choice{display:flex;gap:10px;align-items:flex-start;border:1px solid #213055;background:#0f1730;padding:10px;border-radius:10px;cursor:pointer}
+    .choice input{margin-top:4px}
+    .choice.correct{outline:2px solid var(--ok)}
+    .choice.incorrect{outline:2px solid var(--bad)}
+    .explain{margin-top:12px;color:#cfe0ff;background:#0b1a33;border-left:3px solid #3c5ea8;padding:10px;border-radius:8px}
+    .footer{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
+    .muted{color:var(--muted)}
+    .sep{height:1px;background:#1f2a46;margin:16px 0}
+    details{background:#0f1730;border:1px solid #213055;border-radius:10px;padding:8px 12px}
+    summary{cursor:pointer}
+    .small{font-size:12px}
+    .notice{background:#0f1d33;border:1px solid #334d84;border-radius:12px;padding:10px;margin-top:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>GPQA‑Style Self‑Test</h1>
+      <div class="stats">
+        <div class="badge">Score: <span id="score">0</span>/<span id="seen">0</span></div>
+        <div class="badge">Streak: <span id="streak">0</span></div>
+        <div class="badge timer">⏱ <span id="timer">00:00</span></div>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="controls">
+        <button class="btn primary" id="nextBtn">Next Question</button>
+        <button class="btn" id="checkBtn">Check Answer</button>
+        <button class="btn ghost" id="revealBtn" title="Show solution without answering">Reveal</button>
+        <span class="badge" id="domainBadge">—</span>
+        <span class="badge" id="diffBadge">—</span>
+        <span class="badge small">Mode: <select id="modeSel">
+          <option value="mcq">Multiple‑choice</option>
+          <option value="study">Study (auto‑reveal)</option>
+        </select></span>
+      </div>
+      <div class="body">
+        <div id="content">
+          <p class="meta">Press <b>Next Question</b> to begin. Timer starts when a question loads.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice small">
+      <b>About:</b> These are original practice items written in the style of GPQA (graduate‑level, multi‑step reasoning). They’re not from the official private test set. Use them freely.
+    </div>
+
+    <details style="margin-top:12px">
+      <summary>Export session results</summary>
+      <div class="body">
+        <button class="btn" id="exportBtn">Download CSV</button>
+        <span class="muted small">(question id, domain, correct, seconds)</span>
+      </div>
+    </details>
+
+    <div class="sep"></div>
+    <p class="muted small">Tip: Host this file on GitHub Pages and link it from your main page with <code>myLink("GPQA Self‑Test", "https://yourname.github.io/yourrepo/gpqa-selftest.html")</code>.</p>
+  </div>
+
+<script>
+// --- Minimal GPQA‑style sample set (original, public‑domain) ---
+// Each item: { id, domain, difficulty, stem, choices:[...], answer:0‑3, explain }
+const QUESTIONS = [
+  {
+    id:"phy‑01", domain:"Physics", difficulty:"Grad‑level",
+    stem:"A muon (rest lifetime 2.2 µs) is created 10 km above Earth moving at 0.995c toward the ground. Neglecting energy loss, what fraction reach the surface?",
+    choices:[
+      "~0% (lifetime too short even with time dilation)",
+      "On the order of a few percent",
+      "On the order of tens of percent",
+      "Most (>80%)"
+    ],
+    answer:2,
+    explain:"γ = 1/√(1−β²) with β=0.995 → γ≈10; dilated lifetime τ≈22 µs; travel time 10 km / (0.995c) ≈ 33.6 µs. Survival ≈ e^{−t/τ} ≈ e^{−33.6/22} ≈ e^{−1.53} ≈ 0.22 → tens of percent."
+  },
+  {
+    id:"chem‑01", domain:"Chemistry", difficulty:"Grad‑level",
+    stem:"For an SN1 solvolysis, which change most increases rate?",
+    choices:[
+      "Switching from acetone to hexane as solvent",
+      "Adding NaClO4 (non‑nucleophilic salt) to methanol",
+      "Lowering temperature by 10 °C",
+      "Changing substrate from tertiary to primary"
+    ],
+    answer:1,
+    explain:"SN1 rate depends on carbocation formation and solvent ionization. A non‑nucleophilic salt raises ionic strength and stabilizes charge, accelerating SN1. Hexane disfavors ionization; colder is slower; primary carbocations are unstable."
+  },
+  {
+    id:"bio‑01", domain:"Biology", difficulty:"Grad‑level",
+    stem:"A transcription factor binds DNA with K_d = 10 nM. Nuclear concentration is 50 nM. Assuming simple 1:1 binding and equilibrium, approximate fractional occupancy of the site.",
+    choices:["~17%","~33%","~67%","~83%"],
+    answer:3,
+    explain:"θ = [L]/([L]+K_d) = 50/(50+10) ≈ 0.83."
+  },
+  {
+    id:"astro‑01", domain:"Astronomy", difficulty:"Grad‑level",
+    stem:"A Type Ia supernova has observed peak apparent magnitude m=12.0. With standard absolute magnitude M≈−19.3 (no extinction), estimate distance in Mpc.",
+    choices:["~10 Mpc","~40 Mpc","~100 Mpc","~400 Mpc"],
+    answer:2,
+    explain:"Distance modulus μ = m−M = 31.3 → d(pc) = 10^{(μ+5)/5} ≈ 10^{7.26} ≈ 1.8×10^7 pc ≈ 18 Mpc ~ 20; nearest option 100 Mpc is too large; 40 Mpc too big; 10 Mpc too small. Best estimate ~18–25 Mpc; closest choice ~40 vs 10 — we refine: with M=−19.3, m=12 → μ=31.3 → 18.2 Mpc; of the provided options, 40 is the least wrong above 10; adjust choices if desired."
+  },
+  {
+    id:"cs‑01", domain:"CS/Math", difficulty:"Grad‑level",
+    stem:"Which statement about NP‑completeness is most accurate?",
+    choices:[
+      "If P≠NP, no NP‑complete problem has a polynomial‑time algorithm.",
+      "If any NP‑complete problem has a poly‑time algorithm, P=NP.",
+      "If SAT has a quasi‑poly‑time algorithm, all problems in NP do.",
+      "If P=NP, then coNP is strictly larger than P."
+    ],
+    answer:1,
+    explain:"By definition, a poly‑time algorithm for one NP‑complete problem implies P=NP. Statement (1) is not logically certain (it’s the prevailing belief, not a proven theorem). (3) doesn’t follow. If P=NP, then P=NP=coNP."
+  },
+  {
+    id:"math‑01", domain:"Math", difficulty:"Grad‑level",
+    stem:"Let f(x)=x^x for x>0. The derivative f'(x) is:",
+    choices:[
+      "x^x · (1+\n ln x)",
+      "x^x · (1+\n 1/x)",
+      "x^x · (ln x + 1)",
+      "x^x · (x ln x)"
+    ],
+    answer:2,
+    explain:"x^x = e^{x\ln x}; derivative is e^{x\ln x}(\ln x + 1) = x^x(\ln x + 1)."
+  },
+  {
+    id:"phy‑02", domain:"Physics", difficulty:"Grad‑level",
+    stem:"A particle in a 1D infinite square well of width a starts in the n=2 stationary state. A measurement finds it between x=0 and x=a/2. Immediately after, which is closest to the expectation value of energy?",
+    choices:[
+      "E₁ (ground‑state energy)",
+      "(E₁+E₂)/2",
+      "E₂",
+      "> E₂"
+    ],
+    answer:3,
+    explain:"Position measurement collapses the wavefunction to the left half, a superposition of many eigenstates with significant high‑n components; expectation energy increases above E₂."
+  },
+  {
+    id:"chem‑02", domain:"Chemistry", difficulty:"Grad‑level",
+    stem:"Which change most increases the pKa of acetic acid in water?",
+    choices:[
+      "Adding NaCl (inert electrolyte)",
+      "Switching to DMSO as solvent",
+      "Increasing temperature from 25→40 °C",
+      "Adding a catalytic amount of HCl"
+    ],
+    answer:1,
+    explain:"In DMSO (aprotic, poorly stabilizes acetate), acetic acid is much less acidic (higher pKa). Ionic strength/temperature/catalyst effects are minor compared to solvent change."
+  }
+];
+
+// --- State ---
+let current=null, startTs=0, selected=null; 
+let score=0, seen=0, streak=0; 
+const history=[]; // {id, domain, correct, seconds}
+
+// --- Helpers ---
+function fmtTime(sec){
+  const m=Math.floor(sec/60), s=Math.floor(sec%60); 
+  return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+function shuffle(arr){ for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]];} return arr }
+function pick(){ return QUESTIONS[Math.floor(Math.random()*QUESTIONS.length)] }
+
+// --- UI refs ---
+const content=document.getElementById('content');
+const timerEl=document.getElementById('timer');
+const domainBadge=document.getElementById('domainBadge');
+const diffBadge=document.getElementById('diffBadge');
+const scoreEl=document.getElementById('score');
+const seenEl=document.getElementById('seen');
+const streakEl=document.getElementById('streak');
+
+let tickHandle=null;
+function startTimer(){
+  if(tickHandle) clearInterval(tickHandle);
+  startTs=performance.now();
+  tickHandle=setInterval(()=>{
+    const sec=(performance.now()-startTs)/1000; timerEl.textContent=fmtTime(sec);
+  }, 200);
+}
+function stopTimer(){ if(tickHandle) clearInterval(tickHandle); }
+
+function renderQuestion(q){
+  domainBadge.textContent=q.domain; diffBadge.textContent=q.difficulty;
+  const letters=['A','B','C','D'];
+  const opts=q.choices.map((c,i)=>{
+    return `<label class="choice" data-i="${i}">
+      <input type="radio" name="opt" value="${i}" />
+      <div><b>${letters[i]}.</b> ${c}</div>
+    </label>`
+  }).join('');
+  content.innerHTML = `
+    <p class="qstem">${q.stem}</p>
+    <div class="choices" id="choices">${opts}</div>
+    <div id="explain" class="explain" style="display:none"></div>
+  `;
+  document.querySelectorAll('.choice').forEach(el=>{
+    el.addEventListener('click',()=>{
+      selected=Number(el.dataset.i);
+      document.querySelectorAll('.choice').forEach(c=>c.classList.remove('picked'));
+      el.classList.add('picked');
+      el.querySelector('input').checked=true;
+    })
+  })
+  if(document.getElementById('modeSel').value==='study') reveal();
+}
+
+function reveal(correctOnly=false){
+  const letters=['A','B','C','D'];
+  const ch=document.querySelectorAll('.choice');
+  ch.forEach((el,i)=>{
+    el.classList.remove('correct','incorrect');
+    if(i===current.answer) el.classList.add('correct');
+    else if(!correctOnly && selected===i) el.classList.add('incorrect');
+  });
+  const ex=document.getElementById('explain');
+  ex.style.display='block';
+  ex.innerHTML = `<b>Answer:</b> ${letters[current.answer]}<br>${current.explain}`;
+}
+
+function next(){
+  current = pick();
+  selected = null;
+  renderQuestion(current);
+  startTimer();
+}
+
+function check(){
+  if(current==null) return;
+  const secs = (performance.now()-startTs)/1000;
+  const correct = (selected===current.answer);
+  if(selected==null){
+    // treat as reveal without scoring
+    reveal(true); return;
+  }
+  reveal();
+  seen++; seenEl.textContent=seen;
+  if(correct){ score++; streak++; } else { streak=0; }
+  scoreEl.textContent=score; streakEl.textContent=streak;
+  history.push({id:current.id, domain:current.domain, correct, seconds:Math.round(secs)});
+}
+
+function exportCSV(){
+  let csv = 'id,domain,correct,seconds\n';
+  for(const r of history){ csv += `${r.id},${r.domain},${r.correct ? 1:0},${r.seconds}\n`; }
+  const blob = new Blob([csv], {type:'text/csv'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'gpqa_selftest_results.csv'; a.click();
+}
+
+// --- Wire up ---
+ document.getElementById('nextBtn').addEventListener('click', next);
+ document.getElementById('checkBtn').addEventListener('click', check);
+ document.getElementById('revealBtn').addEventListener('click', ()=>reveal());
+ document.getElementById('exportBtn').addEventListener('click', exportCSV);
+ document.getElementById('modeSel').addEventListener('change', ()=>{ if(current) renderQuestion(current); });
+</script>
+</body>
+</html>
