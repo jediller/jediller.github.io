@@ -1,0 +1,10 @@
+
+# Alexa skill downloaded archives/checksums
+AlexaSkills/*.zip
+AlexaSkills/**/*.zip
+AlexaSkills/*.sha256
+AlexaSkills/**/*.sha256
+
+# Node dependencies / local tooling
+node_modules/
+.ask/
