@@ -1,11 +1,17 @@
 #!/bin/bash
 
-# Define base paths
+# 1. Environment Setup (Crucial for Crontab)
+export PATH="/usr/local/bin:/usr/bin:/bin:/home/john/work/jediller.github.io/gemini/bin"
+export GEMINI_CLI_TRUST_WORKSPACE=true
+export GEMINI_CLI_ALLOW_SHELL=true
+# Load any other specific Gemini keys or paths if needed
+
+# 2. Define Paths
 BASE_DIR="/home/john/work/jediller.github.io/gemini"
 QUERY_DIR="$BASE_DIR/query"
 RESULT_DIR="$BASE_DIR/result"
 
-# Check if a parameter was provided
+# 3. Parameter Check
 if [ -z "$1" ]; then
     echo "Usage: geminiQuery <filename.txt>"
     exit 1
@@ -14,22 +20,30 @@ fi
 QUERY_FILE="$QUERY_DIR/$1"
 RESULT_FILE="$RESULT_DIR/$1"
 
-# Check if the query file exists
+# 4. Existence Check
 if [ ! -f "$QUERY_FILE" ]; then
     echo "Error: Query file '$1' not found in $QUERY_DIR"
     exit 1
 fi
 
-echo "Processing query: $1..."
-
-# Read the instructions from the file
+# 5. Execute Gemini Query
+echo "Executing Gemini query for $1..."
 INSTRUCTIONS=$(cat "$QUERY_FILE")
 
-# Call the Gemini API and redirect output to the result directory
-# Using the 'gemini' CLI tool (adjust if your command name differs)
+# Run the gemini command. 
+# Using 'gemini' assuming it's in your PATH. 
 if gemini "$INSTRUCTIONS" > "$RESULT_FILE"; then
-    echo "Success! Result placed in $RESULT_FILE"
+    echo "Result saved to $RESULT_FILE"
 else
-    echo "Error: Gemini query failed to execute."
+    echo "Error: Gemini query failed."
     exit 1
 fi
+
+# 6. GitHub Bridge (The Push)
+echo "Syncing to GitHub..."
+cd "$BASE_DIR" || exit
+git add "$RESULT_FILE"
+git commit -m "Automated update: $1 $(date +'%Y-%m-%d %H:%M')"
+git push origin master # or 'main' depending on your branch name
+
+echo "Successfully pushed to GitHub."
