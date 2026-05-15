@@ -1,0 +1,1 @@
+Daily News summary of events in the last 24 hours. Make first line of the report today's date, for example June 18, 2025. Assume this text is to be read by automation via TTS, so keep things in plain text readable format. Please limit response to 1400 characters
