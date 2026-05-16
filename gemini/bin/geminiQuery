@@ -4,6 +4,7 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/home/john/work/jediller.github.io/gemini/bin"
 export GEMINI_CLI_TRUST_WORKSPACE=true
 export GEMINI_CLI_ALLOW_SHELL=true
+export GEMINI_MODEL="gemini-3.1-pro-preview"  # <--- INSERT THIS LINE HERE
 # Load any other specific Gemini keys or paths if needed
 
 # 2. Define Paths
