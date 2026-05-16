@@ -1,15 +1,13 @@
-May 15, 2026 by Gemini A.I.
+May 16, 2026 by Gemini A.I.
 
-Financial news summary for Friday, May 15, 2026.
+The following is a summary of the major stock market indices as of the latest close on Friday, May 15, 2026.
 
-U.S. equity markets closed lower on Friday as investors reacted to rising Treasury yields and a surge in oil prices, leading to a broad pullback from recent record levels.
+The Dow Jones Industrial Average closed at 49,526.17. Over the last 30 days, the Dow is up approximately 1.95 percent. Looking back six months, the index has gained roughly 6.30 percent. The Dow is currently 1.32 percent below its all-time closing high of 50,188.14, which was reached on February 10, 2026.
 
-The Dow Jones Industrial Average finished the session at 49,526.17. Over the last 30 days, the Dow has gained 3.72 percent. Looking back over the past six months, the index has risen by 6.03 percent. The Dow is currently approximately 1.95 percent below its all-time closing high of 50,512.79, which was established on February 9, 2026.
+The S&P 500 Index finished the session at 7,408.50. In the past 30 days, the S&P 500 has risen by about 5.22 percent. Over the last six months, the index has climbed 11.03 percent. Despite a recent pullback on Friday, the S&P 500 remains within striking distance of its all-time high of 7,501.24, which was set on May 14, 2026, currently sitting 1.24 percent below that peak.
 
-The S&P 500 closed at 7,408.50. In the last 30 days, the S&P 500 is up by 5.26 percent. Over a six-month period, the index has seen a growth of 10.11 percent. The S&P 500 currently sits about 1.44 percent below its all-time high of 7,517.12, which it reached just yesterday, May 14, 2026.
+The Nasdaq Composite ended at 26,225.14. The technology-heavy index has seen significant growth in the last 30 days, rising 8.81 percent. In the last six months, the Nasdaq has surged 15.49 percent. It currently sits 1.54 percent below its record closing level of 26,635.22, which was also established on May 14, 2026.
 
-The Nasdaq Composite ended the day at 26,225.14. Performance over the last 30 days shows an increase of 5.35 percent. Over the last six months, the Nasdaq has led the major indices with a substantial gain of 16.31 percent, driven largely by momentum in the technology and artificial intelligence sectors. The Nasdaq is currently roughly 1.8 percent below its all-time high of 26,707.14, also set yesterday on May 14, 2026.
+Overall, the markets experienced a sharp retreat on Friday from record levels seen earlier in the week. Rising oil prices and climbing Treasury yields contributed to the decline, as investors took profits following a strong spring rally driven by the technology and artificial intelligence sectors.
 
-The market downturn on Friday was largely attributed to the 10-year Treasury yield reaching 4.59 percent and WTI Crude Oil prices climbing above 105 dollars per barrel. These factors have sparked renewed concerns regarding inflation and the potential for a tighter monetary policy from the Federal Reserve later this year. Technology stocks, which had reached fresh peaks earlier in the week, faced the heaviest selling pressure as market participants engaged in profit-taking.
-
-This concludes the financial market summary for today.
+This concludes the financial news summary.
