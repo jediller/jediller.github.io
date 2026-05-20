@@ -1,0 +1,17 @@
+[
+  {
+    "id": "financial-news",
+    "title": "Financial News",
+    "file": "FinancialNews.txt"
+  },
+  {
+    "id": "daily-news",
+    "title": "Daily News",
+    "file": "DailyNews.txt"
+  },
+  {
+    "id": "mass-readings",
+    "title": "Mass Readings",
+    "file": "MassReadings.txt"
+  }
+]
