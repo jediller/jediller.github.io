@@ -1,50 +1,139 @@
 #!/bin/bash
+# geminiQuery Version 2.0
+# Runs one Gemini query file, saves current result, maintains a 7-weekday history,
+# and syncs changed files to GitHub.
+
+set -u
 
 # 1. Environment Setup (Crucial for Crontab)
 export PATH="/usr/local/bin:/usr/bin:/bin:/home/john/work/jediller.github.io/gemini/bin"
 export GEMINI_CLI_TRUST_WORKSPACE=true
 export GEMINI_CLI_ALLOW_SHELL=true
-export GEMINI_MODEL="gemini-3.1-pro-preview"  # <--- INSERT THIS LINE HERE
-# Load any other specific Gemini keys or paths if needed
+export GEMINI_MODEL="gemini-3.1-pro-preview"
+# Load any other specific Gemini keys or paths if needed.
 
 # 2. Define Paths
-BASE_DIR="/home/john/work/jediller.github.io/gemini"
+REPO_DIR="/home/john/work/jediller.github.io"
+BASE_DIR="$REPO_DIR/gemini"
 QUERY_DIR="$BASE_DIR/query"
 RESULT_DIR="$BASE_DIR/result"
+HISTORY_DIR="$BASE_DIR/history"
+STATE_FILE="$HISTORY_DIR/history_state.tsv"
+LOCK_FILE="$HISTORY_DIR/history_state.lock"
 
 # 3. Parameter Check
-if [ -z "$1" ]; then
+if [ -z "${1:-}" ]; then
     echo "Usage: geminiQuery <filename.txt>"
     exit 1
 fi
 
-QUERY_FILE="$QUERY_DIR/$1"
-RESULT_FILE="$RESULT_DIR/$1"
+REQUESTED_NAME="$1"
+BASENAME="$(basename -- "$REQUESTED_NAME")"
+
+# Avoid path traversal or accidental subdirectories.
+if [ "$REQUESTED_NAME" != "$BASENAME" ]; then
+    echo "Error: Use only a filename, not a path: $REQUESTED_NAME"
+    exit 1
+fi
+
+QUERY_FILE="$QUERY_DIR/$BASENAME"
+RESULT_FILE="$RESULT_DIR/$BASENAME"
+TODAY_DATE="$(date +'%Y-%m-%d')"
+TODAY_WEEKDAY="$(date +'%A')"
+TODAY_HISTORY_DIR="$HISTORY_DIR/$TODAY_WEEKDAY"
+HISTORY_FILE="$TODAY_HISTORY_DIR/$BASENAME"
+
+# Temporary output. Kept inside result directory so mv is atomic on same filesystem.
+TMP_RESULT="$RESULT_DIR/.${BASENAME}.tmp.$$"
+TMP_STATE="$HISTORY_DIR/history_state.tsv.tmp.$$"
+
+cleanup() {
+    rm -f "$TMP_RESULT" "$TMP_STATE"
+}
+trap cleanup EXIT
 
 # 4. Existence Check
 if [ ! -f "$QUERY_FILE" ]; then
-    echo "Error: Query file '$1' not found in $QUERY_DIR"
+    echo "Error: Query file '$BASENAME' not found in $QUERY_DIR"
     exit 1
 fi
 
-# 5. Execute Gemini Query
-echo "Executing Gemini query for $1..."
-INSTRUCTIONS=$(cat "$QUERY_FILE")
+mkdir -p "$RESULT_DIR" "$HISTORY_DIR" "$TODAY_HISTORY_DIR"
 
-# Run the gemini command. 
-# Using 'gemini' assuming it's in your PATH. 
-if gemini "$INSTRUCTIONS" > "$RESULT_FILE"; then
-    echo "Result saved to $RESULT_FILE"
+# 5. Execute Gemini Query into a temporary file first.
+echo "Executing Gemini query for $BASENAME..."
+INSTRUCTIONS="$(cat "$QUERY_FILE")"
+
+# Run the gemini command.
+# If your installed Gemini CLI requires -p, change the next line to:
+#   if gemini -p "$INSTRUCTIONS" > "$TMP_RESULT"; then
+if gemini "$INSTRUCTIONS" > "$TMP_RESULT"; then
+    if [ ! -s "$TMP_RESULT" ]; then
+        echo "Error: Gemini query produced an empty result. Current result was not changed."
+        exit 1
+    fi
 else
-    echo "Error: Gemini query failed."
+    echo "Error: Gemini query failed. Current result was not changed."
     exit 1
 fi
 
-# 6. GitHub Bridge (The Push)
-echo "Syncing to GitHub..."
-cd "$BASE_DIR" || exit
-git add "$RESULT_FILE"
-git commit -m "Automated update: $1 $(date +'%Y-%m-%d %H:%M')"
-git push origin master # or 'main' depending on your branch name
+# 6. Update weekday history and current result under a lock.
+# The visible lock file is a local coordination file. It is not added to Git.
+(
+    flock -x 9
 
-echo "Successfully pushed to GitHub."
+    # Ensure state file exists while under lock.
+    touch "$STATE_FILE"
+
+    LAST_SAVED_DATE="$(awk -F '\t' -v name="$BASENAME" '$1 == name {print $2}' "$STATE_FILE" | tail -n 1)"
+
+    if [ -f "$RESULT_FILE" ]; then
+        if [ "$LAST_SAVED_DATE" != "$TODAY_DATE" ]; then
+            echo "Saving previous result to $HISTORY_FILE"
+            cp -p "$RESULT_FILE" "$HISTORY_FILE"
+
+            # Rewrite state file with this filename's date updated to today.
+            awk -F '\t' -v OFS='\t' -v name="$BASENAME" -v today="$TODAY_DATE" '
+                BEGIN { found = 0 }
+                $1 == name { print name, today; found = 1; next }
+                NF > 0 { print }
+                END { if (!found) print name, today }
+            ' "$STATE_FILE" > "$TMP_STATE"
+            mv "$TMP_STATE" "$STATE_FILE"
+        else
+            echo "History for $BASENAME already saved today; leaving $HISTORY_FILE unchanged."
+        fi
+    else
+        echo "No existing result for $BASENAME; skipping history copy on first run."
+    fi
+
+    mv "$TMP_RESULT" "$RESULT_FILE"
+) 9> "$LOCK_FILE"
+
+# The trap no longer needs to remove the tmp result after successful mv.
+TMP_RESULT=""
+
+echo "Result saved to $RESULT_FILE"
+
+# 7. GitHub Bridge (The Push)
+echo "Syncing to GitHub..."
+cd "$REPO_DIR" || exit 1
+
+CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo master)"
+
+# Do not track the lock file even if it exists.
+git add "$RESULT_FILE" "$STATE_FILE"
+if [ -f "$HISTORY_FILE" ]; then
+    git add "$HISTORY_FILE"
+fi
+
+git reset -q -- "$LOCK_FILE" 2>/dev/null || true
+
+if git diff --cached --quiet; then
+    echo "No Git changes to commit."
+else
+    git commit -m "Automated update: $BASENAME $TODAY_DATE $(date +'%H:%M')"
+    git push origin "$CURRENT_BRANCH"
+fi
+
+echo "Successfully synced to GitHub."
