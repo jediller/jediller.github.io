@@ -1,0 +1,298 @@
+#!/usr/bin/env bash
+# primeGeminiHistory Version 1.0
+# Filename: primeGeminiHistory
+#
+# Temporary one-shot helper for backfilling gemini/history weekday files.
+#
+# Intended location:
+#   /home/john/work/jediller.github.io/gemini/bin/primeGeminiHistory
+#
+# Goal:
+#   Generate historical text outputs for:
+#     Wednesday May 13, 2026 through Tuesday May 19, 2026
+#   and place them into:
+#     gemini/history/<Weekday>/<QueryFile>.txt
+#
+# This script does NOT modify gemini/result/*.txt.
+# It DOES update gemini/history/history_state.tsv so the normal geminiQuery
+# run on the current day does not push today's already-current result back
+# into the Wednesday history slot.
+#
+# Usage:
+#   primeGeminiHistory
+#   primeGeminiHistory --dry-run
+#   primeGeminiHistory --force
+#   primeGeminiHistory --no-push
+#
+# Options:
+#   --dry-run       Show what would be done; do not call gemini or write files.
+#   --force         Overwrite existing non-empty history files.
+#   --no-push       Commit locally but do not push to origin/master.
+#   --no-git        Do not add, commit, or push.
+#   --help          Show this help.
+
+set -Eeuo pipefail
+
+DRY_RUN=0
+FORCE=0
+DO_PUSH=1
+DO_GIT=1
+
+usage() {
+    sed -n '1,45p' "$0" | sed 's/^# \{0,1\}//'
+}
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --dry-run)
+            DRY_RUN=1
+            shift
+            ;;
+        --force)
+            FORCE=1
+            shift
+            ;;
+        --no-push)
+            DO_PUSH=0
+            shift
+            ;;
+        --no-git)
+            DO_GIT=0
+            DO_PUSH=0
+            shift
+            ;;
+        --help|-h)
+            usage
+            exit 0
+            ;;
+        *)
+            echo "ERROR: Unknown option: $1" >&2
+            echo "Try: $0 --help" >&2
+            exit 2
+            ;;
+    esac
+done
+
+log() {
+    printf '%s\n' "$*"
+}
+
+die() {
+    printf 'ERROR: %s\n' "$*" >&2
+    exit 1
+}
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+GEMINI_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+REPO_DIR="$(cd "$GEMINI_DIR/.." && pwd)"
+
+QUERY_DIR="$GEMINI_DIR/query"
+HISTORY_DIR="$GEMINI_DIR/history"
+STATE_FILE="$HISTORY_DIR/history_state.tsv"
+LOCK_FILE="$HISTORY_DIR/history_state.lock"
+
+QUERY_FILES=(
+    "DailyNews.txt"
+    "FinancialNews.txt"
+    "MassReadings.txt"
+)
+
+# Format:
+#   ISO_DATE|Weekday|Month Day Year text
+BACKFILL_DATES=(
+    "2026-05-13|Wednesday|Wednesday May 13, 2026"
+    "2026-05-14|Thursday|Thursday May 14, 2026"
+    "2026-05-15|Friday|Friday May 15, 2026"
+    "2026-05-16|Saturday|Saturday May 16, 2026"
+    "2026-05-17|Sunday|Sunday May 17, 2026"
+    "2026-05-18|Monday|Monday May 18, 2026"
+    "2026-05-19|Tuesday|Tuesday May 19, 2026"
+)
+
+TODAY_ISO="$(date +%F)"
+
+require_layout() {
+    [[ -d "$REPO_DIR/.git" ]] || die "Could not find Git repository at $REPO_DIR"
+    [[ -d "$QUERY_DIR" ]] || die "Missing query directory: $QUERY_DIR"
+
+    command -v gemini >/dev/null 2>&1 || die "gemini command not found in PATH"
+    command -v flock >/dev/null 2>&1 || die "flock command not found in PATH"
+
+    for q in "${QUERY_FILES[@]}"; do
+        [[ -s "$QUERY_DIR/$q" ]] || die "Missing or empty query file: $QUERY_DIR/$q"
+    done
+}
+
+make_prefix() {
+    local iso_date="$1"
+    local day_name="$2"
+    local spoken_date="$3"
+    local query_file="$4"
+
+    cat <<EOF
+Historical backfill instructions.
+
+You are generating a historical output for exactly this date:
+$spoken_date
+
+Treat "$spoken_date" as "today" for the user's prompt below.
+
+Important historical constraints:
+1. Use only information that would have been available on or before $spoken_date.
+2. Do not use hindsight from any later date.
+3. Do not mention that this is a backfill, reconstruction, archive, or historical simulation.
+4. Do not mention today's real date unless it is $spoken_date.
+5. The first line must begin exactly:
+$spoken_date by Gemini A.I.
+6. Keep the output in clean plain text suitable for text-to-speech.
+7. Avoid markdown, bullets using special symbols, tables, hashtags, asterisks, raw URLs, and citations in the final output.
+8. Limit the response to the user's requested length if the prompt below states a length limit.
+
+Special handling by file:
+- For DailyNews.txt: summarize events from the 24-hour news period appropriate to $spoken_date, not later developments.
+- For FinancialNews.txt: use the market close and financial context appropriate to $spoken_date, including Dow Jones, S&P 500, and Nasdaq as requested by the prompt.
+- For MassReadings.txt: retrieve the Catholic Daily Mass readings in English for $spoken_date, preferring United States Conference of Catholic Bishops readings; if a Diocese-specific choice matters, use the Catholic Diocese of Raleigh, North Carolina.
+
+Now follow the user's original query instructions below. Any phrase such as "today" in those instructions means $spoken_date.
+
+Original query file:
+$query_file
+
+EOF
+}
+
+run_one() {
+    local iso_date="$1"
+    local weekday="$2"
+    local spoken_date="$3"
+    local query_file="$4"
+
+    local query_path="$QUERY_DIR/$query_file"
+    local out_dir="$HISTORY_DIR/$weekday"
+    local out_file="$out_dir/$query_file"
+    local tmp_file
+
+    if [[ -s "$out_file" && "$FORCE" -ne 1 ]]; then
+        log "SKIP existing: $out_file"
+        return 0
+    fi
+
+    log "Generating: $spoken_date -> history/$weekday/$query_file"
+
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        return 0
+    fi
+
+    mkdir -p "$out_dir"
+
+    tmp_file="$(mktemp "$out_dir/.${query_file}.tmp.XXXXXX")"
+
+    local prompt
+    prompt="$(
+        make_prefix "$iso_date" "$weekday" "$spoken_date" "$query_file"
+        printf '\n'
+        cat "$query_path"
+    )"
+
+    if ! gemini -p "$prompt" > "$tmp_file"; then
+        rm -f "$tmp_file"
+        die "Gemini failed for $spoken_date / $query_file"
+    fi
+
+    if [[ ! -s "$tmp_file" ]]; then
+        rm -f "$tmp_file"
+        die "Gemini produced empty output for $spoken_date / $query_file"
+    fi
+
+    mv -f "$tmp_file" "$out_file"
+}
+
+update_state_file() {
+    # The normal geminiQuery history guard is keyed by result filename and date.
+    # After this backfill, marking these query files as saved today prevents
+    # a same-day normal geminiQuery run from overwriting today's weekday slot.
+    [[ "$DRY_RUN" -eq 1 ]] && return 0
+
+    mkdir -p "$HISTORY_DIR"
+    touch "$STATE_FILE"
+
+    local tmp_state
+    tmp_state="$(mktemp "$HISTORY_DIR/history_state.tsv.tmp.XXXXXX")"
+
+    # Keep all existing state lines except those for the files we manage here.
+    awk -F '\t' '
+        BEGIN {
+            skip["DailyNews.txt"] = 1
+            skip["FinancialNews.txt"] = 1
+            skip["MassReadings.txt"] = 1
+        }
+        !($1 in skip) { print }
+    ' "$STATE_FILE" > "$tmp_state"
+
+    for q in "${QUERY_FILES[@]}"; do
+        printf '%s\t%s\n' "$q" "$TODAY_ISO" >> "$tmp_state"
+    done
+
+    sort -u "$tmp_state" > "${tmp_state}.sorted"
+    mv -f "${tmp_state}.sorted" "$STATE_FILE"
+    rm -f "$tmp_state"
+}
+
+sync_git() {
+    [[ "$DRY_RUN" -eq 1 ]] && return 0
+    [[ "$DO_GIT" -eq 1 ]] || return 0
+
+    log "Updating Git repository..."
+
+    git -C "$REPO_DIR" add \
+        "$HISTORY_DIR" \
+        "$STATE_FILE"
+
+    # Never commit the local lock file.
+    git -C "$REPO_DIR" reset -q -- "$LOCK_FILE" 2>/dev/null || true
+    git -C "$REPO_DIR" rm --cached -f "$LOCK_FILE" 2>/dev/null || true
+
+    if git -C "$REPO_DIR" diff --cached --quiet; then
+        log "No Git changes staged."
+        return 0
+    fi
+
+    git -C "$REPO_DIR" commit -m "Backfill Gemini history for May 13-19 2026"
+
+    if [[ "$DO_PUSH" -eq 1 ]]; then
+        git -C "$REPO_DIR" push origin master
+    else
+        log "Skipping git push because --no-push was supplied."
+    fi
+}
+
+main() {
+    require_layout
+
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+        log "Dry run only. No files will be written."
+    fi
+
+    mkdir -p "$HISTORY_DIR"
+
+    (
+        flock -n 9 || die "Could not acquire lock: $LOCK_FILE"
+
+        for item in "${BACKFILL_DATES[@]}"; do
+            IFS='|' read -r iso_date weekday spoken_date <<< "$item"
+            for query_file in "${QUERY_FILES[@]}"; do
+                run_one "$iso_date" "$weekday" "$spoken_date" "$query_file"
+            done
+        done
+
+        update_state_file
+        sync_git
+
+    ) 9>"$LOCK_FILE"
+
+    log "Done."
+    log "History directory: $HISTORY_DIR"
+    log "State file: $STATE_FILE"
+}
+
+main "$@"
