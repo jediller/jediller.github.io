@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Daily Browser</title>
+  <link rel="stylesheet" href="DailyBrowser.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Gemini Reports</p>
+      <h1>Daily Browser</h1>
+      <p class="subtitle">Read current reports, browse the past week, view the prompts, and listen using your browser’s built-in voice.</p>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="controls-card" aria-label="Report controls">
+      <div class="control-grid">
+        <label class="field">
+          <span>Topic</span>
+          <select id="topicSelect"></select>
+        </label>
+
+        <label class="field">
+          <span>Version</span>
+          <select id="versionSelect"></select>
+        </label>
+
+        <label class="field">
+          <span>Voice</span>
+          <select id="voiceSelect"></select>
+        </label>
+
+        <label class="field range-field">
+          <span>Speed <output id="rateValue">1.0</output></span>
+          <input id="rateInput" type="range" min="0.6" max="1.6" value="1" step="0.1">
+        </label>
+      </div>
+
+      <div class="button-row">
+        <button id="loadButton" type="button">Load selected report</button>
+        <button id="readButton" type="button">Read aloud</button>
+        <button id="pauseButton" type="button">Pause</button>
+        <button id="resumeButton" type="button">Resume</button>
+        <button id="stopButton" type="button" class="secondary">Stop</button>
+      </div>
+
+      <p id="statusLine" class="status" role="status" aria-live="polite">Choose a topic and version, then load the report.</p>
+    </section>
+
+    <section class="tabs-card">
+      <div class="tabs" role="tablist" aria-label="Content views">
+        <button id="reportTab" class="tab active" type="button" role="tab" aria-selected="true" aria-controls="reportPanel">Report</button>
+        <button id="askTab" class="tab" type="button" role="tab" aria-selected="false" aria-controls="askPanel">Ask</button>
+      </div>
+
+      <section id="reportPanel" class="panel active" role="tabpanel" aria-labelledby="reportTab">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Loaded text</p>
+            <h2 id="reportTitle">No report loaded</h2>
+          </div>
+          <button id="copyReportButton" type="button" class="ghost">Copy report</button>
+        </div>
+        <pre id="reportText" class="text-box">Nothing loaded yet.</pre>
+      </section>
+
+      <section id="askPanel" class="panel" role="tabpanel" aria-labelledby="askTab">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Prompt / question</p>
+            <h2 id="askTitle">No prompt loaded</h2>
+          </div>
+          <button id="copyAskButton" type="button" class="ghost">Copy ask</button>
+        </div>
+        <pre id="askText" class="text-box">The prompt will appear here.</pre>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Uses plain text files and browser speech synthesis. No applets. No installed extras. Just a tidy little web reader.</p>
+  </footer>
+
+  <script src="DailyBrowser.js"></script>
+</body>
+</html>
