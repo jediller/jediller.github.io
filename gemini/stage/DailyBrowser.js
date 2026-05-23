@@ -7,6 +7,16 @@
   const QUERY_BASE = "../query/";
   const MANIFEST_URL = "DailyBrowserManifest.json";
 
+  /*
+   * DailyBrowser.js
+   *
+   * Long-report speech fix:
+   * Browser speech synthesis can fail or stop early when asked to speak a large
+   * report as one giant SpeechSynthesisUtterance. This version keeps the report
+   * file intact and splits text dynamically at playback time.
+   */
+  const SPEECH_CHUNK_LIMIT = 1400;
+
   const els = {
     topicSelect: document.getElementById("topicSelect"),
     versionSelect: document.getElementById("versionSelect"),
@@ -36,6 +46,10 @@
   let currentReportText = "";
   let currentAskText = "";
   let utterance = null;
+
+  let speechChunks = [];
+  let speechChunkIndex = 0;
+  let speechStoppedByUser = false;
 
   function setStatus(message) {
     els.statusLine.textContent = message;
@@ -179,6 +193,118 @@
     return voices.find((voice) => voice.name === name) || null;
   }
 
+  function normalizeSpeechText(text) {
+    return String(text || "")
+      .replace(/\r\n/g, "\n")
+      .replace(/\r/g, "\n")
+      .replace(/[ \t]+/g, " ")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+  }
+
+  function splitOversizedChunk(text, limit) {
+    const pieces = [];
+    let remaining = text.trim();
+
+    while (remaining.length > limit) {
+      let cut = remaining.lastIndexOf(". ", limit);
+      if (cut < Math.floor(limit * 0.45)) cut = remaining.lastIndexOf("? ", limit);
+      if (cut < Math.floor(limit * 0.45)) cut = remaining.lastIndexOf("! ", limit);
+      if (cut < Math.floor(limit * 0.45)) cut = remaining.lastIndexOf("; ", limit);
+      if (cut < Math.floor(limit * 0.45)) cut = remaining.lastIndexOf(", ", limit);
+      if (cut < Math.floor(limit * 0.45)) cut = remaining.lastIndexOf(" ", limit);
+      if (cut < Math.floor(limit * 0.45)) cut = limit;
+
+      const piece = remaining.slice(0, cut + 1).trim();
+      if (piece) pieces.push(piece);
+      remaining = remaining.slice(cut + 1).trim();
+    }
+
+    if (remaining) pieces.push(remaining);
+    return pieces;
+  }
+
+  function splitTextForSpeech(text, limit = SPEECH_CHUNK_LIMIT) {
+    const cleaned = normalizeSpeechText(text);
+    if (!cleaned) return [];
+
+    const paragraphs = cleaned.split(/\n\s*\n/);
+    const chunks = [];
+    let current = "";
+
+    function pushCurrent() {
+      const trimmed = current.trim();
+      if (trimmed) chunks.push(trimmed);
+      current = "";
+    }
+
+    for (const paragraph of paragraphs) {
+      const p = paragraph.trim();
+      if (!p) continue;
+
+      if (p.length > limit) {
+        pushCurrent();
+        chunks.push(...splitOversizedChunk(p, limit));
+        continue;
+      }
+
+      const candidate = current ? `${current}\n\n${p}` : p;
+      if (candidate.length <= limit) {
+        current = candidate;
+      } else {
+        pushCurrent();
+        current = p;
+      }
+    }
+
+    pushCurrent();
+    return chunks;
+  }
+
+  function makeUtterance(text) {
+    const u = new SpeechSynthesisUtterance(text);
+    const voice = selectedVoice();
+    if (voice) u.voice = voice;
+    u.rate = Number(els.rateInput.value) || 1;
+    return u;
+  }
+
+  function speakCurrentChunk() {
+    if (speechStoppedByUser) return;
+
+    if (speechChunkIndex >= speechChunks.length) {
+      utterance = null;
+      setStatus("Finished reading.");
+      return;
+    }
+
+    const chunkNumber = speechChunkIndex + 1;
+    const totalChunks = speechChunks.length;
+
+    utterance = makeUtterance(speechChunks[speechChunkIndex]);
+
+    utterance.onstart = () => {
+      if (totalChunks === 1) {
+        setStatus("Reading aloud...");
+      } else {
+        setStatus(`Reading aloud... chunk ${chunkNumber} of ${totalChunks}`);
+      }
+    };
+
+    utterance.onend = () => {
+      if (speechStoppedByUser) return;
+      speechChunkIndex += 1;
+      speakCurrentChunk();
+    };
+
+    utterance.onerror = (event) => {
+      if (speechStoppedByUser) return;
+      setStatus(`Speech error on chunk ${chunkNumber} of ${totalChunks}: ${event.error || "unknown error"}`);
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
   function readAloud() {
     if (!("speechSynthesis" in window)) {
       setStatus("This browser does not support speech synthesis.");
@@ -192,14 +318,17 @@
     }
 
     stopSpeech();
-    utterance = new SpeechSynthesisUtterance(text);
-    const voice = selectedVoice();
-    if (voice) utterance.voice = voice;
-    utterance.rate = Number(els.rateInput.value) || 1;
-    utterance.onstart = () => setStatus("Reading aloud...");
-    utterance.onend = () => setStatus("Finished reading.");
-    utterance.onerror = (event) => setStatus(`Speech error: ${event.error || "unknown error"}`);
-    window.speechSynthesis.speak(utterance);
+
+    speechChunks = splitTextForSpeech(text);
+    speechChunkIndex = 0;
+    speechStoppedByUser = false;
+
+    if (speechChunks.length === 0) {
+      setStatus("No readable report text found.");
+      return;
+    }
+
+    speakCurrentChunk();
   }
 
   function pauseSpeech() {
@@ -217,6 +346,11 @@
   }
 
   function stopSpeech() {
+    speechStoppedByUser = true;
+    speechChunks = [];
+    speechChunkIndex = 0;
+    utterance = null;
+
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
@@ -231,7 +365,7 @@
       await navigator.clipboard.writeText(text);
       setStatus(`Copied ${label} text.`);
     } catch (error) {
-      setStatus(`Copy failed. You can still select and copy the text manually.`);
+      setStatus("Copy failed. You can still select and copy the text manually.");
     }
   }
 
