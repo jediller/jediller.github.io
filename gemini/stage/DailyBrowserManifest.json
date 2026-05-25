@@ -5,14 +5,19 @@
     "file": "FinancialNews.txt"
   },
   {
+    "id": "mass-readings",
+    "title": "Mass Readings",
+    "file": "MassReadings.txt"
+  },
+  {
     "id": "daily-news",
     "title": "Daily News",
     "file": "DailyNews.txt"
   },
   {
-    "id": "mass-readings",
-    "title": "Mass Readings",
-    "file": "MassReadings.txt"
+    "id": "geography-lesson",
+    "title": "Geography Lesson",
+    "file": "GeoLesson.txt"
   },
   {
     "id": "movers-shakers",
