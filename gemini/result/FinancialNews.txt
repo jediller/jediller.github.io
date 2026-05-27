@@ -1,9 +1,12 @@
-Tuesday May 26, 2026 by Gemini A.I.
+Wednesday May 27, 2026 by Gemini A.I.
 
-Here is your financial market summary for today.
+Here is your financial market summary for the latest close on Tuesday May 26, 2026.
 
-The Dow Jones Industrial Average closed at 50,461.68, down 118.02 points or 0.23 percent for the day. Looking at the historical context, over the last 30 days, the Dow is up 1,230.97 points, an increase of 2.50 percent. Over the past 6 months, it has gained 3,034.56 points, climbing 6.40 percent. The index is currently resting just slightly below its all-time closing high of 50,579.70, which it reached a few days ago on May 22.
+Dow Jones Industrial Average
+The Dow Jones Industrial Average closed at 50,461.68. The index is up 1,230.97 points over the last 30 days, and up 3,034.56 points over the last 6 months. It is currently sitting 118.02 points below its all-time high of 50,579.70.
 
-The S and P 500 closed at 7,519.12, gaining 45.65 points or 0.61 percent today. Over the last 30 days, the index has climbed approximately 4.78 percent. Looking back 6 months, the S and P 500 has seen a significant rally, gaining roughly 17 percent. Today's close represents a brand new all-time high for the index, driven by strong earnings and optimism in the technology sector.
+S and P 500
+The S and P 500 reached a record close at 7,519.12, meaning it is currently at its all-time high. Over the last 30 days, the index is up 353.81 points, and over the last 6 months, it has climbed 676.94 points.
 
-The Nasdaq Composite closed at 26,656.18, surging 312.21 points or 1.19 percent. Over the past 30 days, the index has increased by approximately 4.78 percent. Over the last 6 months, the Nasdaq has seen substantial growth, rising by roughly 14.7 percent. Today's closing position marks a new all-time high for the Nasdaq, fueled heavily by gains in semiconductor and artificial intelligence stocks.
+Nasdaq Composite
+The Nasdaq Composite also hit a new record close, finishing the day at 26,656.18, which is its current all-time high. The index has seen significant growth, up 1,763.87 points in the last 30 days, and surging 5,510.56 points over the last 6 months.
