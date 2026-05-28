@@ -1,11 +1,11 @@
-Thursday May 21, 2026 by Gemini A.I.
+Friday May 22, 2026 by Gemini A.I.
 
-Here is the summary of the latest financial news and market close results as of May 20, 2026. 
+Here is the summary of financial news and the latest closing results for the stock market.
 
-The Dow Jones Industrial Average closed at 50,009.35, marking a significant gain of 645.47 points, or 1.31 percent, for the day. Over the last 30 days, the Dow is up 1.15 percent. Looking at the last 6 months, it has gained 9.30 percent. Currently, the Dow is just 0.36 percent below its all-time closing high of 50,188.14, which was reached on February 10, 2026.
+The Dow Jones Industrial Average closed at 49,363.88. Over the last 30 days, the Dow is up by 1.21 percent. Over the last 6 months, the index is up by 9.78 percent. The Dow is currently trading 2.27 percent below its all-time high of 50,512.79.
 
-The S and P 500 closed at 7,432.97, gaining 79.36 points, or 1.08 percent. Over the past 30 days, the index rose approximately 4.1 percent. Over the last 6 months, it has experienced strong growth, gaining roughly 23.2 percent. The S and P 500 is currently trading about 0.91 percent below its record closing high of 7,501.24, which was set recently on May 14, 2026.
+The S and P 500 closed at 7,482.90. In the past 30 days, the index is up by 5.06 percent. Looking back 6 months, the S and P 500 has climbed by 12.09 percent. It is currently positioned 0.46 percent below its all-time high of 7,517.12.
 
-The Nasdaq Composite closed at 26,270.36, gaining 399.65 points, or 1.54 percent. Over the last 30 days, the Nasdaq is up 5.54 percent. Over the last 6 months, it has surged by roughly 42.47 percent. The index is currently sitting approximately 1.37 percent below its all-time high of 26,635.22, which was also reached on May 14, 2026.
+The Nasdaq closed at 29,040.04. Over the last 30 days, the Nasdaq is down by 1.30 percent. Over the last 6 months, the index is up by 10.41 percent. The Nasdaq is currently trading 2.15 percent below its all-time high of 29,678.89. 
 
-Overall, the markets experienced a strong rally driven by technology earnings and easing Treasury yields, rebounding from recent dips and maintaining positions very close to their all-time record highs.
+This concludes your market summary.

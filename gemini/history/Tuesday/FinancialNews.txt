@@ -1,11 +1,9 @@
-Monday, May 25, 2026 by Gemini A.I.
+Tuesday May 26, 2026 by Gemini A.I.
 
-Here is the latest financial market summary. The US stock market is closed today for the Memorial Day holiday, so the following figures reflect the latest official close from Friday, May 22, 2026.
+Here is your financial market summary for today.
 
-The Dow Jones Industrial Average closed at 50,579.70. Over the last 30 days, the Dow is up approximately 7.1 percent. Looking back over the last 6 months, the index is up 5.9 percent. The latest closing figure of 50,579.70 represents a brand new all-time high for the Dow.
+The Dow Jones Industrial Average closed at 50,461.68, down 118.02 points or 0.23 percent for the day. Looking at the historical context, over the last 30 days, the Dow is up 1,230.97 points, an increase of 2.50 percent. Over the past 6 months, it has gained 3,034.56 points, climbing 6.40 percent. The index is currently resting just slightly below its all-time closing high of 50,579.70, which it reached a few days ago on May 22.
 
-The S and P 500 closed at 7,473.47. The index has seen an increase of about 5.2 percent over the last 30 days. Over the past 6 months, the S and P 500 is up 10.9 percent. Currently, the index is trading just slightly below its all-time high of 7,517.12, which was reached earlier this month. 
+The S and P 500 closed at 7,519.12, gaining 45.65 points or 0.61 percent today. Over the last 30 days, the index has climbed approximately 4.78 percent. Looking back 6 months, the S and P 500 has seen a significant rally, gaining roughly 17 percent. Today's close represents a brand new all-time high for the index, driven by strong earnings and optimism in the technology sector.
 
-The Nasdaq Composite closed at 26,343.97. Over the last 30 days, the Nasdaq has seen a significant surge, going up approximately 15.3 percent. Over the last 6 months, the index is up 12.7 percent. The Nasdaq is currently sitting just below its all-time high, which is near the 26,400 level.
-
-Overall, the major indices have experienced a strong rally over both the short and medium term, driven by solid corporate earnings and optimistic market sentiment.
+The Nasdaq Composite closed at 26,656.18, surging 312.21 points or 1.19 percent. Over the past 30 days, the index has increased by approximately 4.78 percent. Over the last 6 months, the Nasdaq has seen substantial growth, rising by roughly 14.7 percent. Today's closing position marks a new all-time high for the Nasdaq, fueled heavily by gains in semiconductor and artificial intelligence stocks.
