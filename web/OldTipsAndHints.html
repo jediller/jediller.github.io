@@ -1,12 +1,8 @@
 <html>
 <head><title>Tips and Hints</title></head>
 <body>
+<h2>jpg and mp3 to mp4</h2><pre>
 
-<p><a href="TipsAndHints.html">View Original Tips and Hints Archive</a></p>
-<hr>
-
-<h2>jpg and mp3 to mp4</h2>
-<pre>
 ffmpeg -i Magnificat1.jpg -i Magnificat1.mp3 -c:v copy -c:a aac -strict 2 Magnificat1.mp4
 
 ffmpeg -i ItsABrandNewDay.mp3 -i HereIAm.mp3 -filter_complex "[0:a]volume=0.5[a1];[1:a]volume=0.5[a2]; [a1][a2]amerge" test.mp3
@@ -30,10 +26,11 @@ make clean
 make all
 make install
 modprobe -r 8812au
-modprobe 8812au
+modprobe
+ 8812au
 
 cd /home/john/rtl8812au; make clean; make all; make install
-modprobe -r 8812au ; modprobe 8812au
+   modprobe -r 8812au ; modprobe 8812au
 </pre>
 <hr>
 
@@ -45,10 +42,11 @@ pdftk noPasswordYet.pdf output nowWithPW.pdf user_pw secretPW
 
 <h2>English subtitles and compress</h2>
 <pre>
-Pick up English subtitles when using yt-dlp to download
+Pick up English subtitles when using youtube-dl to download
 from Asian Crush like this.
 
-yt-dlp --write-sub --write-auto-sub https://www.asiancrush.com/video/001526v/now-and-forever/
+youtube-dl --write-sub --write-auto-sub https://www.asiancrush.com/video/001526v/now-and-forever/
+</pre>
 
 movies might tend to be very large ffmpeg might give very good
 compression like this ...
@@ -68,12 +66,10 @@ WINDOWS8.qcow2
 </pre>
 <hr>
 
-<h2>Splitting large MP files</h2>
+<h2>Spliting large MP files</h2>
 <pre>
 Split audio into bite size pieces of 10 minutes each for my MP3 player ... like this ...
-ffmpeg -i LordTonysWife.mp3 -f segment -segment_time 600 -c copy L%02dordTonysWife.mp3
-</pre>
-<hr>
+ ffmpeg -i LordTonysWife.mp3 -f segment -segment_time 600 -c copy L%02dordTonysWife.mp3
 
 <h2>Easy Github to add inline C to Python</h2>
 <pre>
@@ -83,7 +79,7 @@ Very useful write inline C code in your Python  ... nice !!!
 </pre>
 <hr>
 
-<h2>Cropping MP4 with ffmpeg</h2>
+<h2>Croping MP4 with ffmpeg</h2>
 <pre>
 ffmpeg -i in.mp4 -filter:v "crop=out_w:out_h:x:y" out.mp4
 Where the options are as follows:
@@ -97,8 +93,10 @@ see https://video.stackexchange.com/questions/4563/how-can-i-crop-a-video-with-f
 
 <h2>Turn video into slow motion</h2>
 <pre>
+
 ffmpeg -i input.mkv -filter:v "setpts=2.0*PTS" output.mkv
 =10.0  for ten times slower, =0.5 for twice as fast
+
 
 see https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video
 </pre>
@@ -116,18 +114,16 @@ file '/home/john/audio/PrayerOfSaintFrancis.mp3'
 see https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
 </pre>
 <hr>
-
 <h2>Quick and Easy Webserver</h2>
 <pre>
-Run a quick webserver from Ubuntu, and pretty much everywhere. Note --bind allows one to specify which adapter on your machine is listening
+ Run a quick webserver from Ubuntu, and pretty much everywhere. Note --bind allows one to specify which adapter on your machine is listening
 
 sudo python3 -m http.server --bind 192.168.86.133 80
 </pre>
 <hr>
-
 <h2>convert text with vim</h2>
 <pre>
-from google search
+ from google search
 
 If you want to convert text to lowercase, create a visual block and press u (or U to convert to uppercase).
 ...
@@ -152,6 +148,7 @@ pip install --upgrade pip
 
 <h2>A Little fun with Julia</h2>
 <pre>
+
 julia> Pkg.add(PackageSpec(url="https://github.com/JuliaMath/Primes.jl"))
 Cloning git-repo `https://github.com/JuliaMath/Primes.jl`
 Updating git-repo `https://github.com/JuliaMath/Primes.jl`
@@ -175,17 +172,16 @@ julia> primes(10)
 
 <h2>Clear up Audio Problems</h2>
 <pre>
-pulseaudio -k && sudo alsa force-reload
+ pulseaudio -k && sudo alsa force-reload
 </pre>
 <hr>
 
 <h2>Random busybox command for something</h2>
 <pre>
-sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/install'
+ sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/install'
 </pre>
 <hr>
-
-<h2>Crucial Steps to GitHub Smoothly Working</h2>
+<h2>Cruial Steps to GitHub Smoothly Working</h2>
 <pre>
 From History
 1990  ssh-keygen -t rsa -b 4096 -C "jediller@outlook.com"
@@ -193,84 +189,120 @@ From History
 1992  ssh-add ~/.ssh/id_rsa
 1993  cat ~/.ssh/id_rsa.pub
 With much help from this URL:
-https://medium.com/featurepreneur/setting-up-ssh-key-with-github-for-ubuntu-cd8f2fabf25b
 </pre>
+https://medium.com/featurepreneur/setting-up-ssh-key-with-github-for-ubuntu-cd8f2fabf25b
 <hr>
-
 <h2>Creating Video from Image on Ubuntu</h2>
 <pre>
-Download images into directory
-Convert all the images to a smaller size. This step is only needed is the
-result is too large. Making the images smaller may reduce crispness.
+  Download images into directory
+  Convert all the images to a smaller size. This step is only needed is the
+  result is too large. Making the images smaller may reduce crispness.
 
-for f in `ls -1 IMG*.jpg`; do convert -resize 1248X702 $f 'G'$f; done
+  for f in `ls -1 IMG*.jpg`; do convert -resize 1248X702 $f 'G'$f; done
 
-ffmpeg -i IMG_20211205_112929068.jpg
+  ffmpeg -i IMG_20211205_112929068.jpg
 
-was used to get the size of the IMG, 1248X702 was choosen to keep the height
-and width ratios the same. This never hurts, and might be important in this
-case the original size was 4160X2340
+  was used to get the size of the IMG, 1248X702 was choosen to keep the height
+  and width ratios the same. This never hurts, and might be important in this
+  case the original size was 4160X2340
 
-ffmpeg -framerate 1 -pattern_type glob -i 'GIMG*.jpg' -c:v libx265 -r 1 test1s.mp4
+  ffmpeg -framerate 1 -pattern_type glob -i 'GIMG*.jpg' -c:v libx265 -r 1 test1s.mp4
 
-creates a small video
+  creates a small video
 
-ffmpeg -framerate 1/3 -pattern_type glob -i 'GIMG*.jpg' -c:v libx265  -r 1 test1g.mp4
+  ffmpeg -framerate 1/3 -pattern_type glob -i 'GIMG*.jpg' -c:v libx265  -r 1 test1g.mp4
 
-creates a small video, but shows each image for 3 seconds
+  creates a small video, but shows each image for 3 seconds
 
-even better
+  even better
 
-ffmpeg -framerate 1/3 -pattern_type glob -i 'IMG*.jpg' -c:v libx265 -vf scale=1024:-1  -r 1 test7.mp4
-Without the -vf scale=1024:-1 the MP4 is 50MB with it only 4.5MB (dimensions of raw image 4160X2340)
+  ffmpeg -framerate 1/3 -pattern_type glob -i 'IMG*.jpg' -c:v libx265 -vf scale=1024:-1  -r 1 test7.mp4
+  Without the -vf scale=1024:-1 the MP4 is 50MB with it only 4.5MB (dimensions of raw image 4160X2340)
+
+
 </pre>
 <hr>
-
 <h2>Git Notes</h2>
 <pre>
-john@jeditop:~/github/SimpleWords$ pwd
+  john@jeditop:~/github/SimpleWords$ pwd
 /home/john/github/SimpleWords
 Already created empty "SimpleWords" at GitHub
-155  git init
-156  git add .
-157  git commit -m "commit"
-158  git branch -M master
-159  git remote add origin git@github.com:jediller/SimpleWords.git
-160  git push -u origin master
-161  history
+  155  git init
+  156  git add .
+  157  git commit -m "commit"
+  158  git branch -M master
+  159  git remote add origin git@github.com:jediller/SimpleWords.git
+  160  git push -u origin master
+  161  history
 
-john@jeditop:~/github/SimpleWords$ git init
-Reinitialized existing Git repository in /home/john/github/SimpleWords/.git/
-john@jeditop:~/github/SimpleWords$ git add .
-john@jeditop:~/github/SimpleWords$ git commit -m "commit"
-[master (root-commit) df4039f] commit
- 40 files changed, 800 insertions(+)
- create mode 100644 .gitignore
- [... abbreviated list for readability ...]
- create mode 100644 settings.gradle
-john@jeditop:~/github/SimpleWords$ git branch -M master
-john@jeditop:~/github/SimpleWords$ git remote add origin git@github.com:jediller/SimpleWords.git
-john@jeditop:~/github/SimpleWords$ git push -u origin master
-Enumerating objects: 73, done.
-Counting objects: 100% (73/73), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (54/54), done.
-Writing objects: 100% (73/73), 97.19 KiB | 2.86 MiB/s, done.
-Total 73 (delta 1), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (1/1), done.
-To github.com:jediller/SimpleWords.git
- * [new branch]      master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
+  john@jeditop:~/github/SimpleWords$ git init
+  Reinitialized existing Git repository in /home/john/github/SimpleWords/.git/
+  john@jeditop:~/github/SimpleWords$ git add .
+  john@jeditop:~/github/SimpleWords$ git commit -m "commit"
+  [master (root-commit) df4039f] commit
+   40 files changed, 800 insertions(+)
+   create mode 100644 .gitignore
+   create mode 100644 .idea/.gitignore
+   create mode 100644 .idea/.name
+   create mode 100644 .idea/compiler.xml
+   create mode 100644 .idea/gradle.xml
+   create mode 100644 .idea/misc.xml
+   create mode 100644 .idea/vcs.xml
+   create mode 100644 app/.gitignore
+   create mode 100644 app/build.gradle
+   create mode 100644 app/proguard-rules.pro
+   create mode 100644 app/src/androidTest/java/com/example/simplewords/ExampleInstrumentedTest.java
+   create mode 100644 app/src/main/AndroidManifest.xml
+   create mode 100644 app/src/main/java/com/example/simplewords/MainActivity.java
+   create mode 100644 app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+   create mode 100644 app/src/main/res/drawable/ic_launcher_background.xml
+   create mode 100644 app/src/main/res/layout/activity_main.xml
+   create mode 100644 app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+   create mode 100644 app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+   create mode 100644 app/src/main/res/mipmap-hdpi/ic_launcher.webp
+   create mode 100644 app/src/main/res/mipmap-hdpi/ic_launcher_round.webp
+   create mode 100644 app/src/main/res/mipmap-mdpi/ic_launcher.webp
+   create mode 100644 app/src/main/res/mipmap-mdpi/ic_launcher_round.webp
+   create mode 100644 app/src/main/res/mipmap-xhdpi/ic_launcher.webp
+   create mode 100644 app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp
+   create mode 100644 app/src/main/res/mipmap-xxhdpi/ic_launcher.webp
+   create mode 100644 app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp
+   create mode 100644 app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp
+   create mode 100644 app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp
+   create mode 100644 app/src/main/res/values-night/themes.xml
+   create mode 100644 app/src/main/res/values/colors.xml
+   create mode 100644 app/src/main/res/values/strings.xml
+   create mode 100644 app/src/main/res/values/themes.xml
+   create mode 100644 app/src/test/java/com/example/simplewords/ExampleUnitTest.java
+   create mode 100644 build.gradle
+   create mode 100644 gradle.properties
+   create mode 100644 gradle/wrapper/gradle-wrapper.jar
+   create mode 100644 gradle/wrapper/gradle-wrapper.properties
+   create mode 100755 gradlew
+   create mode 100644 gradlew.bat
+   create mode 100644 settings.gradle
+  john@jeditop:~/github/SimpleWords$ git branch -M master
+  john@jeditop:~/github/SimpleWords$ git remote add origin git@github.com:jediller/SimpleWords.git
+  john@jeditop:~/github/SimpleWords$ git push -u origin master
+  Enumerating objects: 73, done.
+  Counting objects: 100% (73/73), done.
+  Delta compression using up to 8 threads
+  Compressing objects: 100% (54/54), done.
+  Writing objects: 100% (73/73), 97.19 KiB | 2.86 MiB/s, done.
+  Total 73 (delta 1), reused 0 (delta 0), pack-reused 0
+  remote: Resolving deltas: 100% (1/1), done.
+  To github.com:jediller/SimpleWords.git
+   * [new branch]      master -> master
+  Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
 </pre>
 <hr>
-
 <h2>More ffmpeg Samples</h2>
 <pre>
 ffmpeg -i GMT20220216-001452_Recording.m4a -ss 00:16:00 -to 00:51:37 -af "volume=volume=12dB" AssemblyMeeting021522.m4a
 ffmpeg -i GMT20220216-001452_Recording.m4a -ss 00:51:37 -af "volume=volume=12dB" CCCMeeting021522.m4a
-</pre>
 <hr>
-
 <h2>Copy DVD images quick and simplewords</h2>
 <pre>
 cat /dev/sr0 SomeDVD.iso
@@ -278,22 +310,16 @@ Note: In Ubuntu Files App, right click on
 ISO file to mount ISO images
 May drag file to VLC player, newer versions have menu options open to ISO
 </pre>
-<hr>
-
-<h2>System Information</h2>
 <pre>
-john@jeditop:~$ sudo dmidecode | grep -A3 '^System Information'
-[sudo] password for john:
-System Information
-	Manufacturer: LENOVO
-	Product Name: 20VD
-	Version: ThinkBook 14 G2 ITL
+  <hr>
+  john@jeditop:~$ sudo dmidecode | grep -A3 '^System Information'
+  [sudo] password for john:
+  System Information
+  	Manufacturer: LENOVO
+  	Product Name: 20VD
+  	Version: ThinkBook 14 G2 ITL
 </pre>
-<hr>
-
-<h2>Network Printer Setup (CUPS)</h2>
 <pre>
-<<<<<<< HEAD
   <hr>
   sudo lpadmin -p HL3140CWjedi -E -v ipp://192.168.86.38/ipp/print -m everywhere
 <p>Find printer address if needed from phone Google Home (for my Wifi)
@@ -336,43 +362,5 @@ System Information
   Note: use Home app to find address of printer, if needed
  </pre>
  <hr>
-=======
-sudo apt install cups
-sudo lpadmin -p HL3140CWjedi -E -v ipp://192.168.86.38/ipp/print -m everywhere
-Note: use Home app to find address of printer, if needed
-</pre>
-<hr>
-
-<h2>WinGet & yt-dlp Quick Reference</h2>
-<pre>
-updated version of yt-dlp (modern Ubuntu / Linux)
-pipx install yt-dlp
-
-yt-dlp -o "%(playlist_index)s-%(title)s.%(ext)s"  --yes-playlist https://www.youtube.com/playlist?list=PLDRndPrVl1jcGUzIsLUAvg593O0lmHrZ2
-
-If the next version is needed
-winget upgrade yt-dlp
-
-Typical VLC install
-winget install VideoLAN.VLC
-
-FFMpeg install
-winget install Gyan.FFmpeg
-
-Upgrade of everything installed
-winget upgrade --all
-
-Upgrade of everything installed, even troublesomes unknowns
-winget upgrade --all --include-unknown
-
-Everything on your machine
-winget list
-
-Everything installed via winget
-winget list --source "winget"
-</pre>
-<hr>
-
->>>>>>> dd847e3 (Update site)
 </body>
 </html>
