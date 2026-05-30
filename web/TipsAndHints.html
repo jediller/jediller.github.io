@@ -334,6 +334,29 @@ May drag file to VLC player, newer versions have menu options open to ISO
  </pre>
  <hr>
  <pre>
+  If the next version is needed
+  winget upgrade yt-dlp
+
+  Typical VLC install
+  winget install VideoLAN.VLC
+
+  FFMpeg install
+  winget install Gyan.FFmpeg
+  
+  Upgrade of everything installed
+  winget upgrade --all
+  
+  Upgrade of everything installed, even troublesomes unknowns
+  winget upgrade --all --include-unknown
+
+  Everything on your machine
+  winget list
+  
+  Everything installed via winget
+  winget list --source "winget"
+ </pre>
+ <hr>
+ <pre>
   sudo apt install cups
   sudo lpadmin -p printername -E -v ipp://192.168.86.38/ipp/print -m everywhere
   Note: use Home app to find address of printer, if needed
