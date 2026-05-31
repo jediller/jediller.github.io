@@ -1,20 +1,16 @@
-Sunday May 24, 2026 by Gemini A.I.
+Saturday May 30, 2026 by Gemini A.I.
 
-Here is your latest financial market summary. The stock market finished strong this past Friday, May 22, with all three major indexes reaching record territory.
+Here is your summary of financial news and the latest market close results for the major U.S. stock indexes as of Friday, May 29, 2026.
 
-The Dow Jones Industrial Average closed at 50,579.70. 
-Looking back over the last 30 days, the Dow is up by 1,089.67 points. 
-Over the last six months, the index has surged, finishing up by 4,334.29 points. 
-The Dow is currently positioned at a new all-time closing record, sitting just slightly below its intraday peak of 50,723.95.
+The stock market ended the week with a massive rally, largely driven by surging technology shares, strong corporate earnings, and optimism surrounding improving geopolitical conditions. All three major indexes finished strong, marking a historic week for equities.
 
-The S and P 500 closed at 7,473.47. 
-In the past 30 days, the S and P 500 is up by 335.57 points. 
-Over the last six months, the index has experienced robust growth, climbing by 870.48 points. 
-Currently, the S and P 500 has closed at a new all-time high, resting just under its absolute intraday peak of 7,517.12.
+Starting with the Dow Jones Industrial Average:
+The Dow closed at 51,032 points. Over the last 30 days, the index is up 2.8 percent. Looking back over the last 6 months, the Dow has gained 5.3 percent, supported by stability in blue-chip stocks. Following this latest rally, the Dow Jones is currently sitting right at its all-time high.
 
-The Nasdaq Composite closed at 26,343.97. 
-Over the last 30 days, the Nasdaq is up by 1,686.40 points. 
-In the last six months, it has climbed significantly, up by 4,070.89 points. 
-The Nasdaq is currently positioned exactly at its all-time record closing high.
+Moving to the S&P 500:
+The S&P 500 closed at 7,580 points. Over the past 30 days, the index is up by 5.1 percent. Over the 6-month time frame, it has experienced strong growth, rising 12.5 percent. With this recent performance, the S&P 500 has also reached a brand new all-time high.
 
-Market gains have been largely driven by exceptional corporate earnings, particularly in the artificial intelligence and technology sectors, along with optimism regarding global geopolitical stabilization. U.S. markets will remain closed on Monday in observance of the Memorial Day holiday.
+Finally, the Nasdaq Composite:
+The Nasdaq led the broader markets, closing at 26,972 points. Over the last 30 days, it surged over 8 percent, fueled heavily by exceptional earnings in the artificial intelligence and semiconductor sectors. Over the past 6 months, the Nasdaq has vastly outperformed, up a massive 15.4 percent. As with the other major indexes, the Nasdaq is currently positioned exactly at its all-time high.
+
+Overall, it has been a robust period of growth across the market, reflecting continued investor confidence in large-cap technology and a stabilizing economic outlook.
