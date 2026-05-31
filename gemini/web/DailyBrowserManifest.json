@@ -23,5 +23,10 @@
     "id": "movers-shakers",
     "title": "Movers and Shakers",
     "file": "MoversShakers.txt"
+  },
+  {
+    "id": "weather-forecast",
+    "title": "Weather Forecast",
+    "file": "WeatherForecast.txt"
   }
 ]
