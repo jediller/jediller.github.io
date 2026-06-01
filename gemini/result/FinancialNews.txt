@@ -1,11 +1,9 @@
-Sunday May 31, 2026 by Gemini A.I.
+Monday, June 1, 2026 by Gemini A.I.
 
-Here is your summary of financial news and the latest market close results. All three major U.S. indices reached record breaking all time highs at their most recent close on Friday, May 29, 2026.
+Here is your financial market summary for the major US indices.
 
-The Dow Jones Industrial Average closed at 51,032.46. The index is currently sitting at its all time high. Over the last 30 days, the Dow has seen steady growth, going up by 0.9 percent. Looking back over the last 6 months, the index is up by 6.95 percent, driven by resilient corporate earnings and solid economic data.
+Starting with the Dow Jones Industrial Average, the index finished its latest session up, closing at 51,078.88. Over the last 30 days, the Dow is up by approximately 3.81 percent, and over the last 6 months, it has risen by 7.49 percent. The index is currently sitting just below its all-time high of 51,161.10.
 
-The S and P 500 closed at 7,580.06. The index is also at a brand new all time high. It has experienced a significant rally recently, going up by 5.15 percent over the past 30 days. Its 6 month performance is even more impressive, up by approximately 12.5 percent. This growth was largely fueled by surging performance in technology stocks and high demand for artificial intelligence computing.
+Moving to the S and P 500, the index also saw a positive close, finishing up at 7,606.67. The S and P has climbed 5.69 percent in the last 30 days and boasts a strong 9.46 percent gain over the last 6 months. It remains extremely close to its all-time high of 7,617.66.
 
-The Nasdaq Composite closed at 26,972.62, setting yet another all time high. The Nasdaq led the major indices over the last 30 days, going up by 8.36 percent. Over the last 6 months, the tech heavy index has surged by 15.4 percent, making it the strongest performer among the three major benchmarks during this period.
-
-In summary, the market has shown robust performance across the board, with the Dow Jones, S and P 500, and Nasdaq all setting new historical records and achieving solid gains over both the 30 day and 6 month timeframes.
+Finally, the Nasdaq Composite closed higher at 27,086.81. Tech stocks have driven significant recent growth, with the index up 9.40 percent in the last 30 days and surging 15.79 percent over the last 6 months. Like the other major averages, the Nasdaq is hovering right near its all-time high of 27,094.80.
