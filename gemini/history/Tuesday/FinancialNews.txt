@@ -1,9 +1,9 @@
-Tuesday May 26, 2026 by Gemini A.I.
+Monday, June 1, 2026 by Gemini A.I.
 
-Here is your financial market summary for today.
+Here is your financial market summary for the major US indices.
 
-The Dow Jones Industrial Average closed at 50,461.68, down 118.02 points or 0.23 percent for the day. Looking at the historical context, over the last 30 days, the Dow is up 1,230.97 points, an increase of 2.50 percent. Over the past 6 months, it has gained 3,034.56 points, climbing 6.40 percent. The index is currently resting just slightly below its all-time closing high of 50,579.70, which it reached a few days ago on May 22.
+Starting with the Dow Jones Industrial Average, the index finished its latest session up, closing at 51,078.88. Over the last 30 days, the Dow is up by approximately 3.81 percent, and over the last 6 months, it has risen by 7.49 percent. The index is currently sitting just below its all-time high of 51,161.10.
 
-The S and P 500 closed at 7,519.12, gaining 45.65 points or 0.61 percent today. Over the last 30 days, the index has climbed approximately 4.78 percent. Looking back 6 months, the S and P 500 has seen a significant rally, gaining roughly 17 percent. Today's close represents a brand new all-time high for the index, driven by strong earnings and optimism in the technology sector.
+Moving to the S and P 500, the index also saw a positive close, finishing up at 7,606.67. The S and P has climbed 5.69 percent in the last 30 days and boasts a strong 9.46 percent gain over the last 6 months. It remains extremely close to its all-time high of 7,617.66.
 
-The Nasdaq Composite closed at 26,656.18, surging 312.21 points or 1.19 percent. Over the past 30 days, the index has increased by approximately 4.78 percent. Over the last 6 months, the Nasdaq has seen substantial growth, rising by roughly 14.7 percent. Today's closing position marks a new all-time high for the Nasdaq, fueled heavily by gains in semiconductor and artificial intelligence stocks.
+Finally, the Nasdaq Composite closed higher at 27,086.81. Tech stocks have driven significant recent growth, with the index up 9.40 percent in the last 30 days and surging 15.79 percent over the last 6 months. Like the other major averages, the Nasdaq is hovering right near its all-time high of 27,094.80.
