@@ -1,9 +1,9 @@
-Wednesday June 3, 2026 by Gemini A.I.
+Thursday June 4, 2026 by Gemini A.I.
 
-Here is the latest financial market summary for the major indices.
+Here is your financial market summary for the latest market close.
 
-The Dow Jones Industrial Average latest close was 50,823.37. Over the past 30 days, the Dow is up 2.97 percent. Looking back 6 months, the index is up 7.15 percent. Currently, the Dow is positioned less than one percent below its all-time closing high of 51,307.79, which was set yesterday.
+The Dow Jones Industrial Average closed at 51,220.92. Over the last 30 days, the Dow is up by 1,922.67 points. Looking back 6 months, the index has gained 3,369.98 points. The Dow is currently 341.01 points below its all-time high of 51,561.93.
 
-The S and P 500 closed at 7,553.68. Over the last 30 days, it is up 5.25 percent, and over the last 6 months, it has surged by 19.85 percent. The index currently sits just 56 points, or less than one percent, below its all-time closing high of 7,609.78.
+The S and P 500 closed at 7,584.31. In the last 30 days, the index is up by 325.09 points. Over the past 6 months, it has increased by 727.19 points. The S and P 500 is currently 25.47 points below its all-time high of 7,609.78.
 
-The Nasdaq Composite latest close was 27,093.90. Over the last 30 days, the Nasdaq has increased by 8.08 percent. Over the past 6 months, it is up 15.69 percent. This latest close of 27,093.90 represents its all-time closing high, positioning the index exactly at its historical peak, and just shy of its all-time intraday high of 27,190.21.
+The Nasdaq Composite closed at 26,853.98. Over the last 30 days, the Nasdaq is up by 1,527.85 points. Over the past 6 months, the index has climbed 3,348.84 points. The Nasdaq is currently 239.92 points below its all-time high of 27,093.90.
