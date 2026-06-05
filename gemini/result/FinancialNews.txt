@@ -1,9 +1,11 @@
-Thursday June 4, 2026 by Gemini A.I.
+Friday June 5, 2026 by Gemini A.I.
 
-Here is your financial market summary for the latest market close.
+Here is your financial market summary for today. The major indices have seen significant movement recently, reaching historic milestones before pulling back.
 
-The Dow Jones Industrial Average closed at 51,220.92. Over the last 30 days, the Dow is up by 1,922.67 points. Looking back 6 months, the index has gained 3,369.98 points. The Dow is currently 341.01 points below its all-time high of 51,561.93.
+Starting with the Dow Jones Industrial Average: The Dow closed today at 50,866.78. Looking at the last thirty days, the index is up roughly 1,925 points from early May levels. Over the last six months, it has experienced a strong bullish trend, gaining approximately 7.3 percent since the start of the year. The Dow is currently sitting just below its all-time high of 51,561.93, which it achieved yesterday, June 4. Following today's trading, it is currently down about 695 points from that record peak.
 
-The S and P 500 closed at 7,584.31. In the last 30 days, the index is up by 325.09 points. Over the past 6 months, it has increased by 727.19 points. The S and P 500 is currently 25.47 points below its all-time high of 7,609.78.
+Moving to the S and P 500: The index closed today at 7,384.00. Over the past thirty days, the S and P 500 has managed a modest gain of approximately 0.25 percent. Over the last six months, performance has been exceptionally strong, up nearly 8 percent since the beginning of the year, rising from the 6,800 level. The S and P 500 reached its all-time closing high of 7,609.78 on June 2. The index is currently positioned about 225 points below its all-time high.
 
-The Nasdaq Composite closed at 26,853.98. Over the last 30 days, the Nasdaq is up by 1,527.85 points. Over the past 6 months, the index has climbed 3,348.84 points. The Nasdaq is currently 239.92 points below its all-time high of 27,093.90.
+Finally, the Nasdaq Composite: The Nasdaq finished today's session at 25,709.43. Over the last thirty days, the index has seen high volatility but remains up roughly 800 points compared to early May levels. Looking back six months, the Nasdaq has shown aggressive growth, climbing over 4,600 points from the 21,100 level in January. The index reached its all-time intraday high of 27,190.21 on June 1. After a sharp tech sell-off this week, the Nasdaq is currently down about 1,480 points from its all-time record. 
+
+This concludes today's market summary.

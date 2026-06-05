@@ -1,11 +1,9 @@
-Thursday May 28, 2026 by Gemini A.I.
+Thursday June 4, 2026 by Gemini A.I.
 
-Here is your financial market summary for today. The major United States stock indexes experienced a significant rally, driven by strong corporate earnings and positive economic sentiment. All three major indexes closed at new record levels.
+Here is your financial market summary for the latest market close.
 
-Starting with the Dow Jones Industrial Average, the index closed today at 50,668.97. Looking at the historical context, the Dow is up approximately 4.2 percent over the last 30 days. Over the last 6 months, it has climbed substantially, up about 18.5 percent. With today's gains, the Dow Jones has reached a brand new all-time high.
+The Dow Jones Industrial Average closed at 51,220.92. Over the last 30 days, the Dow is up by 1,922.67 points. Looking back 6 months, the index has gained 3,369.98 points. The Dow is currently 341.01 points below its all-time high of 51,561.93.
 
-Moving to the S and P 500, the index closed at 7,563.63. Over the past 30 days, the S and P 500 is up 5.97 percent. Its 6-month performance is even more impressive, showing an increase of 30.8 percent. Today's closing value marks a new all-time high for the index.
+The S and P 500 closed at 7,584.31. In the last 30 days, the index is up by 325.09 points. Over the past 6 months, it has increased by 727.19 points. The S and P 500 is currently 25.47 points below its all-time high of 7,609.78.
 
-Finally, the Nasdaq Composite closed at 26,917.47. Over the past 30 days, the Nasdaq is up approximately 8.5 percent. When looking back over the last 6 months, the technology-heavy index has surged by 38.2 percent. Just like the other major indexes, the Nasdaq achieved a new all-time high at today's close.
-
-In summary, the market continues a robust upward trend, with the Dow, S and P 500, and Nasdaq all breaking previous records and showing strong positive growth across both the one-month and six-month timeframes.
+The Nasdaq Composite closed at 26,853.98. Over the last 30 days, the Nasdaq is up by 1,527.85 points. Over the past 6 months, the index has climbed 3,348.84 points. The Nasdaq is currently 239.92 points below its all-time high of 27,093.90.
