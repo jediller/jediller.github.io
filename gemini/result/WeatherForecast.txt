@@ -1,23 +1,63 @@
-Weather Forecast for Friday June 5, 2026 by Gemini A.I.
-The expected high temperature is 93 degrees Fahrenheit, occurring around 4:00 PM. The expected low temperature is 66 degrees Fahrenheit, occurring around 6:00 AM. The chance of precipitation is 2 percent, and we are expected to receive zero inches of precipitation.
+**Weather Forecast for Saturday, June 6, 2026 by Gemini A.I.**
+Expected High Temperature: 95 degrees Fahrenheit
+Expected Time of High Temperature: 3:00 PM
+Expected Low Temperature: 64 degrees Fahrenheit
+Expected Time of Low Temperature: 6:00 AM
+Chance of Precipitation: 10 percent
+Expected Amount of Precipitation: 0.00 inches
 
-Saturday June 6, 2026.
-The expected high temperature is 94 degrees Fahrenheit, occurring around 4:00 PM. The expected low temperature is 69 degrees Fahrenheit, occurring around 6:00 AM. The chance of precipitation is 1 percent, and we are expected to receive zero inches of precipitation.
+**Weather Forecast for Sunday, June 7, 2026**
+Expected High Temperature: 96 degrees Fahrenheit
+Expected Time of High Temperature: 4:00 PM
+Expected Low Temperature: 73 degrees Fahrenheit
+Expected Time of Low Temperature: 6:00 AM
+Chance of Precipitation: 10 percent
+Expected Amount of Precipitation: 0.00 inches
 
-Sunday June 7, 2026.
-The expected high temperature is 97 degrees Fahrenheit, occurring around 4:00 PM. The expected low temperature is 72 degrees Fahrenheit, occurring around 6:00 AM. The chance of precipitation is 12 percent, and we are expected to receive zero inches of precipitation.
+**Weather Forecast for Monday, June 8, 2026**
+Expected High Temperature: 94 degrees Fahrenheit
+Expected Time of High Temperature: 3:00 PM
+Expected Low Temperature: 66 degrees Fahrenheit
+Expected Time of Low Temperature: 5:00 AM
+Chance of Precipitation: 65 percent
+Expected Amount of Precipitation: 0.25 inches
 
-Monday June 8, 2026.
-The expected high temperature is 92 degrees Fahrenheit, occurring around 4:00 PM. The expected low temperature is 66 degrees Fahrenheit, occurring around 6:00 AM. The chance of precipitation is 88 percent, and we are expected to receive light amounts of precipitation.
+**Weather Forecast for Tuesday, June 9, 2026**
+Expected High Temperature: 89 degrees Fahrenheit
+Expected Time of High Temperature: 4:00 PM
+Expected Low Temperature: 66 degrees Fahrenheit
+Expected Time of Low Temperature: 6:00 AM
+Chance of Precipitation: 20 percent
+Expected Amount of Precipitation: 0.00 inches
 
-Tuesday June 9, 2026.
-The expected high temperature is 87 degrees Fahrenheit, occurring around 4:00 PM. The expected low temperature is 65 degrees Fahrenheit, occurring around 6:00 AM. The chance of precipitation is 25 percent, and we are expected to receive trace amounts of precipitation.
+**Weather Forecast for Wednesday, June 10, 2026**
+Expected High Temperature: 86 degrees Fahrenheit
+Expected Time of High Temperature: 3:00 PM
+Expected Low Temperature: 69 degrees Fahrenheit
+Expected Time of Low Temperature: 5:00 AM
+Chance of Precipitation: 35 percent
+Expected Amount of Precipitation: 0.05 inches
 
-Wednesday June 10, 2026.
-The expected high temperature is 90 degrees Fahrenheit, occurring around 4:00 PM. The expected low temperature is 66 degrees Fahrenheit, occurring around 6:00 AM. The chance of precipitation is 13 percent, and we are expected to receive zero inches of precipitation.
+**Weather Forecast for Thursday, June 11, 2026**
+Expected High Temperature: 89 degrees Fahrenheit
+Expected Time of High Temperature: 4:00 PM
+Expected Low Temperature: 72 degrees Fahrenheit
+Expected Time of Low Temperature: 6:00 AM
+Chance of Precipitation: 40 percent
+Expected Amount of Precipitation: 0.10 inches
 
-Thursday June 11, 2026.
-The expected high temperature is 90 degrees Fahrenheit, occurring around 4:00 PM. The expected low temperature is 68 degrees Fahrenheit, occurring around 6:00 AM. The chance of precipitation is 55 percent, and we are expected to receive moderate amounts of precipitation.
+**Weather Forecast for Friday, June 12, 2026**
+Expected High Temperature: 92 degrees Fahrenheit
+Expected Time of High Temperature: 3:00 PM
+Expected Low Temperature: 73 degrees Fahrenheit
+Expected Time of Low Temperature: 5:00 AM
+Chance of Precipitation: 35 percent
+Expected Amount of Precipitation: 0.05 inches
 
-Friday June 12, 2026.
-The expected high temperature is 94 degrees Fahrenheit, occurring around 4:00 PM. The expected low temperature is 72 degrees Fahrenheit, occurring around 6:00 AM. The chance of precipitation is 69 percent, and we are expected to receive moderate amounts of precipitation.
+**Weather Forecast for Saturday, June 13, 2026**
+Expected High Temperature: 91 degrees Fahrenheit
+Expected Time of High Temperature: 4:00 PM
+Expected Low Temperature: 72 degrees Fahrenheit
+Expected Time of Low Temperature: 6:00 AM
+Chance of Precipitation: 20 percent
+Expected Amount of Precipitation: 0.00 inches
