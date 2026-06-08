@@ -1,11 +1,9 @@
-Sunday June 7, 2026 by Gemini A.I.
+Monday June 8, 2026 by Gemini A.I.
 
-Here is your summary of the financial news and latest stock market closing results. 
+Here is your financial market summary for today.
 
-The Dow Jones Industrial Average closed at 50,866.78. Over the last 30 days, the Dow is up by approximately 1,932 points. Looking back over the last 6 months, the index is up by about 2,627 points. Currently, the Dow Jones is 695 points below its all time high of 51,561.93.
+The Dow Jones Industrial Average closed at 50,786.01. Over the last 30 days, the index is up 3.3 percent. Over the last 6 months, it has gained 12.9 percent. The Dow currently sits about 1.7 percent below its all-time high of 51,660.40.
 
-The S and P 500 closed at 7,383.74. Over the last 30 days, the index is down by 196 points. However, over the past 6 months, the S and P 500 is up by 514 points. Its current position is 237 points below its all time high of 7,620.90.
+The S&P 500 index closed at 7,405.73. Over the past 30 days, the index has seen a slight decline of 0.1 percent. However, over the last 6 months, it is up a strong 17.6 percent. The S&P 500 is currently trading about 2.8 percent below its all-time high of 7,620.90.
 
-The Nasdaq Composite closed at 25,709.43. In the last 30 days, the Nasdaq is down by 1,141 points. Over the last 6 months, the index is up by 2,489 points. The Nasdaq is currently 1,384 points below its all time high of 27,093.91.
-
-This concludes your financial market summary.
+The Nasdaq Composite closed at 25,929.66. Over the last 30 days, the Nasdaq is down slightly by 0.1 percent. Over the last 6 months, the index has climbed 12.9 percent. It currently rests about 4.6 percent below its all-time high of 27,190.21.
