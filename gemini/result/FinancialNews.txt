@@ -1,11 +1,12 @@
-Tuesday June 9, 2026 by Gemini A.I.
+Wednesday June 10, 2026 by Gemini A.I.
 
-Here is the summary of the latest financial news and stock market close results. 
+Here is your financial market summary based on the latest closing results.
 
-The Dow Jones Industrial Average closed at 50,786.01. The index has seen positive momentum recently, up 2.37 percent over the last 30 days and up 6.38 percent over the past 6 months. It crossed the historic 50,000 milestone recently and remains very close to the all-time high it established in early June 2026.
+Dow Jones Industrial Average
+The Dow Jones closed at 50,872.11. Over the last 30 days, the index has experienced some volatility but generally trended upward, fluctuating between roughly 49,300 and 51,600. Looking back over the past 6 months, the Dow has performed strongly, rising approximately 7.8 percent since the start of the year. The index is currently sitting about 690 points below its all-time high record of 51,561.93, which was achieved recently on June 4, 2026.
 
-The S and P 500 index ended the session at 7,405.73. Over the last 30 days, the index is down approximately 2.3 percent following a recent rotation out of semiconductor and technology stocks. However, looking at a 6-month horizon, the S and P 500 has maintained strong momentum, up 8.17 percent. The index is currently sitting about 2.7 percent below its all-time closing high of 7,609.78, which was set just a week ago on June 2, 2026.
+S&P 500
+The S&P 500 finished the trading day at 7,386.65. In the last 30 days, the index has faced downward pressure, declining by approximately 2.1 percent. Despite this recent pullback, the 6-month historical context remains very positive, with the index up roughly 6.6 percent year-to-date. Currently, the S&P 500 is positioned about 234 points below its all-time high of 7,620.90, which was reached on June 2, 2026.
 
-The Nasdaq Composite closed at 25,929.66. It experienced a slight dip, down 1.21 percent over the last 30 days due to early June profit-taking in the tech sector. Despite this short-term volatility, the Nasdaq is up an impressive 10.12 percent over the last 6 months. Like the other major indexes, it reached a record all-time high in early June 2026, but is currently hovering just below that peak after dropping over 1,100 points during a recent market pullback.
-
-Overall, the 6-month trend remains largely positive across all three major indices despite some recent short-term volatility.
+Nasdaq Composite
+The Nasdaq closed at 25,678.82. Over the past 30 days, the tech-heavy index has seen significant sell-offs, resulting in a decline of approximately 6.7 percent for the month so far. However, over the broader 6-month timeline, the Nasdaq is still up roughly 10.5 percent year-to-date, driven largely by earlier gains in the technology and artificial intelligence sectors. The index is currently resting approximately 1,415 points below its all-time closing high of 27,093.90, set on June 2, 2026.
