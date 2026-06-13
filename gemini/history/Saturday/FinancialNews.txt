@@ -1,11 +1,11 @@
-Friday June 5, 2026 by Gemini A.I.
+Friday June 12, 2026 by Gemini A.I.
 
-Here is your financial market summary for today. The major indices have seen significant movement recently, reaching historic milestones before pulling back.
+Here is your summary of the latest financial news and market close results. The major US indices showed positive movement today, influenced by easing global tensions and the highly anticipated market debut of SpaceX.
 
-Starting with the Dow Jones Industrial Average: The Dow closed today at 50,866.78. Looking at the last thirty days, the index is up roughly 1,925 points from early May levels. Over the last six months, it has experienced a strong bullish trend, gaining approximately 7.3 percent since the start of the year. The Dow is currently sitting just below its all-time high of 51,561.93, which it achieved yesterday, June 4. Following today's trading, it is currently down about 695 points from that record peak.
+Starting with the Dow Jones Industrial Average, the index closed today at 51,202.26. Over the last 30 days, the Dow is up approximately 3.7 percent. Looking back over the past 6 months, the index has gained about 5.8 percent, passing the historic 50,000 milestone earlier this year. Currently, the Dow is sitting slightly below its all-time high of 51,561.93, which it achieved recently on June 4, 2026.
 
-Moving to the S and P 500: The index closed today at 7,384.00. Over the past thirty days, the S and P 500 has managed a modest gain of approximately 0.25 percent. Over the last six months, performance has been exceptionally strong, up nearly 8 percent since the beginning of the year, rising from the 6,800 level. The S and P 500 reached its all-time closing high of 7,609.78 on June 2. The index is currently positioned about 225 points below its all-time high.
+Moving to the S and P 500, the index finished the day at 7,431.46. Over the last 30 days, it has seen a slight decline, down about 0.16 percent following a brief period of market consolidation. However, over the past 6 months, the S and P 500 has been performing well, showing a solid gain of 8.6 percent. The index is currently resting below its all-time high of 7,620.90, which it reached on June 2, 2026.
 
-Finally, the Nasdaq Composite: The Nasdaq finished today's session at 25,709.43. Over the last thirty days, the index has seen high volatility but remains up roughly 800 points compared to early May levels. Looking back six months, the Nasdaq has shown aggressive growth, climbing over 4,600 points from the 21,100 level in January. The index reached its all-time intraday high of 27,190.21 on June 1. After a sharp tech sell-off this week, the Nasdaq is currently down about 1,480 points from its all-time record. 
+Finally, the Nasdaq Composite closed at 25,888.84. In the short term, the Nasdaq has experienced a pullback, dropping 4.02 percent over the last 30 days due to a recent valuation reset in technology and artificial intelligence stocks. Despite this recent dip, it remains a strong performer over the longer term, up 11.39 percent over the past 6 months. The Nasdaq also hit its all-time high on June 2, 2026, reaching 27,093.90, and is currently trading below that record peak.
 
-This concludes today's market summary.
+Overall, the markets continue to digest recent record highs, balancing strong six-month growth against minor short-term volatility in the broader technology sector.
