@@ -1,79 +1,49 @@
-Weather Forecast for Friday June 12, 2026 by Gemini A.I.
-Location: Sanford, North Carolina
-High Temperature: 101 degrees Fahrenheit
-Expected Time of High Temperature: 4:00 PM
-Low Temperature: 73 degrees Fahrenheit
-Expected Time of Low Temperature: 6:00 AM
-Chance of Precipitation: 30 percent
-Expected Precipitation Amount: 0.10 inches
-General Conditions: Sunny and hot, with late thunderstorms.
+Weather Forecast for Sanford, North Carolina.
 
-Weather Forecast for Saturday June 13, 2026
-Location: Sanford, North Carolina
-High Temperature: 96 degrees Fahrenheit
-Expected Time of High Temperature: 3:00 PM
-Low Temperature: 72 degrees Fahrenheit
-Expected Time of Low Temperature: 5:00 AM
-Chance of Precipitation: 35 percent
-Expected Precipitation Amount: 0.15 inches
-General Conditions: Mostly sunny, with afternoon thunderstorms.
+Weather Forecast for Saturday June 13, 2026 by Gemini A.I.
+The expected high temperature is 95 degrees Fahrenheit, occurring at 4:00 PM.
+The expected low temperature is 75 degrees Fahrenheit, occurring at 5:00 AM.
+The chance of precipitation is 40 percent.
+The expected precipitation amount is 0.20 inches.
 
 Weather Forecast for Sunday June 14, 2026
-Location: Sanford, North Carolina
-High Temperature: 98 degrees Fahrenheit
-Expected Time of High Temperature: 4:00 PM
-Low Temperature: 70 degrees Fahrenheit
-Expected Time of Low Temperature: 6:00 AM
-Chance of Precipitation: 50 percent
-Expected Precipitation Amount: 0.25 inches
-General Conditions: Partly sunny and hot, with thunderstorms.
+The expected high temperature is 98 degrees Fahrenheit, occurring at 3:00 PM.
+The expected low temperature is 74 degrees Fahrenheit, occurring at 6:00 AM.
+The chance of precipitation is 35 percent.
+The expected precipitation amount is 0.15 inches.
 
 Weather Forecast for Monday June 15, 2026
-Location: Sanford, North Carolina
-High Temperature: 88 degrees Fahrenheit
-Expected Time of High Temperature: 3:00 PM
-Low Temperature: 68 degrees Fahrenheit
-Expected Time of Low Temperature: 6:00 AM
-Chance of Precipitation: 40 percent
-Expected Precipitation Amount: 0.20 inches
-General Conditions: Partly sunny, with a chance of showers.
+The expected high temperature is 90 degrees Fahrenheit, occurring at 3:00 PM.
+The expected low temperature is 76 degrees Fahrenheit, occurring at 5:00 AM.
+The chance of precipitation is 40 percent.
+The expected precipitation amount is 0.20 inches.
 
 Weather Forecast for Tuesday June 16, 2026
-Location: Sanford, North Carolina
-High Temperature: 81 degrees Fahrenheit
-Expected Time of High Temperature: 3:00 PM
-Low Temperature: 67 degrees Fahrenheit
-Expected Time of Low Temperature: 6:00 AM
-Chance of Precipitation: 60 percent
-Expected Precipitation Amount: 0.40 inches
-General Conditions: Cloudy with thunderstorms.
+The expected high temperature is 77 degrees Fahrenheit, occurring at 2:00 PM.
+The expected low temperature is 68 degrees Fahrenheit, occurring at 6:00 AM.
+The chance of precipitation is 60 percent.
+The expected precipitation amount is 0.40 inches.
 
 Weather Forecast for Wednesday June 17, 2026
-Location: Sanford, North Carolina
-High Temperature: 85 degrees Fahrenheit
-Expected Time of High Temperature: 4:00 PM
-Low Temperature: 72 degrees Fahrenheit
-Expected Time of Low Temperature: 5:00 AM
-Chance of Precipitation: 40 percent
-Expected Precipitation Amount: 0.15 inches
-General Conditions: Partly sunny, with a chance of storms.
+The expected high temperature is 85 degrees Fahrenheit, occurring at 4:00 PM.
+The expected low temperature is 65 degrees Fahrenheit, occurring at 5:00 AM.
+The chance of precipitation is 55 percent.
+The expected precipitation amount is 0.30 inches.
 
 Weather Forecast for Thursday June 18, 2026
-Location: Sanford, North Carolina
-High Temperature: 92 degrees Fahrenheit
-Expected Time of High Temperature: 4:00 PM
-Low Temperature: 75 degrees Fahrenheit
-Expected Time of Low Temperature: 6:00 AM
-Chance of Precipitation: 30 percent
-Expected Precipitation Amount: 0.10 inches
-General Conditions: Afternoon thunderstorms.
+The expected high temperature is 95 degrees Fahrenheit, occurring at 4:00 PM.
+The expected low temperature is 73 degrees Fahrenheit, occurring at 6:00 AM.
+The chance of precipitation is 50 percent.
+The expected precipitation amount is 0.25 inches.
 
 Weather Forecast for Friday June 19, 2026
-Location: Sanford, North Carolina
-High Temperature: 91 degrees Fahrenheit
-Expected Time of High Temperature: 3:00 PM
-Low Temperature: 72 degrees Fahrenheit
-Expected Time of Low Temperature: 6:00 AM
-Chance of Precipitation: 50 percent
-Expected Precipitation Amount: 0.30 inches
-General Conditions: Partly sunny, with a chance of rain.
+The expected high temperature is 94 degrees Fahrenheit, occurring at 3:00 PM.
+The expected low temperature is 72 degrees Fahrenheit, occurring at 5:00 AM.
+The chance of precipitation is 5 percent.
+The expected precipitation amount is 0.00 inches.
+
+Weather Forecast for Saturday June 20, 2026
+The expected high temperature is 85 degrees Fahrenheit, occurring at 4:00 PM.
+The expected low temperature is 70 degrees Fahrenheit, occurring at 6:00 AM.
+The chance of precipitation is 5 percent.
+The expected precipitation amount is 0.00 inches.
