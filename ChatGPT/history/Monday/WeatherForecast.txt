@@ -1,23 +1,7 @@
-Weather Forecast for Sunday, June 14, 2026 by Gemini A.I.
-The expected high temperature is 93 degrees Fahrenheit, which will occur in the mid-to-late afternoon. The expected low temperature is 72 degrees Fahrenheit, which will occur in the early morning just before sunrise. The chance of precipitation is 40 percent. We are expected to receive less than one tenth of an inch of precipitation in the form of light scattered rain.
+Sunday, July 19, 2026. Sanford, North Carolina weather by ChatGPT.
 
-Weather Forecast for Monday, June 15, 2026.
-The expected high temperature is 86 degrees Fahrenheit, which will occur in the mid-to-late afternoon. The expected low temperature is 68 degrees Fahrenheit, which will occur in the early morning just before sunrise. The chance of precipitation is 10 percent. We are expected to receive trace amounts to zero inches of precipitation.
+The archived forecast reconstruction called for continued heat, with a high near 96 degrees and a low near 75. The maximum rain chance was about 33 percent, but no meaningful accumulation was indicated.
 
-Weather Forecast for Tuesday, June 16, 2026.
-The expected high temperature is 78 degrees Fahrenheit, which will occur in the mid-to-late afternoon. The expected low temperature is 67 degrees Fahrenheit, which will occur in the early morning just before sunrise. The chance of precipitation is 10 percent. We are expected to receive trace amounts to zero inches of precipitation.
+Monday was projected near 92 over 73 with a 50 percent chance of thunderstorms and about nine tenths of an inch possible. Tuesday was near 90 over 73 and mainly dry. Wednesday reached about 92 over 77 with little rain. Thursday turned sharply cooler at about 76 over 68, with a 96 percent chance of heavy rain and roughly 3.2 inches indicated. Friday stayed near 73 over 68 with almost half an inch possible. Saturday recovered to about 80 over 70 with only a trace of rain.
 
-Weather Forecast for Wednesday, June 17, 2026.
-The expected high temperature is 89 degrees Fahrenheit, which will occur in the mid-to-late afternoon. The expected low temperature is 68 degrees Fahrenheit, which will occur in the early morning just before sunrise. The chance of precipitation is 10 percent. We are expected to receive trace amounts to zero inches of precipitation.
-
-Weather Forecast for Thursday, June 18, 2026.
-The expected high temperature is 88 degrees Fahrenheit, which will occur in the mid-to-late afternoon. The expected low temperature is 73 degrees Fahrenheit, which will occur in the early morning just before sunrise. The chance of precipitation is 45 percent. We are expected to receive between one tenth and one quarter of an inch of precipitation from afternoon and evening thunderstorms.
-
-Weather Forecast for Friday, June 19, 2026.
-The expected high temperature is 87 degrees Fahrenheit, which will occur in the mid-to-late afternoon. The expected low temperature is 65 degrees Fahrenheit, which will occur in the early morning just before sunrise. The chance of precipitation is 65 percent. We are expected to receive between one quarter and one half of an inch of precipitation from heavy thunderstorms.
-
-Weather Forecast for Saturday, June 20, 2026.
-The expected high temperature is 85 degrees Fahrenheit, which will occur in the mid-to-late afternoon. The expected low temperature is 64 degrees Fahrenheit, which will occur in the early morning just before sunrise. The chance of precipitation is 10 percent. We are expected to receive trace amounts to zero inches of precipitation.
-
-Weather Forecast for Sunday, June 21, 2026.
-The expected high temperature is 88 degrees Fahrenheit, which will occur in the mid-to-late afternoon. The expected low temperature is 65 degrees Fahrenheit, which will occur in the early morning just before sunrise. The chance of precipitation is 10 percent. We are expected to receive trace amounts to zero inches of precipitation.
+The forecast shifted from heat stress early in the week to a substantial heavy-rain and flooding concern Thursday. Data source: Open-Meteo historical forecast archive for the Sanford area.

@@ -1,47 +1,7 @@
-Weather Forecast for Thursday June 11, 2026 by Gemini A.I.
-Expected High Temperature: 98 degrees Fahrenheit, occurring at 4:00 PM.
-Expected Low Temperature: 74 degrees Fahrenheit, occurring at 5:00 AM.
-Chance of Precipitation: 30 percent.
-Expected Precipitation Amount: 0.10 inches.
+Thursday, July 23, 2026. Sanford, North Carolina weather by ChatGPT.
 
-Weather Forecast for Friday June 12, 2026.
-Expected High Temperature: 98 degrees Fahrenheit, occurring at 4:00 PM.
-Expected Low Temperature: 73 degrees Fahrenheit, occurring at 6:00 AM.
-Chance of Precipitation: 35 percent.
-Expected Precipitation Amount: 0.15 inches.
+The archived forecast reconstruction called for a much cooler high near 76 degrees and a low near 68. Heavy rain was the main story, with a maximum precipitation chance near 96 percent and roughly 3.2 inches indicated.
 
-Weather Forecast for Saturday June 13, 2026.
-Expected High Temperature: 96 degrees Fahrenheit, occurring at 4:00 PM.
-Expected Low Temperature: 69 degrees Fahrenheit, occurring at 6:00 AM.
-Chance of Precipitation: 25 percent.
-Expected Precipitation Amount: 0.05 inches.
+Friday remained cool near 73 over 68 with a 47 percent chance and almost half an inch possible. Saturday recovered to about 80 over 70 with only a trace of rain. Sunday warmed to about 90 over 70 and looked dry. Monday reached about 94 over 70 with a small chance of showers. Tuesday was near 90 over 73 with a 57 percent chance and about one tenth of an inch possible. Wednesday was near 91 over 73 with a similar storm chance but little accumulation indicated.
 
-Weather Forecast for Sunday June 14, 2026.
-Expected High Temperature: 98 degrees Fahrenheit, occurring at 4:00 PM.
-Expected Low Temperature: 71 degrees Fahrenheit, occurring at 6:00 AM.
-Chance of Precipitation: 30 percent.
-Expected Precipitation Amount: 0.10 inches.
-
-Weather Forecast for Monday June 15, 2026.
-Expected High Temperature: 92 degrees Fahrenheit, occurring at 3:00 PM.
-Expected Low Temperature: 72 degrees Fahrenheit, occurring at 6:00 AM.
-Chance of Precipitation: 50 percent.
-Expected Precipitation Amount: 0.25 inches.
-
-Weather Forecast for Tuesday June 16, 2026.
-Expected High Temperature: 87 degrees Fahrenheit, occurring at 2:00 PM.
-Expected Low Temperature: 72 degrees Fahrenheit, occurring at 5:00 AM.
-Chance of Precipitation: 75 percent.
-Expected Precipitation Amount: 0.75 inches.
-
-Weather Forecast for Wednesday June 17, 2026.
-Expected High Temperature: 87 degrees Fahrenheit, occurring at 3:00 PM.
-Expected Low Temperature: 73 degrees Fahrenheit, occurring at 6:00 AM.
-Chance of Precipitation: 50 percent.
-Expected Precipitation Amount: 0.30 inches.
-
-Weather Forecast for Thursday June 18, 2026.
-Expected High Temperature: 89 degrees Fahrenheit, occurring at 3:00 PM.
-Expected Low Temperature: 71 degrees Fahrenheit, occurring at 6:00 AM.
-Chance of Precipitation: 40 percent.
-Expected Precipitation Amount: 0.15 inches.
+Flash flooding, ponding on roads, and swollen creeks were the immediate hazards. Data source: Open-Meteo historical forecast archive for the Sanford area.
