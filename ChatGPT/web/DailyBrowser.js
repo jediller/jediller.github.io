@@ -1,11 +1,20 @@
 (() => {
   "use strict";
 
-  const WEEKDAYS = ["Current", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
   const REPORT_BASE = "../result/";
   const HISTORY_BASE = "../history/";
   const QUERY_BASE = "../query/";
   const MANIFEST_URL = "DailyBrowserManifest.json";
+  const HISTORY_INDEX_URL = "../history/index.json";
+  const FALLBACK_HISTORY = [
+    { folder: "Wednesday", label: "Wednesday history" },
+    { folder: "Thursday", label: "Thursday history" },
+    { folder: "Friday", label: "Friday history" },
+    { folder: "Saturday", label: "Saturday history" },
+    { folder: "Sunday", label: "Sunday history" },
+    { folder: "Monday", label: "Monday history" },
+    { folder: "Tuesday", label: "Tuesday history" }
+  ];
 
   /*
    * DailyBrowser.js
@@ -42,6 +51,7 @@
   };
 
   let manifest = [];
+  let historyEntries = [];
   let voices = [];
   let currentReportText = "";
   let currentAskText = "";
@@ -90,6 +100,35 @@
     }
   }
 
+  async function loadHistoryIndex() {
+    try {
+      const response = await fetch(HISTORY_INDEX_URL, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Could not load ${HISTORY_INDEX_URL}`);
+      }
+
+      const entries = await response.json();
+      if (!Array.isArray(entries)) {
+        throw new Error("History index is not a list.");
+      }
+
+      historyEntries = entries.filter((entry) => {
+        return entry &&
+          typeof entry.folder === "string" &&
+          entry.folder.trim() &&
+          typeof entry.label === "string" &&
+          entry.label.trim();
+      });
+
+      if (historyEntries.length === 0) {
+        throw new Error("History index contains no valid entries.");
+      }
+    } catch (error) {
+      historyEntries = FALLBACK_HISTORY;
+      setStatus("Using the weekday history list because the dated archive index was not loaded.");
+    }
+  }
+
   function populateTopics() {
     els.topicSelect.innerHTML = "";
     for (const item of manifest) {
@@ -102,12 +141,27 @@
 
   function populateVersions() {
     els.versionSelect.innerHTML = "";
-    for (const day of WEEKDAYS) {
+
+    const currentOption = document.createElement("option");
+    currentOption.value = "Current";
+    currentOption.textContent = "Current result";
+    els.versionSelect.appendChild(currentOption);
+
+    for (const entry of historyEntries) {
       const option = document.createElement("option");
-      option.value = day;
-      option.textContent = day === "Current" ? "Current result" : `History: ${day}`;
+      option.value = entry.folder;
+      option.textContent = `History: ${entry.label}`;
       els.versionSelect.appendChild(option);
     }
+  }
+
+  function versionLabel(version) {
+    if (version === "Current") {
+      return "Current";
+    }
+
+    const entry = historyEntries.find((candidate) => candidate.folder === version);
+    return entry ? entry.label : version;
   }
 
   function selectedTopic() {
@@ -122,8 +176,9 @@
 
     const reportUrl = fileUrlForReport(topic.file, version);
     const askUrl = fileUrlForAsk(topic.file);
+    const displayVersion = versionLabel(version);
 
-    els.reportTitle.textContent = `${topic.title} — ${version === "Current" ? "Current" : version}`;
+    els.reportTitle.textContent = `${topic.title} — ${displayVersion}`;
     els.askTitle.textContent = `${topic.title} — Ask`;
     els.reportText.textContent = "Loading report...";
     els.askText.textContent = "Loading ask...";
@@ -149,7 +204,7 @@
       }
 
       if (report.status === "fulfilled") {
-        setStatus(`Loaded ${topic.title} from ${version === "Current" ? "current results" : version + " history"}.`);
+        setStatus(`Loaded ${topic.title} from ${version === "Current" ? "current results" : displayVersion + " history"}.`);
       } else {
         setStatus(`Report not available: ${report.reason.message}`);
       }
@@ -404,7 +459,7 @@
   }
 
   async function init() {
-    await loadManifest();
+    await Promise.all([loadManifest(), loadHistoryIndex()]);
     populateTopics();
     populateVersions();
     refreshVoices();

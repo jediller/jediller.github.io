@@ -1,0 +1,7 @@
+Monday, July 20, 2026. Sanford, North Carolina weather by ChatGPT.
+
+The archived forecast reconstruction called for a high near 92 degrees and a low near 73. Thunderstorms were possible, with a maximum precipitation chance near 50 percent and about nine tenths of an inch indicated.
+
+Tuesday was projected near 90 over 73 and mainly dry. Wednesday climbed to about 92 over 77 with little rain expected. Thursday changed dramatically, with a high near 76, a low near 68, a 96 percent rain chance, and roughly 3.2 inches indicated. Friday remained cool near 73 over 68 with almost half an inch possible. Saturday recovered to about 80 over 70 with only a trace of rain, and Sunday warmed to about 90 over 70 under mainly dry conditions.
+
+Localized flooding and lightning were the key concerns, especially in the Thursday heavy-rain signal. Data source: Open-Meteo historical forecast archive for the Sanford area.
