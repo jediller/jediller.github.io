@@ -1,0 +1,1 @@
+Daily News summary of events in the last 24 hours. Make the first line of the report today's day and date followed by ChatGPT, for example Wednesday June 18, 2025 by ChatGPT, and assume this text is to be read by automation via TTS, so keep things in plain-text readable format. Please limit the response to 2500 characters.

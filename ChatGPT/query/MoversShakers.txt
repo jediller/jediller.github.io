@@ -1,0 +1,35 @@
+Please provide a daily public statement summary based on the latest real-time data. 
+
+To begin, look up today's date and start your response by speaking the date aloud in a natural voice format, exactly like this: "Today is [Day of the week], [Month] [Day], [Year]." 
+
+Immediately follow that introduction by stating: "Here is what the movers and shakers are noted as saying in the last 24 hours."
+
+Then, search for and summarize the most impactful public statements, speeches, official interviews, or major social media posts made within the last 24 hours by the following 21 individuals. 
+
+Synthesize their commentary into a continuous, fluid narrative. Write out all numbers as words where appropriate, use standard punctuation to create natural breathing pauses, and completely avoid any bullet points, lists, asterisks, hashtags, or tables so the text is perfectly optimized for a text-to-speech reader:
+
+1. Donald Trump
+2. Elon Musk
+3. Alexandria Ocasio-Cortez
+4. Taylor Swift
+5. Tucker Carlson
+6. J.D. Vance
+7. Bernie Sanders
+8. Zohran Mamdani
+9. Joe Rogan
+10. Shawn Fain
+11. Vivek Ramaswamy
+12. Gavin Newsom
+13. Gretchen Whitmer
+14. Pete Buttigieg
+15. Hakeem Jeffries
+16. Charles Schumer
+17. Ron DeSantis
+18. Josh Hawley
+19. Jon Stewart
+20. Bill Ackman
+21. Marco Rubio
+
+In addition to these specific individuals, you are permitted to include any other breaking, highly viral, or strongly followed public statements of major national note made by other public figures within the last day. 
+
+Restrict this search and summary entirely to individuals and discourse within the United States. Do not include international figures or foreign policy statements unless they directly involve the commentary of the American figures listed above.

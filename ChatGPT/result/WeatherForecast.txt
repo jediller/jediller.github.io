@@ -1,0 +1,55 @@
+Weather Forecast for Thursday June 18, 2026 by Gemini A.I.
+Location: Sanford, North Carolina
+Expected High Temperature: 95 degrees Fahrenheit, expected to occur in the mid-afternoon.
+Expected Low Temperature: 73 degrees Fahrenheit, expected to occur in the early morning.
+Chance of Precipitation: 75 percent.
+Expected Precipitation Amount: One quarter to one half of an inch.
+
+Friday June 19, 2026
+Location: Sanford, North Carolina
+Expected High Temperature: 86 degrees Fahrenheit, expected to occur in the mid-afternoon.
+Expected Low Temperature: 62 degrees Fahrenheit, expected to occur in the early morning.
+Chance of Precipitation: 85 percent.
+Expected Precipitation Amount: One half to one inch.
+
+Saturday June 20, 2026
+Location: Sanford, North Carolina
+Expected High Temperature: 85 degrees Fahrenheit, expected to occur in the mid-afternoon.
+Expected Low Temperature: 63 degrees Fahrenheit, expected to occur in the early morning.
+Chance of Precipitation: 10 percent.
+Expected Precipitation Amount: Less than one tenth of an inch.
+
+Sunday June 21, 2026
+Location: Sanford, North Carolina
+Expected High Temperature: 89 degrees Fahrenheit, expected to occur in the mid-afternoon.
+Expected Low Temperature: 66 degrees Fahrenheit, expected to occur in the early morning.
+Chance of Precipitation: 25 percent.
+Expected Precipitation Amount: Less than one tenth of an inch.
+
+Monday June 22, 2026
+Location: Sanford, North Carolina
+Expected High Temperature: 87 degrees Fahrenheit, expected to occur in the mid-afternoon.
+Expected Low Temperature: 73 degrees Fahrenheit, expected to occur in the early morning.
+Chance of Precipitation: 45 percent.
+Expected Precipitation Amount: One tenth to one quarter of an inch.
+
+Tuesday June 23, 2026
+Location: Sanford, North Carolina
+Expected High Temperature: 89 degrees Fahrenheit, expected to occur in the mid-afternoon.
+Expected Low Temperature: 68 degrees Fahrenheit, expected to occur in the early morning.
+Chance of Precipitation: 10 percent.
+Expected Precipitation Amount: Less than one tenth of an inch.
+
+Wednesday June 24, 2026
+Location: Sanford, North Carolina
+Expected High Temperature: 85 degrees Fahrenheit, expected to occur in the mid-afternoon.
+Expected Low Temperature: 66 degrees Fahrenheit, expected to occur in the early morning.
+Chance of Precipitation: 10 percent.
+Expected Precipitation Amount: Less than one tenth of an inch.
+
+Thursday June 25, 2026
+Location: Sanford, North Carolina
+Expected High Temperature: 87 degrees Fahrenheit, expected to occur in the mid-afternoon.
+Expected Low Temperature: 67 degrees Fahrenheit, expected to occur in the early morning.
+Chance of Precipitation: 15 percent.
+Expected Precipitation Amount: Less than one tenth of an inch.
