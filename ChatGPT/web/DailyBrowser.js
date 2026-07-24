@@ -5,6 +5,7 @@
   const HISTORY_BASE = "../history/";
   const QUERY_BASE = "../query/";
   const MANIFEST_URL = "DailyBrowserManifest.json";
+  const CURRENT_INDEX_URL = "../result/index.json";
   const HISTORY_INDEX_URL = "../history/index.json";
   const FALLBACK_HISTORY = [
     { folder: "Wednesday", label: "Wednesday history" },
@@ -51,6 +52,7 @@
   };
 
   let manifest = [];
+  let currentEntry = { label: "Current" };
   let historyEntries = [];
   let voices = [];
   let currentReportText = "";
@@ -129,6 +131,23 @@
     }
   }
 
+  async function loadCurrentIndex() {
+    try {
+      const response = await fetch(CURRENT_INDEX_URL, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Could not load ${CURRENT_INDEX_URL}`);
+      }
+
+      const entry = await response.json();
+      if (!entry || typeof entry.label !== "string" || !entry.label.trim()) {
+        throw new Error("Current report index has no valid date label.");
+      }
+      currentEntry = entry;
+    } catch (error) {
+      currentEntry = { label: "Current" };
+    }
+  }
+
   function populateTopics() {
     els.topicSelect.innerHTML = "";
     for (const item of manifest) {
@@ -144,7 +163,9 @@
 
     const currentOption = document.createElement("option");
     currentOption.value = "Current";
-    currentOption.textContent = "Current result";
+    currentOption.textContent = currentEntry.label === "Current"
+      ? "Current result"
+      : `Current result: ${currentEntry.label}`;
     els.versionSelect.appendChild(currentOption);
 
     for (const entry of historyEntries) {
@@ -157,7 +178,9 @@
 
   function versionLabel(version) {
     if (version === "Current") {
-      return "Current";
+      return currentEntry.label === "Current"
+        ? "Current"
+        : `Current — ${currentEntry.label}`;
     }
 
     const entry = historyEntries.find((candidate) => candidate.folder === version);
@@ -459,7 +482,7 @@
   }
 
   async function init() {
-    await Promise.all([loadManifest(), loadHistoryIndex()]);
+    await Promise.all([loadManifest(), loadCurrentIndex(), loadHistoryIndex()]);
     populateTopics();
     populateVersions();
     refreshVoices();
