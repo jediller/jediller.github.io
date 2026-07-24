@@ -1,0 +1,280 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --border: #d9deea;
+  --accent: #355cc9;
+  --accent-strong: #2444a8;
+  --soft: #eef2ff;
+  --shadow: 0 16px 40px rgba(20, 32, 64, 0.12);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #e9edff 0, transparent 34rem), var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.site-header,
+.site-footer,
+.app-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: 2rem 0 1.25rem;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0.35rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.eyebrow {
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.subtitle,
+.site-footer,
+.status {
+  color: var(--muted);
+}
+
+.app-shell {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.controls-card,
+.tabs-card {
+  background: color-mix(in srgb, var(--card) 96%, transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.controls-card {
+  padding: 1rem;
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 700;
+}
+
+.field span {
+  font-size: 0.92rem;
+}
+
+select,
+input[type="range"] {
+  width: 100%;
+}
+
+select,
+button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font: inherit;
+}
+
+select {
+  min-height: 2.6rem;
+  padding: 0 0.8rem;
+  background: var(--card);
+  color: var(--text);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+button {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.95rem;
+  background: var(--accent);
+  color: white;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-strong);
+}
+
+button.secondary,
+button.ghost {
+  background: var(--soft);
+  color: var(--accent-strong);
+}
+
+button.secondary:hover,
+button.ghost:hover {
+  background: #dfe6ff;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.status {
+  margin: 0.8rem 0 0;
+  min-height: 1.5rem;
+}
+
+.tabs-card {
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.6rem;
+  background: rgba(238, 242, 255, 0.65);
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  background: transparent;
+  color: var(--muted);
+}
+
+.tab.active {
+  background: var(--card);
+  color: var(--accent-strong);
+  box-shadow: 0 6px 18px rgba(20, 32, 64, 0.08);
+}
+
+.panel {
+  display: none;
+  padding: 1rem;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.text-box {
+  min-height: 22rem;
+  max-height: 62vh;
+  overflow: auto;
+  margin: 0;
+  padding: 1rem;
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: calc(var(--radius) - 6px);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: clamp(0.95rem, 2.5vw, 1.06rem);
+}
+
+.site-footer {
+  padding: 0 0 2rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 860px) {
+  .control-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header,
+  .site-footer,
+  .app-shell {
+    width: min(100% - 1rem, 1100px);
+  }
+
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button-row button,
+  .panel-header button {
+    flex: 1 1 100%;
+  }
+
+  .panel-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tabs {
+    overflow-x: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1020;
+    --card: #111827;
+    --text: #eef2ff;
+    --muted: #aab3c5;
+    --border: #263249;
+    --accent: #91a7ff;
+    --accent-strong: #bdc8ff;
+    --soft: #1d2944;
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  }
+
+  body {
+    background: radial-gradient(circle at top left, #1f2b54 0, transparent 34rem), var(--bg);
+  }
+
+  select {
+    background: #0f172a;
+  }
+
+  button.secondary:hover,
+  button.ghost:hover {
+    background: #27365c;
+  }
+}
