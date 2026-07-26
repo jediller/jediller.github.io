@@ -28,5 +28,10 @@
     "id": "weather-forecast",
     "title": "Weather Forecast",
     "file": "WeatherForecast.txt"
+  },
+  {
+    "id": "on-this-date",
+    "title": "On This Date",
+    "file": "OnThisDate.txt"
   }
 ]
