@@ -1,0 +1,7 @@
+﻿Please provide a daily "On This Date in History" summary featuring three to four interesting, notable, or unusual historical events that occurred on today's calendar date in history across various eras, scientific discoveries, cultural milestones, and historical affairs.
+
+
+Formatting and Output Instructions:
+- Begin the report with today's date in full plain text, for example: "Sunday July 26, 2026 On This Date in History by Gemini A.I."
+- Present each historical event as a fluid, engaging narrative paragraph optimized for Text-To-Speech (TTS) reading without bullet points, asterisks, hashtags, or markdown formatting.
+- Target output length: Approximately 2500 to 3000 characters.
