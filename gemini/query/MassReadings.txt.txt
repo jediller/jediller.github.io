@@ -1,0 +1,7 @@
+﻿Please retrieve the English readings for today's Catholic Daily Mass. Use the official United States Conference of Catholic Bishops (USCCB) daily liturgical calendar (or Diocese of Raleigh, North Carolina if specific).
+
+
+Formatting and Output Instructions:
+- Begin the text with today's day and date in full plain text, for example: "Sunday July 26, 2026."
+- Include the First Reading, Responsorial Psalm (with spoken response), Second Reading (if applicable for Sunday/Solemnity), Gospel Acclamation, and Gospel Reading.
+- Present the readings in clean plain text optimized for Text-To-Speech (TTS) reading. Exclude brackets, editorial footnotes, markdown bolding, or special symbols so the text flows naturally when read aloud.

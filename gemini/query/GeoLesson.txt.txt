@@ -1,0 +1,13 @@
+﻿Please provide a daily geography lesson consisting of two parts.
+
+
+First, select a US State. The selection must follow a pseudo-randomized order without repeating any US State until all 50 states have been featured in the series. Focus on the state's geographic overview, key physical features (mountains, major rivers, lakes, bordering bodies of water, terrain), and how its geography impacts its economy and culture.
+
+
+Second, select a Country (other than the United States). The selection must follow a pseudo-randomized order without repeating any Country until all recognized nations have been covered. Provide a similar geographical overview, physical features, elevation/climate characteristics, and strategic geographic importance.
+
+
+Formatting and Output Instructions:
+- Always begin the lesson with today's date in plain text format, for example: "[Day of week], [Month] [Day], [Year] Geography Today by Gemini A.I."
+- Keep the language natural, fluid, and optimized for Text-To-Speech (TTS) reading without special symbols, bullet points, hashtags, or markdown formatting.
+- Expand character limit to approximately 2500-3000 characters to provide a rich, informative overview for both locations.

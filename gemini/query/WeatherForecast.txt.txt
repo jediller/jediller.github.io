@@ -1,0 +1,8 @@
+﻿Weather Forecast for Sanford, North Carolina.
+
+
+Formatting and Output Instructions:
+- Start with: "Weather Forecast for [Day of week], [Month] [Day], [Year] by Gemini A.I."
+- Provide expected high and low temperatures, timing of peak temperatures, chance of precipitation, and expected precipitation amount for today, followed by the forecast for each of the next seven days.
+- Present all days with full date formatting (e.g. "Monday July 27, 2026").
+- Keep the output in a clean, plain-text format optimized for Text-To-Speech (TTS) reading without markdown symbols or tables.

@@ -1,0 +1,8 @@
+﻿Daily public statement summary based on the latest real-time news and public commentary.
+
+
+Formatting and Output Instructions:
+- Start the response by stating the date aloud in natural voice format: "Today is [Day of the week], [Month] [Day], [Year]."
+- Immediately follow with: "Here is what the movers and shakers are noted as saying in the last 24 hours."
+- Search for and summarize impactful public statements, speeches, official interviews, or social media commentary made in the last 24 hours by prominent US leaders across politics, business, labor, and commentary (including figures such as Donald Trump, J.D. Vance, Marco Rubio, Bernie Sanders, Elon Musk, Shawn Fain, Alexandria Ocasio-Cortez, and other major national voices).
+- Synthesize commentary into continuous, fluid narrative paragraphs optimized for TTS reading. Write numbers out as words where appropriate, use standard punctuation for breathing pauses, and strictly avoid bullet points, lists, asterisks, or hashtags.

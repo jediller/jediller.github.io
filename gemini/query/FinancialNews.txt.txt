@@ -1,0 +1,8 @@
+﻿Summary of Financial News and market updates based on the latest market closing results.
+
+
+Formatting and Output Instructions:
+- Make the first line of the report today's day and date followed by "by Gemini A.I.", for example: "Sunday July 26, 2026 by Gemini A.I."
+- Assume this text will be read aloud via Text-To-Speech (TTS): keep formatting strictly plain-text without markdown, bolding, bullet points, or special characters.
+- Target output length: Approximately 3000 to 3500 characters.
+- Metrics to include: The Dow Jones Industrial Average, the S&P 500, and the Nasdaq Composite. For each index, provide context on 30-day performance, 6-month performance, and position relative to all-time highs. Include major market-moving factors such as interest rate expectations, oil prices, corporate earnings, and global economic sentiment.
