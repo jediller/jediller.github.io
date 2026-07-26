@@ -1,1 +1,7 @@
-Daily News summary of events in the last 24 hours. Make first line of the report today's day and date followed by Gemini A.I., for example Wednesday June 18, 2025 by Gemini A.I. and assume this text is to be read by automation via TTS, so keep things in plain text readable format. Please limit response to 2500 characters
+﻿Daily News summary of major national and international events from the last 24 hours.
+
+
+Formatting and Output Instructions:
+- Make the first line of the report today's day and date followed by "by Gemini A.I.", for example: "Sunday July 26, 2026 by Gemini A.I."
+- Optimize the text for automated Text-To-Speech (TTS) reading: write in clean, fluid plain-text paragraphs without markdown bolding, bullet points, asterisks, or hashtags.
+- Target output length: Approximately 3000 to 3500 characters, providing comprehensive coverage of key global headlines, geopolitical developments, domestic stories, and technological news.

@@ -1,1 +1,7 @@
-Please retrieve the readings in English for the Daily Catholic Mass that will be read today. One good source may be from the United States Conference of Catholic Bishops. On rare occassions, some Dioceses have different readings, if that is the case select the readings for the Catholic Diocese of Raleigh, North Carolina. Present these readings, in a text format, that will read text to audio by TTS. This is usually a one reading from either the Old or New Testament. Responses to the Reading, And a Reading from the Gospel. On Sundays, or special Holy Days there will be another reading before the Gospel Reading. Do not include this, or a similar comment in the final output. It does not make for good reading. They are formatted cleanly without special symbols, markdown bolding, or abbreviations so that your Text-To-Speech (TTS) software will read them naturally, including the spoken liturgical responses, however all start with the current day and date, in this format: Wednesday May 20, 2026.
+﻿Please retrieve the English readings for today's Catholic Daily Mass. Use the official United States Conference of Catholic Bishops (USCCB) daily liturgical calendar (or Diocese of Raleigh, North Carolina if specific).
+
+
+Formatting and Output Instructions:
+- Begin the text with today's day and date in full plain text, for example: "Sunday July 26, 2026."
+- Include the First Reading, Responsorial Psalm (with spoken response), Second Reading (if applicable for Sunday/Solemnity), Gospel Acclamation, and Gospel Reading.
+- Present the readings in clean plain text optimized for Text-To-Speech (TTS) reading. Exclude brackets, editorial footnotes, markdown bolding, or special symbols so the text flows naturally when read aloud.
