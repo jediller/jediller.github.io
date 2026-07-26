@@ -1,16 +1,12 @@
 #!/bin/bash
-# geminiQuery Version 2.0
-# Runs one Gemini query file, saves current result, maintains a 7-weekday history,
+# geminiQuery Version 2.0 (Updated for Antigravity CLI)
+# Runs one query file using agy, saves current result, maintains a 7-weekday history,
 # and syncs changed files to GitHub.
 
 set -u
 
 # 1. Environment Setup (Crucial for Crontab)
-export PATH="/usr/local/bin:/usr/bin:/bin:/home/john/work/jediller.github.io/gemini/bin"
-export GEMINI_CLI_TRUST_WORKSPACE=true
-export GEMINI_CLI_ALLOW_SHELL=true
-export GEMINI_MODEL="gemini-3.1-pro-preview"
-# Load any other specific Gemini keys or paths if needed.
+export PATH="/home/john/.local/bin:/usr/local/bin:/usr/bin:/bin:/home/john/work/jediller.github.io/gemini/bin"
 
 # 2. Define Paths
 REPO_DIR="/home/john/work/jediller.github.io"
@@ -60,25 +56,22 @@ fi
 
 mkdir -p "$RESULT_DIR" "$HISTORY_DIR" "$TODAY_HISTORY_DIR"
 
-# 5. Execute Gemini Query into a temporary file first.
-echo "Executing Gemini query for $BASENAME..."
+# 5. Execute Antigravity Query into a temporary file first.
+echo "Executing Antigravity query for $BASENAME..."
 INSTRUCTIONS="$(cat "$QUERY_FILE")"
 
-# Run the gemini command.
-# If your installed Gemini CLI requires -p, change the next line to:
-#   if gemini -p "$INSTRUCTIONS" > "$TMP_RESULT"; then
-if gemini "$INSTRUCTIONS" > "$TMP_RESULT"; then
+# Run the agy command using the non-interactive print mode and specific model override.
+if /home/john/.local/bin/agy --model="Gemini 3.5 Flash (High)" --print "$INSTRUCTIONS" > "$TMP_RESULT"; then
     if [ ! -s "$TMP_RESULT" ]; then
-        echo "Error: Gemini query produced an empty result. Current result was not changed."
+        echo "Error: Antigravity query produced an empty result. Current result was not changed."
         exit 1
     fi
 else
-    echo "Error: Gemini query failed. Current result was not changed."
+    echo "Error: Antigravity query failed. Current result was not changed."
     exit 1
 fi
 
 # 6. Update weekday history and current result under a lock.
-# The visible lock file is a local coordination file. It is not added to Git.
 (
     flock -x 9
 
@@ -110,7 +103,6 @@ fi
     mv "$TMP_RESULT" "$RESULT_FILE"
 ) 9> "$LOCK_FILE"
 
-# The trap no longer needs to remove the tmp result after successful mv.
 TMP_RESULT=""
 
 echo "Result saved to $RESULT_FILE"
@@ -121,7 +113,6 @@ cd "$REPO_DIR" || exit 1
 
 CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo master)"
 
-# Do not track the lock file even if it exists.
 git add "$RESULT_FILE" "$STATE_FILE"
 if [ -f "$HISTORY_FILE" ]; then
     git add "$HISTORY_FILE"
