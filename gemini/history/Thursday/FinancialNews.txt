@@ -1,12 +1,13 @@
-Wednesday June 10, 2026 by Gemini A.I.
+﻿Thursday July 23, 2026 by Gemini A.I.
 
-Here is your financial market summary based on the latest closing results.
 
-Dow Jones Industrial Average
-The Dow Jones closed at 50,872.11. Over the last 30 days, the index has experienced some volatility but generally trended upward, fluctuating between roughly 49,300 and 51,600. Looking back over the past 6 months, the Dow has performed strongly, rising approximately 7.8 percent since the start of the year. The index is currently sitting about 690 points below its all-time high record of 51,561.93, which was achieved recently on June 4, 2026.
+United States stock markets experienced significant selling pressure, with technology and artificial intelligence shares leading declines. The Dow Jones Industrial Average fell 506.93 points, or 0.97 percent, to close at 51,711.65. The S and P 500 lost 90.66 points, or 1.21 percent, ending at 7,408.30. The Nasdaq Composite dropped 553.21 points, or 2.15 percent, to finish at 25,137.69.
 
-S&P 500
-The S&P 500 finished the trading day at 7,386.65. In the last 30 days, the index has faced downward pressure, declining by approximately 2.1 percent. Despite this recent pullback, the 6-month historical context remains very positive, with the index up roughly 6.6 percent year-to-date. Currently, the S&P 500 is positioned about 234 points below its all-time high of 7,620.90, which was reached on June 2, 2026.
 
-Nasdaq Composite
-The Nasdaq closed at 25,678.82. Over the past 30 days, the tech-heavy index has seen significant sell-offs, resulting in a decline of approximately 6.7 percent for the month so far. However, over the broader 6-month timeline, the Nasdaq is still up roughly 10.5 percent year-to-date, driven largely by earlier gains in the technology and artificial intelligence sectors. The index is currently resting approximately 1,415 points below its all-time closing high of 27,093.90, set on June 2, 2026.
+Over the past thirty days, overall equity market indices have trended lower. The S and P 500 is approximately two percent below its thirty-day prior level, while the Nasdaq Composite reflects a six percent pullback from recent mid-summer peaks. The Dow Jones Industrial Average remains relatively flat over the thirty-day comparison window.
+
+
+On a six-month trailing basis, all three main equity benchmarks maintain strong overall gains. The S and P 500 and Nasdaq Composite remain up roughly eight percent compared to year-end 2025 benchmarks, with the Dow Jones Industrial Average up approximately seven point six percent.
+
+
+Market volatility was heightened by corporate earnings commentary from mega-cap technology firms, combined with rising Treasury bond yields and elevated crude oil prices amid Middle East supply concerns.
