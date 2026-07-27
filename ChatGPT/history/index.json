@@ -1,9 +1,9 @@
 [
+  { "folder": "2026-07-25", "label": "Saturday, July 25, 2026" },
   { "folder": "2026-07-24", "label": "Friday, July 24, 2026" },
   { "folder": "2026-07-23", "label": "Thursday, July 23, 2026" },
   { "folder": "2026-07-22", "label": "Wednesday, July 22, 2026" },
   { "folder": "2026-07-21", "label": "Tuesday, July 21, 2026" },
   { "folder": "2026-07-20", "label": "Monday, July 20, 2026" },
-  { "folder": "2026-07-19", "label": "Sunday, July 19, 2026" },
-  { "folder": "2026-07-18", "label": "Saturday, July 18, 2026" }
+  { "folder": "2026-07-19", "label": "Sunday, July 19, 2026" }
 ]
