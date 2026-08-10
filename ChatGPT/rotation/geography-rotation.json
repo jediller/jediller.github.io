@@ -1,11 +1,11 @@
 {
   "version": 1,
   "initializationDate": "2026-07-25",
-  "lastAuditDate": "2026-08-09",
+  "lastAuditDate": "2026-08-10",
   "state": {
     "cycle": 1,
-    "nextPosition": 16,
-    "lastUsed": "New Jersey",
+    "nextPosition": 17,
+    "lastUsed": "New Mexico",
     "order": [
       "Vermont", "West Virginia", "Delaware", "Wyoming", "Mississippi",
       "Kansas", "Arizona", "Nevada", "New Hampshire", "Texas",
@@ -21,8 +21,8 @@
   },
   "country": {
     "cycle": 1,
-    "nextPosition": 16,
-    "lastUsed": "São Tomé and Príncipe",
+    "nextPosition": 17,
+    "lastUsed": "Peru",
     "order": [
       "Belarus", "Micronesia", "Andorra", "Latvia", "The Bahamas",
       "Slovakia", "Greece", "Denmark", "Lithuania", "Malawi",
