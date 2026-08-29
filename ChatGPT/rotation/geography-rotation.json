@@ -1,11 +1,11 @@
 {
   "version": 1,
   "initializationDate": "2026-07-25",
-  "lastAuditDate": "2026-08-28",
+  "lastAuditDate": "2026-08-29",
   "state": {
     "cycle": 1,
-    "nextPosition": 31,
-    "lastUsed": "Oregon",
+    "nextPosition": 32,
+    "lastUsed": "Colorado",
     "order": [
       "Vermont",
       "West Virginia",
@@ -61,8 +61,8 @@
   },
   "country": {
     "cycle": 1,
-    "nextPosition": 31,
-    "lastUsed": "Portugal",
+    "nextPosition": 32,
+    "lastUsed": "Palau",
     "order": [
       "Belarus",
       "Micronesia",
