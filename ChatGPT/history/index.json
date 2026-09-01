@@ -1,5 +1,9 @@
 [
   {
+    "folder": "2026-08-31",
+    "label": "Monday, August 31, 2026"
+  },
+  {
     "folder": "2026-08-30",
     "label": "Sunday, August 30, 2026"
   },
@@ -22,9 +26,5 @@
   {
     "folder": "2026-08-23",
     "label": "Sunday, August 23, 2026"
-  },
-  {
-    "folder": "2026-08-22",
-    "label": "Saturday, August 22, 2026"
   }
 ]
