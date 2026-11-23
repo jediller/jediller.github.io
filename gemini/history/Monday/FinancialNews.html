@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial News - Monday, November 23, 2026</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --accent: #1d4ed8;
+      --down: #b91c1c;
+      --up: #15803d;
+      --base-size: 16px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --surface: #1e293b;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --border: #334155;
+        --accent: #60a5fa;
+        --down: #f87171;
+        --up: #4ade80;
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: var(--base-size);
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      margin-bottom: 1rem;
+    }
+    .byline {
+      font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+      font-weight: 700;
+      margin: 0 0 0.75rem 0;
+      overflow-wrap: break-word;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .controls span {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-right: 0.25rem;
+    }
+    .controls button {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 540px) {
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+    }
+    .card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 0.25rem 0;
+    }
+    .card-value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 0.2rem 0;
+    }
+    .card-change.up {
+      color: var(--up);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+      overflow-wrap: break-word;
+    }
+    article {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.15rem;
+    }
+    article h2 {
+      font-size: 1.1rem;
+      margin: 1.25rem 0 0.5rem 0;
+      color: var(--accent);
+    }
+    article h2:first-child {
+      margin-top: 0;
+    }
+    article p {
+      margin: 0 0 0.95rem 0;
+      overflow-wrap: break-word;
+    }
+    article p:last-child {
+      margin-bottom: 0;
+    }
+    .sources {
+      margin-top: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .sources h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .sources ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+    .sources li {
+      margin-bottom: 0.35rem;
+      overflow-wrap: break-word;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="byline">Monday November 23, 2026 by Gemini A.I.</h1>
+      <div class="controls" aria-label="Text size controls">
+        <span>Text size:</span>
+        <button type="button" onclick="adjustFont(-2)" aria-label="Decrease font size">A-</button>
+        <button type="button" onclick="resetFont()" aria-label="Reset font size">Reset</button>
+        <button type="button" onclick="adjustFont(2)" aria-label="Increase font size">A+</button>
+      </div>
+    </header>
+
+    <section class="cards" aria-label="Major U.S. Market Benchmarks">
+      <div class="card">
+        <div class="card-title">Dow Jones (DJIA)</div>
+        <div class="card-value">49,595.31</div>
+        <div class="card-change up">+1,447.98 (+3.01%)</div>
+        <div class="card-meta">30d: ~-6.2% | 6m: ~+7.3% | ATH: -8.75%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">S&amp;P 500</div>
+        <div class="card-value">7,237.17</div>
+        <div class="card-change up">+326.78 (+4.73%)</div>
+        <div class="card-meta">30d: ~-6.7% | 6m: ~+8.5% | ATH: -7.44%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Nasdaq Composite</div>
+        <div class="card-value">24,089.56</div>
+        <div class="card-change up">+1,471.83 (+6.51%)</div>
+        <div class="card-meta">30d: ~-9.8% | 6m: ~+8.5% | ATH: -12.72%</div>
+      </div>
+    </section>
+
+    <article>
+      <h2>Market Closing Summary</h2>
+      <p>United States stocks staged a powerful rally on Monday, November 23, 2026, snapping a seven-day losing streak for the S&amp;P 500 and pulling both the S&amp;P 500 and the Dow Jones Industrial Average back out of correction territory after Nvidia reinstated Jensen Huang as chief executive officer.</p>
+      <p>The Dow Jones Industrial Average surged 1,447.98 points, or 3.01 percent, to close at 49,595.31, rebounding sharply from Friday's finish of 48,147.33. Opening at 49,239.91, the blue-chip index traded between a low of 49,033.31 and a session peak of 49,810.26 on volume of 1.20 billion shares.</p>
+      <p>The S&amp;P 500 jumped 326.78 points, or 4.73 percent, to settle at 7,237.17 compared with its prior close of 6,910.39. After opening at 7,227.41, the broad market benchmark ranged between a low of 7,152.66 and a high of 7,295.60 with 4.25 billion shares traded.</p>
+      <p>The Nasdaq Composite led the advance, soaring 1,471.83 points, or 6.51 percent, to close at 24,089.56 from Friday's close of 22,617.73. The tech-heavy index opened at 24,269.75 and moved between a session low of 23,794.96 and a high of 24,353.65 on heavy volume of 9.41 billion shares.</p>
+
+      <h2>30-Day, 6-Month &amp; All-Time High Context</h2>
+      <p>Monday's rebound trimmed steep losses from the October 6, 2026 all-time record closes, though all three indexes remain lower over the past month. Over the trailing 30 days, the Dow Jones Industrial Average is down roughly 6.2 percent and sits 8.75 percent below its record close of 54,349.12. The S&amp;P 500 has declined approximately 6.7 percent over the past month, standing 7.44 percent below its 7,818.93 peak. The Nasdaq Composite remains in technical correction territory, down about 9.8 percent over 30 days and 12.72 percent beneath its 27,599.79 record high. Over the trailing six-month window from mid-May levels, all three benchmarks retain solid gains, with the Dow up roughly 7.3 percent, the S&amp;P 500 up 8.5 percent, and the Nasdaq up 8.5 percent.</p>
+
+      <h2>Key Drivers, Yields &amp; Commodities</h2>
+      <p>Technology shares powered the turnaround after Nvidia's board reinstated founder Jensen Huang as chief executive officer, saying senior United States government officials confirmed his return poses no national security risk, while President Donald Trump posted that the Attorney General found no evidence of unlawful conduct. Nvidia shares skyrocketed more than 30 percent, lifting artificial intelligence and cloud computing peers including CoreWeave and Nebius, while defensive consumer staples lagged the broader rally.</p>
+      <p>In fixed income and commodities, the benchmark 10-year United States Treasury yield eased to around 4.93 to 4.95 percent as investors looked ahead to Wednesday's Personal Consumption Expenditures inflation report and third-quarter gross domestic product update before Thursday's Thanksgiving market closure. Meanwhile, crude oil prices fell more than 3 percent on global surplus forecasts and recovering Gulf flows, with Brent crude dropping below $90 to roughly $89.23 per barrel and West Texas Intermediate slipping near $80.20 per barrel.</p>
+    </article>
+
+    <section class="sources" aria-label="Sources">
+      <h3>Sources</h3>
+      <ul>
+        <li><a href="https://www.fidelity.com/news/article/us-markets/202611231153MIDNIGHTUSEQUITY_A3759278">US Equity Indexes Soar as Jensen Huang's Return as Nvidia's CEO Energizes AI Trade (Fidelity / MT Newswires)</a></li>
+        <li><a href="https://www.cbsnews.com/news/us-stock-futures-rebound-tech-rout/">Stock market jumps after reinstatement of Jensen Huang as Nvidia CEO (CBS News)</a></li>
+        <li><a href="https://tradingeconomics.com/united-states/government-bond-yield">US 10 Year Treasury Note Yield (Trading Economics)</a></li>
+        <li><a href="https://tradingeconomics.com/commodity/brent-crude-oil">Brent &amp; Crude Oil Prices (Trading Economics)</a></li>
+        <li><a href="https://forbesmiddleeast.com/industry/energy/us-wti-crude-touches-7995-below-80-for-first-time-since-august-report">WTI Reportedly Hits $79.95 As Brent Drops Below $90 On Gulf Flows (Forbes Middle East)</a></li>
+      </ul>
+    </section>
+  </div>
+  <script>
+    let currentSize = 16;
+    function adjustFont(delta) {
+      currentSize = Math.min(24, Math.max(12, currentSize + delta));
+      document.documentElement.style.setProperty('--base-size', currentSize + 'px');
+    }
+    function resetFont() {
+      currentSize = 16;
+      document.documentElement.style.setProperty('--base-size', '16px');
+    }
+  </script>
+</body>
+</html>
