@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Financial News - Friday, November 20, 2026</title>
+  <title>Financial News - Friday, November 27, 2026</title>
   <style>
     :root {
       --bg: #f8fafc;
@@ -14,6 +14,8 @@
       --accent: #1d4ed8;
       --down: #b91c1c;
       --up: #15803d;
+      --badge-bg: #eff6ff;
+      --badge-text: #1e40af;
       --base-size: 16px;
     }
     @media (prefers-color-scheme: dark) {
@@ -26,6 +28,8 @@
         --accent: #60a5fa;
         --down: #f87171;
         --up: #4ade80;
+        --badge-bg: #1e3a8a;
+        --badge-text: #dbeafe;
       }
     }
     * {
@@ -59,8 +63,18 @@
     .byline {
       font-size: clamp(1.05rem, 3.8vw, 1.35rem);
       font-weight: 700;
-      margin: 0 0 0.75rem 0;
+      margin: 0 0 0.5rem 0;
       overflow-wrap: break-word;
+    }
+    .status-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
     }
     .controls {
       display: flex;
@@ -112,6 +126,11 @@
       font-size: 1.35rem;
       font-weight: 700;
       margin: 0 0 0.2rem 0;
+    }
+    .card-change.up {
+      color: var(--up);
+      font-weight: 600;
+      font-size: 0.95rem;
     }
     .card-change.down {
       color: var(--down);
@@ -179,7 +198,8 @@
 <body>
   <div class="container">
     <header>
-      <h1 class="byline">Friday November 20, 2026 by Gemini A.I.</h1>
+      <h1 class="byline">Friday November 27, 2026 by Gemini A.I.</h1>
+      <div class="status-badge">Black Friday Early Close (1:00 PM ET) &mdash; Best Week Since April 2025</div>
       <div class="controls" aria-label="Text size controls">
         <span>Text size:</span>
         <button type="button" onclick="adjustFont(-2)" aria-label="Decrease font size">A-</button>
@@ -191,48 +211,48 @@
     <section class="cards" aria-label="Major U.S. Market Benchmarks">
       <div class="card">
         <div class="card-title">Dow Jones (DJIA)</div>
-        <div class="card-value">48,147.33</div>
-        <div class="card-change down">-949.73 (-1.93%)</div>
-        <div class="card-meta">30d: ~-8.9% | 6m: ~+4.2% | ATH: -11.41%</div>
+        <div class="card-value">50,774.94</div>
+        <div class="card-change up">+591.99 (+1.18%)</div>
+        <div class="card-meta">30d: -3.24% | 6m: +0.26% | ATH: -6.58%</div>
       </div>
       <div class="card">
         <div class="card-title">S&amp;P 500</div>
-        <div class="card-value">6,910.39</div>
-        <div class="card-change down">-265.44 (-3.70%)</div>
-        <div class="card-meta">30d: ~-10.9% | 6m: ~+3.6% | ATH: -11.62%</div>
+        <div class="card-value">7,297.49</div>
+        <div class="card-change up">+114.71 (+1.60%)</div>
+        <div class="card-meta">30d: -5.77% | 6m: -2.96% | ATH: -6.67%</div>
       </div>
       <div class="card">
         <div class="card-title">Nasdaq Composite</div>
-        <div class="card-value">22,617.73</div>
-        <div class="card-change down">-1,261.47 (-5.28%)</div>
-        <div class="card-meta">30d: ~-15.3% | 6m: ~+1.9% | ATH: -18.05%</div>
+        <div class="card-value">24,129.50</div>
+        <div class="card-change up">+543.70 (+2.31%)</div>
+        <div class="card-meta">30d: -9.12% | 6m: -9.54% | ATH: -12.57%</div>
       </div>
     </section>
 
     <article>
       <h2>Market Closing Summary</h2>
-      <p>United States stocks suffered a steep, technology-led selloff on Friday, November 20, 2026, pushing both the S&amp;P 500 and the Dow Jones Industrial Average into correction territory and erasing the Nasdaq Composite's gains for the year.</p>
-      <p>The Dow Jones Industrial Average fell 949.73 points, or 1.93 percent, to close at 48,147.33, down from Thursday's finish of 49,097.06. After touching an early high of 49,594.90 from an open of 49,071.82, the blue-chip average slid to an intraday low of 47,998.86 on heavy volume of 1.17 billion shares.</p>
-      <p>The S&amp;P 500 tumbled 265.44 points, or 3.70 percent, to finish at 6,910.39 compared with its prior close of 7,175.83, marking its seventh consecutive daily loss. The broad market benchmark opened at 7,150.39 and traded between a high of 7,198.67 and a low of 6,882.66 with 4.73 billion shares changing hands.</p>
-      <p>The Nasdaq Composite bore the brunt of the decline, plunging 1,261.47 points, or 5.28 percent, to settle at 22,617.73 from Thursday's close of 23,879.20, turning negative for 2026. Opening at 23,592.67, the tech-heavy index touched a session peak of 23,837.76 before dropping to a low of 22,513.01 on massive volume of 10.42 billion shares.</p>
+      <p>United States stocks surged in a shortened Black Friday session on Friday, November 27, 2026, capping Wall Street's strongest week since April 2025 as buyers rushed back into technology and artificial intelligence shares following the Thanksgiving break. Major equity exchanges closed early at 1:00 PM Eastern, with bond markets closing at 2:00 PM Eastern.</p>
+      <p>At the early closing bell, the Dow Jones Industrial Average climbed 591.99 points, or 1.18 percent, to finish at 50,774.94, building on Wednesday's close of 50,182.95. Opening higher at 50,458.86, the blue-chip index moved between an intraday low of 50,398.29 and a high of 50,830.19 on holiday-light volume of 365.41 million shares, finishing the week up 5.46 percent.</p>
+      <p>The S&amp;P 500 rose 114.71 points, or 1.60 percent, to settle at 7,297.49 compared with Wednesday's close of 7,182.78. After opening at 7,262.61, the broad market benchmark ranged from 7,211.46 to 7,304.10 on volume of 1.68 billion shares, locking in a 5.60 percent weekly advance.</p>
+      <p>The Nasdaq Composite led the rally, jumping 543.70 points, or 2.31 percent, to close at 24,129.50 from Wednesday's finish of 23,585.80. The tech-heavy index opened at 23,958.46, touched a low of 23,690.60, and reached a high of 24,149.09 on volume of 4.76 billion shares, ending the week up 6.68 percent.</p>
 
       <h2>30-Day, 6-Month &amp; All-Time High Context</h2>
-      <p>Friday's rout placed all three major benchmarks squarely in technical correction territory, defined as a drop of at least 10 percent from the all-time record closes set on October 6, 2026. Over the trailing 30 days, the Dow Jones Industrial Average has fallen roughly 8.9 percent and now sits 11.41 percent below its record close of 54,349.12. The S&amp;P 500 is down approximately 10.9 percent over the past month, standing 11.62 percent below its 7,818.93 peak. The Nasdaq Composite has dropped about 15.3 percent over 30 days and now sits 18.05 percent beneath its 27,599.79 record high. Across the trailing six-month window from mid-May levels, gains have narrowed sharply, leaving the Dow up roughly 4.2 percent, the S&amp;P 500 up 3.6 percent, and the Nasdaq up 1.9 percent.</p>
+      <p>From a broader historical perspective, Friday's advance narrowed losses from recent peaks, though all three benchmarks remain below their all-time record closes. Over the trailing 30 days since October 28, the Dow Jones Industrial Average is down 3.24 percent and sits 6.58 percent below its August 5 record close of 54,349.12. The S&amp;P 500 has declined 5.77 percent over the past 30 days, standing 6.67 percent below its October 6 peak of 7,818.93. The Nasdaq Composite remains in technical correction territory, down 9.12 percent over 30 days and 12.57 percent beneath its October 6 record high of 27,599.89. Over the trailing six-month window since May 27, the Dow has edged back into positive territory, up 0.26 percent, while the S&amp;P 500 is down 2.96 percent and the Nasdaq is down 9.54 percent.</p>
 
       <h2>Key Drivers, Yields &amp; Commodities</h2>
-      <p>Market selling accelerated on monthly options expiration day as Anthropic shares slumped following Thursday's record $93.5 billion initial public offering, dragging down major semiconductor and artificial intelligence names including Nvidia, AMD, Micron, and Broadcom amid mounting doubts over valuation and capital spending durability, while defensive money rotated toward consumer staples.</p>
-      <p>In the bond market, a flight to safety sent Treasury prices higher and pushed the benchmark 10-year United States Treasury yield down 13 basis points to finish at 4.92 percent, breaking back below the 5 percent threshold while the 2-year yield ended at 4.63 percent, even as futures continued pricing in high odds of a December Federal Reserve rate hike. Meanwhile, crude oil prices remained subdued in the mid-$80s for West Texas Intermediate and low-$90s for Brent ahead of next week's Thanksgiving holiday.</p>
+      <p>Technology and retail shares drove sentiment as the holiday shopping season kicked off. Anthropic jumped 11 percent to $91.88, Broadcom gained 3.8 percent, Amazon rose 2.1 percent, and Microsoft added 0.6 percent, while Nvidia slipped 1.7 percent. Among traditional retailers, Macy's rose 1.2 percent while Target finished nearly flat. The National Retail Federation projects November and December holiday sales will grow 4.2 percent year over year to surpass $1 trillion, even as 82 percent of surveyed shoppers adjust spending habits amid 3.8 percent inflation and elevated energy costs.</p>
+      <p>In bond and commodity markets, the benchmark 10-year United States Treasury yield rose to 4.94 percent from 4.85 percent late Wednesday. Meanwhile, Brent crude oil eased 0.9 percent to $90.84 per barrel. Regular trading hours resume on Monday, November 30, ahead of next week's November employment and manufacturing reports.</p>
     </article>
 
     <section class="sources" aria-label="Sources">
       <h3>Sources</h3>
       <ul>
-        <li><a href="https://www.kare11.com/article/syndication/associatedpress/how-major-us-stock-indexes-fared-friday-11202026/616-ddb71432-40dc-428c-97d9-7f706955d9e8">How major US stock indexes fared Friday, 11/20/2026 (Associated Press / KARE 11)</a></li>
-        <li><a href="https://aroundprague.cz/en/news/us/why-the-stock-market-fell-today-nasdaq-sinks-5-3-s-p-500-drops-3-7-as-ai">Why the Stock Market Fell Today: Nasdaq Sinks 5.3%, S&amp;P 500 Drops 3.7% (AroundPrague)</a></li>
-        <li><a href="https://www.fidelity.com/news/article/us-markets/202611201408MIDNIGHTUSEQUITY_A3758578">Update: S&amp;P 500, Dow Enter Correction Territory (Fidelity / MT Newswires)</a></li>
-        <li><a href="https://www.advisorperspectives.com/dshort/updates/2026/11/20/treasury-yields-snapshot-november-20-2026">Treasury Yields Snapshot: November 20, 2026 (Advisor Perspectives)</a></li>
-        <li><a href="https://tradingeconomics.com/united-states/government-bond-yield">US 10 Year Treasury Note Yield (Trading Economics)</a></li>
-        <li><a href="https://www.macrotrends.net/2516/wti-crude-oil-prices-10-year-daily-chart">WTI Crude Oil Prices (Macrotrends)</a></li>
+        <li><a href="https://apnews.com/article/wall-street-stocks-dow-nasdaq-04dab6079cf7f3dfe7285a3cc1f240a2">How major US stock indexes fared Friday 11/27/2026 (AP News)</a></li>
+        <li><a href="https://cdapress.com/news/2026/nov/27/stocks-jump-to-close-out-an-erratic-week-that-was-also-wall-streets-best-in-more-than-a-year/">Stocks jump to close out an erratic week (CDA Press / AP)</a></li>
+        <li><a href="https://www.bnnbloomberg.ca/markets/2026/11/27/stocks-jump-to-close-out-an-erratic-week-that-was-also-wall-streets-best-in-more-than-a-year/">Stock market news: U.S. shares jump to close out an erratic week (BNN Bloomberg)</a></li>
+        <li><a href="https://cappnotes.substack.com/p/closing-look-friday-november-27-2026">Closing Look &mdash; Friday, November 27, 2026 (CappNotes)</a></li>
+        <li><a href="https://en.moneyandbanking.co.th/2026/290353/">Black Friday 2026: US shopping expected to surpass $1 trillion (Money and Banking / Reuters)</a></li>
+        <li><a href="https://www.schwab.com/learn/story/stock-market-update-open">Stocks Set to Pop Early as Investors Hunt Deals (Charles Schwab)</a></li>
       </ul>
     </section>
   </div>

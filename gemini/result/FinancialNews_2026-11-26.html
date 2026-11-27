@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial News - Thursday, November 26, 2026</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --accent: #1d4ed8;
+      --down: #b91c1c;
+      --up: #15803d;
+      --badge-bg: #eff6ff;
+      --badge-text: #1e40af;
+      --base-size: 16px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --surface: #1e293b;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --border: #334155;
+        --accent: #60a5fa;
+        --down: #f87171;
+        --up: #4ade80;
+        --badge-bg: #1e3a8a;
+        --badge-text: #dbeafe;
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: var(--base-size);
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      margin-bottom: 1rem;
+    }
+    .byline {
+      font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      overflow-wrap: break-word;
+    }
+    .status-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .controls span {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-right: 0.25rem;
+    }
+    .controls button {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 540px) {
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+    }
+    .card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 0.25rem 0;
+    }
+    .card-value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 0.2rem 0;
+    }
+    .card-change.up {
+      color: var(--up);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .card-change.down {
+      color: var(--down);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+      overflow-wrap: break-word;
+    }
+    article {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.15rem;
+    }
+    article h2 {
+      font-size: 1.1rem;
+      margin: 1.25rem 0 0.5rem 0;
+      color: var(--accent);
+    }
+    article h2:first-child {
+      margin-top: 0;
+    }
+    article p {
+      margin: 0 0 0.95rem 0;
+      overflow-wrap: break-word;
+    }
+    article p:last-child {
+      margin-bottom: 0;
+    }
+    .sources {
+      margin-top: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .sources h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .sources ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+    .sources li {
+      margin-bottom: 0.35rem;
+      overflow-wrap: break-word;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="byline">Thursday November 26, 2026 by Gemini A.I.</h1>
+      <div class="status-badge">Markets Closed (Thanksgiving Day) &mdash; Official Wednesday, Nov. 25 Closing Benchmarks</div>
+      <div class="controls" aria-label="Text size controls">
+        <span>Text size:</span>
+        <button type="button" onclick="adjustFont(-2)" aria-label="Decrease font size">A-</button>
+        <button type="button" onclick="resetFont()" aria-label="Reset font size">Reset</button>
+        <button type="button" onclick="adjustFont(2)" aria-label="Increase font size">A+</button>
+      </div>
+    </header>
+
+    <section class="cards" aria-label="Major U.S. Market Benchmarks">
+      <div class="card">
+        <div class="card-title">Dow Jones (DJIA)</div>
+        <div class="card-value">50,182.95</div>
+        <div class="card-change up">+164.25 (+0.33%)</div>
+        <div class="card-meta">30d: -4.16% | 6m: -0.55% | ATH: -7.67%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">S&amp;P 500</div>
+        <div class="card-value">7,182.78</div>
+        <div class="card-change down">-18.31 (-0.25%)</div>
+        <div class="card-meta">30d: -6.43% | 6m: -4.47% | ATH: -8.14%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Nasdaq Composite</div>
+        <div class="card-value">23,585.80</div>
+        <div class="card-change down">-147.74 (-0.62%)</div>
+        <div class="card-meta">30d: -9.87% | 6m: -11.52% | ATH: -14.54%</div>
+      </div>
+    </section>
+
+    <article>
+      <h2>Market Status &amp; Latest Closing Summary</h2>
+      <p>United States financial markets are closed today, Thursday, November 26, 2026, in observance of the Thanksgiving Day holiday. Using the most recent official closing benchmarks from Wednesday, November 25, 2026, major U.S. stock indexes finished mixed after staging a dramatic intraday comeback that erased steep morning losses triggered by stubborn inflation data, fresh tariff proposals, and early semiconductor weakness.</p>
+      <p>At Wednesday's closing bell, the Dow Jones Industrial Average finished up 164.25 points, or 0.33 percent, at 50,182.95, building on Tuesday's close of 50,018.70. After opening down at 49,469.86 and dropping more than 1,100 points to an intraday low of 48,913.74, the blue-chip index rallied as high as 50,395.24 on volume of 754.71 million shares.</p>
+      <p>The S&amp;P 500 recovered most of a 3 percent morning slide to close down just 18.31 points, or 0.25 percent, at 7,182.78 compared with Tuesday's finish of 7,201.09. Opening at 7,060.33, the broad market benchmark touched a low of 6,970.11 before climbing to 7,199.31 on volume of 3.47 billion shares.</p>
+      <p>The Nasdaq Composite pared an early drop of more than 4 percent to finish down 147.74 points, or 0.62 percent, at 23,585.80 from Tuesday's close of 23,733.54. The tech-heavy index opened at 22,948.48, dropped to a low of 22,632.40, and rebounded to 23,627.45 on heavy volume of 9.76 billion shares.</p>
+
+      <h2>30-Day, 6-Month &amp; All-Time High Context</h2>
+      <p>From a broader historical perspective, all three benchmarks remain below their all-time record closes. Over the trailing 30 days since October 26, the Dow Jones Industrial Average is down 4.16 percent and sits 7.67 percent below its August 5 record close of 54,349.12. The S&amp;P 500 has fallen 6.43 percent over the past 30 days, standing 8.14 percent below its October 6 peak of 7,818.93. The Nasdaq Composite remains in technical correction territory, down 9.87 percent over 30 days and 14.54 percent beneath its October 6 record high of 27,599.89. Over the trailing six-month window since May 26, all three benchmarks also sit in negative territory, with the Dow down 0.55 percent, the S&amp;P 500 down 4.47 percent, and the Nasdaq down 11.52 percent.</p>
+
+      <h2>Key Drivers, Yields &amp; Commodities</h2>
+      <p>Market-moving factors ahead of the holiday break centered on inflation, trade policy, and technology earnings sentiment. Wednesday's October Personal Consumption Expenditures report showed headline inflation accelerating to 3.8 percent year over year and core inflation rising 3.3 percent, slightly above forecasts, while third-quarter gross domestic product was revised up to 4.3 percent annualized growth. Those readings reinforced near-certain market expectations for a December Federal Reserve interest rate hike. Simultaneously, the Office of the United States Trade Representative proposed new Section 301 tariffs on 14 trading partners, including rates up to 35 percent on Vietnam, 25 percent on India, 20 percent on China, and 15 percent on the European Union and Japan, pending January hearings. In technology, Nvidia shares fell 3.91 percent after S&amp;P Global placed its credit rating on watch, though broader semiconductor losses narrowed into the close.</p>
+      <p>In bond and commodity markets, safe-haven buying pushed the benchmark 10-year United States Treasury yield down 6 basis points to 4.85 percent, while the 2-year yield dipped to 4.61 percent. Meanwhile, Brent crude oil jumped 3.51 percent to settle at $94.61 per barrel following a Houthi attack on Saudi Arabia's largest refinery, with West Texas Intermediate crude trading near $83 to $85 per barrel. United States stock markets will reopen on Friday, November 27, for a shortened Black Friday session closing early at 1:00 PM Eastern, with bond markets closing at 2:00 PM Eastern.</p>
+    </article>
+
+    <section class="sources" aria-label="Sources">
+      <h3>Sources</h3>
+      <ul>
+        <li><a href="https://apnews.com/article/wall-street-stocks-dow-nasdaq-94fdb0ecb060ec65c0b02879ce0d2d09">How major US stock indexes fared Wednesday 11/25/2026 (AP News)</a></li>
+        <li><a href="https://www.nasdaq.com/market-activity/stock-market-holiday-schedule">2026 US Stock Market Holiday Schedule (Nasdaq)</a></li>
+        <li><a href="https://cappnotes.substack.com/p/closing-look-wednesday-november-25">Closing Look &mdash; Wednesday, November 25, 2026 (CappNotes)</a></li>
+        <li><a href="https://www.stocktitan.net/articles/new-tariffs-14-economies-section-301-2026">New Tariffs List by Country Under Section 301 (StockTitan)</a></li>
+        <li><a href="https://thebusinessjournal.com/wall-street-ai-stock-sell-off-inflation-tariffs/">Wall Street rebounds as AI stock sell-off eases (The Business Journal)</a></li>
+        <li><a href="https://www.investing.com/analysis/the-us-economy-is-strong--but-how-safe-is-the-global-growth-200692359">The US Economy Is Strong &mdash; Q3 GDP, PCE &amp; AI Capex (Investing.com)</a></li>
+      </ul>
+    </section>
+  </div>
+  <script>
+    let currentSize = 16;
+    function adjustFont(delta) {
+      currentSize = Math.min(24, Math.max(12, currentSize + delta));
+      document.documentElement.style.setProperty('--base-size', currentSize + 'px');
+    }
+    function resetFont() {
+      currentSize = 16;
+      document.documentElement.style.setProperty('--base-size', '16px');
+    }
+  </script>
+</body>
+</html>
